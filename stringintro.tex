@@ -18,7 +18,7 @@
 \usepackage[libertine]{newtxmath}
 \usepackage{hyperref}
 \usepackage{pxjahyper}
-
+\usepackage{physics}
 \usepackage{graphicx}
 \graphicspath{{fig/}}
 
@@ -63,8 +63,8 @@
 \newcommand{\Cb}{\mathbb{C}}
 \newcommand{\Ncal}{\mathcal{N}}
 \newcommand{\del}{\partial}
-\DeclareMathOperator*{\Tr}{{\rm Tr}}
-\DeclareMathOperator*{\tr}{{\rm tr}}
+%\DeclareMathOperator*{\Tr}{{\rm Tr}}
+%\DeclareMathOperator*{\tr}{{\rm tr}}
 
 \newenvironment{remark}{\begin{quote}\small\textbf{[注意]}\\ }{\end{quote}}
 
@@ -261,7 +261,7 @@ e^{-1}\dot{X}^2-em^2
 \end{align}
 となって$S_1$と同じになります。
 
-新しい作用\eqref{particle-action2}にも世界面の座標変換の対称性があります。これは無限小変換の形で表すと
+新しい作用\eqref{particle-action2}にも世界線の座標変換の対称性があります。これは無限小変換の形で表すと
 \begin{equation}
 \begin{aligned}
  \delta_{\xi}X^{\mu}=&-\xi \dot{X}^{\mu},\\
@@ -1154,7 +1154,7 @@ f(\theta)=A+\theta B
 
 このような対称性を作るために超場(superfield)を導入しましょう。例えば、世界線の理論には$X^{\mu}(\tau)$という場がありましたが、これに対して超世界線上の場$Y^{\mu}(\tau,\theta)$を導入します。$\theta$で展開すると
 \begin{align}
-Y^{\mu}(\tau,\theta)=X^{\mu}(\tau) + \theta \psi^{\mu}(\tau)
+Y^{\mu}(\tau,\theta)=X^{\mu}(\tau) + i\theta \psi^{\mu}(\tau)
 \end{align}
 となります。$Y^{\mu}$をボゾン的とすることにすると、$X^{\mu}$はボゾン的、$\psi^{\mu}$はフェルミオン的となります。$X^{\mu}(\tau)$や$\psi^{\mu}(\tau)$は超場$Y^{\mu}(\tau,\theta)$の「成分場」(component field)と呼ばれます。この超場の表式を用いて超対称変換を定義します。超対称変換のパラメータを$\epsilon$とします。これは、フェルミオン的で微小なパラメータである。超場$Y^{\mu}$に対する変換性を
 \begin{align}
@@ -1164,17 +1164,17 @@ Y^{\mu}(\tau,\theta)=X^{\mu}(\tau) + \theta \psi^{\mu}(\tau)
 と定義します。この意味は、両辺を$\theta$で展開したときに、成分場$X^{\mu},\psi^{\mu}$に対する変換は
 $1, \theta$の係数を比較して得られるということです。つまり\eqref{superfield-SUSY-transf}の左辺は、
 \begin{align}
-\delta_{\epsilon}X^{\mu} +\theta \delta_{\epsilon} \psi^{\mu}
+\delta_{\epsilon}X^{\mu} + i\theta \delta_{\epsilon} \psi^{\mu}
 \end{align}
 であり、右辺は、
 \begin{align}
-\epsilon \psi^{\mu} +\epsilon i\theta \dot{X}^{\mu}
-=\epsilon \psi^{\mu} -\theta i\epsilon \dot{X}^{\mu}
+i\epsilon \psi^{\mu} +\epsilon i\theta \dot{X}^{\mu}
+=i\epsilon \psi^{\mu} -\theta i\epsilon \dot{X}^{\mu}
 \end{align}
 となります。これらを比較すると成分場に対する変換性
 \begin{align}
-\delta_{\epsilon} X^{\mu}=\epsilon \psi^{\mu},\qquad
-\delta_{\epsilon} \psi^{\mu}=-i\epsilon \dot{X}^{\mu}
+\delta_{\epsilon} X^{\mu}=i\epsilon \psi^{\mu},\qquad
+\delta_{\epsilon} \psi^{\mu}=-\epsilon \dot{X}^{\mu}
 \end{align}
 が得られます。
 
@@ -1236,8 +1236,69 @@ $です。}。
 この対称性のある理論の一つの例は次のように作れます。
 \begin{align}
 L=\int \di \theta \frac{i}{2}\del_{\tau} Y^{\mu} \Dh Y_{\mu}
-=\frac12 \dot{X}^{\mu}\dot{X}_{\mu} +\frac i2 \dot{\psi}^{\mu} \psi_{\mu}
+=\frac12 \dot{X}^{\mu}\dot{X}_{\mu} +\frac i2 \psi_{\mu}\dot{\psi}^{\mu} 
+\label{susyQM0}
 \end{align}
+
+この\eqref{susyQM0}で表される理論を正準量子化してみましょう。$X^{\mu},\psi^{\mu}$の正準共役運動量はそれぞれ
+\begin{align}
+  P_{\mu}=\pdv{L}{\dot{X}^{\mu}}=\dot{X}_{\mu},\quad
+  P_{\psi^{\mu}}=\pdv{\dot{\psi}^{\mu}}L=-\frac{i}{2}\psi_{\mu}.
+\end{align}
+ボゾンの方は通常どおりです。一方、フェルミオンの方は正準変数の間に非自明な関係がついていて、独立変数とは見做せなくなってしまっています。このような拘束条件がある場合の正準形式の取り扱いはDiracによって定式化されました。この詳細については、
+\begin{mycite}
+  九後 汰一郎「ゲージ場の量子論 1」
+\end{mycite}
+の５章に詳しく書いてあるので見てみてください。この処方を用いて正準量子化したときの正準交換関係は結果的に
+\begin{align}
+  [P_{\mu},X^{\nu}]=-i\delta_{\mu}^{\nu},\quad
+  \{\psi^{\mu},\psi^{\nu}\}=\eta^{\mu\nu}
+\end{align}
+となります。Hamiltonian は
+\begin{align}
+  H=\dot{X^{\mu}}P_{\mu}+\dot{\psi}^{\mu}P_{\psi^{\mu}}-L=\frac12 P^2
+\end{align}
+となります。
+
+この系のHilbert空間について、もう少し調べてみましょう。今、$\Gamma^{\mu}:=\sqrt{2}\psi^{\mu}$と書くと、正準交換関係は
+\begin{align}
+  \{\Gamma^{\mu},\Gamma^{\nu}\}=2\eta^{\mu\nu}
+\end{align}
+となり、これはClifford代数を生成することになります。Clifford代数の既約表現は$n:=\left[\frac{D}{2}\right]$であることが知られています。言い換えると$\Gamma^{\mu}$は$n\times n$行列で表されます。$\Gamma^{\mu}$だけ考えた場合のHilbert空間は$\Cb^n$になります。今、$P_{\mu},X^{\mu}$の方もありますから、$X^{\mu}$基底をとることにすると、波動関数は$n$成分のもの
+\begin{align}
+  \Psi(x)=\mqty(
+    \Psi_1(x)\\
+    \vdots\\
+    \Psi_n(x)
+  )
+\end{align}
+になります。ガンマ行列やスピノールが出てきたので、Dirac方程式が出てくる可能性が見えてきたでしょうか。
+
+一方で、この系には超対称性がありましたから、その生成子について考えてみましょう。生成子は
+\begin{align}
+  Q:=-\psi^{\mu}P_{\mu}
+\end{align}
+となります。実際この電荷は
+\begin{align}
+  Q^2=H
+\end{align}
+という関係を満たします。ですから何らかの理由で
+\begin{align}
+  Q\Psi=0
+\end{align}
+という拘束条件を課す必要があれば、それがDirac方程式になります。ただし、ここまでの議論では、この拘束条件はどこからも出てきません。
+
+\subsection{Dirac括弧とフェルミオンの正準交換関係*}
+
+\subsection{世界線の局所超対称性}
+普通の相対論的な粒子の場合に、拘束条件$H=0$がどこから出てきたのかを思い出してみると、それは世界線の座標変換\eqref{reparam2}の対称性があったからでした。同様に超対称性をゲージ化した理論を考えると、$Q=0$の拘束条件が課されることが期待できます。実際にやってみましょう。
+
+\eqref{particle-action2}の作用の中の補助場$e(\tau)$を超場に格上げすることにします。
+\begin{align}
+  E(\tau,\theta)=e(\tau)+i\theta \lambda(\tau)
+\end{align}
+
+
 \section{2次元スピノール}
 
 \section{世界面の超対称性}
