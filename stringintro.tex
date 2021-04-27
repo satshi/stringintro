@@ -29,6 +29,9 @@
 \tcbuselibrary{breakable, skins, theorems}
 %\usepackage{cleveref}
 
+
+
+
 % font warningを出さないため
 \DeclareFontShape{JY2}{hgt}{b}{n}{<->ssub*hgt/bx/n}{}
 \DeclareFontShape{JY2}{hgt}{m}{it}{<->ssub*hgt/m/n}{}
@@ -65,6 +68,8 @@
 \newcommand{\del}{\partial}
 %\DeclareMathOperator*{\Tr}{{\rm Tr}}
 %\DeclareMathOperator*{\tr}{{\rm tr}}
+
+\newcommand{\kyou}[1]{{\sffamily \bfseries #1}}
 
 \newenvironment{remark}{\begin{quote}\small\textbf{[注意]}\\ }{\end{quote}}
 
@@ -335,11 +340,13 @@ e^{-1}\dot{X}^2-em^2
 \begin{align} G_{\alpha\beta}=\del_{\alpha}X^{\mu}(\sigma)\del_{\beta}X^{\nu}(\sigma)\eta_{\mu\nu}
 \end{align}
 ここで、$\del_{\alpha}=\frac{\del}{\del\sigma^{\alpha}}$です。弦の作用が世界面の面積に比例するとすると、
-\begin{align}
- S_{NG}[X]=-\frac{1}{2\pi\alpha'}\int \di^2\sigma
-\sqrt{-\det G}\label{NG}
-\end{align}
-と書けます。これはNambu-Goto作用と呼ばれます。ここで$\alpha'$(アルファプライム)は「スロープパラメータ(slope parameter)」と呼ばれる定数です。あるいは、弦の張力は、$\frac{1}{2\pi\alpha'}$となるといっても良いです。\footnote{定数$\alpha'$がこのような形で出てきたのは歴史的な理由によります。$\alpha'$はどの教科書や論文でも定義が同じなので便利です。「弦の長さ」($\ell_s$と書いたりする)もよく使われるパラメータですが、教科書や論文によって定義が異なるので注意が必要です。$\ell_s=\sqrt{\alpha'}$だったり、$\ell_s=\sqrt{2\alpha'}$だったりします。
+\begin{important}
+  \begin{align}
+    S_{NG}[X]=-\frac{1}{2\pi\alpha'}\int \di^2\sigma
+   \sqrt{-\det G}\label{NG}
+   \end{align}     
+\end{important}
+と書けます。これは\kyou{Nambu-Goto作用}と呼ばれます。ここで$\alpha'$(アルファプライム)は「スロープパラメータ(slope parameter)」と呼ばれる定数です。あるいは、弦の張力は、$\frac{1}{2\pi\alpha'}$となるといっても良いです。\footnote{定数$\alpha'$がこのような形で出てきたのは歴史的な理由によります。$\alpha'$はどの教科書や論文でも定義が同じなので便利です。「弦の長さ」($\ell_s$と書いたりする)もよく使われるパラメータですが、教科書や論文によって定義が異なるので注意が必要です。$\ell_s=\sqrt{\alpha'}$だったり、$\ell_s=\sqrt{2\alpha'}$だったりします。
 }
 
 \subsection{Polyakov作用}
@@ -350,12 +357,14 @@ h_{\alpha\beta}(\sigma),\quad
 h_{\alpha\beta}=h_{\beta\alpha},\quad
 (\alpha,\beta=0,1)
 \end{align}
-これを用いて、「Polyakov作用」を次の形で導入します。
-\begin{align}
-S[X,h]=-\frac{1}{4\pi\alpha'}\int \di^2\sigma \sqrt{-h}h^{\alpha\beta}\del_{\alpha}X^{\mu}\del_{\beta}X^{\nu}\eta_{\mu\nu}=
--\frac{1}{4\pi\alpha'}\int \di^2\sigma \sqrt{-h}h^{\alpha\beta}G_{\alpha\beta}
-\label{Polyakov}
-\end{align}
+これを用いて、\kyou{Polyakov作用}を次の形で導入します。
+\begin{important}
+  \begin{align}
+    S[X,h]=-\frac{1}{4\pi\alpha'}\int \di^2\sigma \sqrt{-h}h^{\alpha\beta}\del_{\alpha}X^{\mu}\del_{\beta}X^{\nu}\eta_{\mu\nu}=
+    -\frac{1}{4\pi\alpha'}\int \di^2\sigma \sqrt{-h}h^{\alpha\beta}G_{\alpha\beta}
+    \label{Polyakov}
+    \end{align}      
+\end{important}
 ここで
 \begin{align}
 h=\det h_{\alpha\beta},\qquad h^{\alpha\beta} : h_{\alpha\beta}\text{の逆行列}
@@ -437,16 +446,20 @@ X'^{\mu}(\sigma)=\Lambda^{\mu}{}_{\nu}X^{\nu}(\sigma)+a^{\mu}
 h_{\alpha\beta}=\eta_{\alpha\beta}
 \end{align}
 局所的な対称性のパラメータは、一般座標変換の２つとWeyl変換の１つの合計３つあるので、数の上からは上のようなゲージを取ることはできます。このゲージでは作用は
-\begin{align}
-S=-\frac{1}{8\pi}\int \di^2\sigma \eta^{\alpha\beta}\del_{\alpha}X^{\mu}\del_{\beta}X^{\nu}\eta^{\alpha\beta}\eta_{\mu\nu}.
-\end{align}
+\begin{important}
+  \begin{align}
+    S=-\frac{1}{8\pi}\int \di^2\sigma \eta^{\alpha\beta}\del_{\alpha}X^{\mu}\del_{\beta}X^{\nu}\eta^{\alpha\beta}\eta_{\mu\nu}.\label{gaugefixedaction}
+    \end{align}      
+\end{important}
 粒子の場合でやったのと同様に$h_{\alpha\beta}$に対する運動方程式\eqref{constraintT}を拘束条件として課さなければなりません。これは今のゲージでは\eqref{EM}から
-\begin{align}
-0=T_{\alpha\beta}=
-\frac12 \del_{\alpha}X^{\mu}\del_{\beta}X^{\nu}\eta_{\mu\nu}
--\frac14 \eta_{\alpha\beta}\del_{\gamma}X^{\mu}\del_{\delta}X^{\nu}\eta_{\mu\nu}
-\end{align}
-と書けます。
+\begin{important}
+  \begin{align}
+    0=T_{\alpha\beta}=
+    \frac12 \del_{\alpha}X^{\mu}\del_{\beta}X^{\nu}\eta_{\mu\nu}
+    -\frac14 \eta_{\alpha\beta}\del_{\gamma}X^{\mu}\del_{\delta}X^{\nu}\eta_{\mu\nu}\label{constraint}
+    \end{align}      
+\end{important}
+と書けます。したがって、\kyou{古典的な弦理論は\eqref{gaugefixedaction}の作用で表される系で\eqref{constraint}の拘束条件を課したものです。}
 
 さて、局所対称性をゲージ固定したのですが、実はまだ残っている対称性があります。それは、一般座標変換とWeyl変換を同時に行うようなものです。一般座標変換のうち、
 \begin{align}
@@ -510,14 +523,18 @@ T_{+-}=T_{-+}=0
 \end{enumerate}
 
 \section{2次元自由スカラー場}
+これから、作用\eqref{gaugefixedaction}と拘束条件\eqref{constraint}の系を考えていきます。
+これらは作用\eqref{fixed-action}と拘束条件$T_{++}=T_{--}=0$（$T_{++},T_{--}$は\eqref{fixed-em}式）とも書けます。
+一旦拘束条件を忘れると、作用\eqref{gaugefixedaction}は相互作用のない、2次元の自由スカラー場が$D$個あるだけの系になります\footnote{$X^0$だけが少し違いますが、取り扱いは同様にできます。}。
+ですから、この節ではまず1個の自由スカラー場について量子論まで含めて詳しく調べます。それを$D$個集めてきて拘束条件を考えるのは、後で行います。
+
 \subsection{作用と運動方程式の一般解}
-これから、作用\eqref{fixed-action}とエネルギー運動量テンソル\eqref{fixed-em}について考えていくのですが、
-まず、手始めに簡単のため$X$が一つだけある場合を考えてみましょう。このときの作用は、
+2次元自由スカラー場$X$が一つを考えてみましょう。このときの作用は、
 \begin{align}
 S=-\frac{1}{8\pi}\int \di^2\sigma \eta^{\alpha\beta}\del_{\alpha} X \del_{\beta} X
 \label{free-boson-action}
 \end{align}
-です。これは自由スカラー場の理論であり、無限個の調和振動子からなっています。
+です。これは、自由場であり、無限個の調和振動子からなっています。
 この無限個の調和振動子の生成消滅演算子に分けることを考えましょう。運動方程式は、
 \begin{align}
 0=-\del_{\alpha}\del^{\alpha}X=\del_{\tau}^2 X-\del_{\sigma}^2 X.
@@ -538,7 +555,7 @@ S=-\frac{1}{8\pi}\int \di^2\sigma \eta^{\alpha\beta}\del_{\alpha} X \del_{\beta}
 \end{align}
 と同等です。したがって、この系は$X_0(\tau)$という自由粒子と$X_{n}(\tau),\ (n\ne 0)$ の角振動数$|n|$の
 調和振動子が集まった系と考えることができます。これらは、互いに独立\footnote{後で拘束条件を考えると独立でなくなります。}
-なので、いつもの様に量子化することができます。一般解は$a_n, b_n, \ (n\ne0),x, p$を積分定数として
+なので、一つ一つに分けて考えることができます。一般解は$a_n, b_n, \ (n\ne0),x, p$を積分定数として
 \begin{align}
 n\ne 0,\qquad & X_{n}(\tau)=a_n e^{-i|n|\tau}+b_n e^{i|n|\tau},\\
 n = 0,\qquad & X_{0}(\tau)=x+2p\tau
@@ -590,12 +607,12 @@ X(\tau,\sigma)=x+2p\tau+i\sum_{n\ne 0}\left(
 
 後のために式\eqref{delXalpha}を逆に解いておきます。
 \begin{align}
-&\alpha_n=\frac{1}{2\pi}\int_0^{2\pi} \di \sigma \del_{+} X(\tau=0,\sigma) e^{in\sigma}, \nonumber\\
-&\alphat_n=\frac{1}{2\pi}\int_0^{2\pi} \di \sigma \del_{-} X(\tau=0,\sigma) e^{-in\sigma}.
+&\alpha_n=\frac{1}{2\pi}\int_0^{2\pi} \di \sigma \del_{+} X(\tau=0,\sigma) e^{in\sigma}, \quad
+\alphat_n=\frac{1}{2\pi}\int_0^{2\pi} \di \sigma \del_{-} X(\tau=0,\sigma) e^{-in\sigma}.\label{alphabyX}
 \end{align}
 また、$x$についても解いておくと便利です。
 \begin{align}
-x=\frac{1}{2\pi}\int \di\sigma X(\tau=0,\sigma).
+x=\frac{1}{2\pi}\int \di\sigma X(\tau=0,\sigma).\label{xbyX}
 \end{align}
 \subsection{共形対称性とエネルギー運動量テンソル}
 世界面のエネルギー運動量テンソルは弦理論を考える際には非常に重要な役割を果たします。
@@ -618,16 +635,16 @@ T_{--}=\sum_{n\in\Zb}\Lt_{n}e^{-in\sigma^{-}}.
 \end{align}
 実際に式\eqref{delXalpha}を代入すると$T_{++}$は
 \begin{align}
-T_{++}&=\frac12 \sum_{n,m}\alpha_n e^{-in\sigma^{+}}\alpha_m e^{-im\sigma^{+}}\\
-&=\sum_{n,m}\frac12 \alpha_n\alpha_m e^{-i(m+n)\sigma^{+}}
+T_{++}&=\frac12 \sum_{n,m\in\Zb}\alpha_n e^{-in\sigma^{+}}\alpha_m e^{-im\sigma^{+}}\\
+&=\sum_{n,m\in\Zb}\frac12 \alpha_n\alpha_m e^{-i(m+n)\sigma^{+}}
 \end{align}
 となるので、
 \begin{align}
-L_{n}=\frac12 \sum_{m} \alpha_{n-m}\alpha_{m}
+L_{n}=\frac12 \sum_{m\in\Zb} \alpha_{n-m}\alpha_{m}
 \end{align}
 となります。同様にして
 \begin{align}
-\Lt_{n}=\frac12 \sum_{m} \alphat_{n-m}\alphat_{m}
+\Lt_{n}=\frac12 \sum_{m\in\Zb} \alphat_{n-m}\alphat_{m}
 \end{align}
 となります。
 \subsection{正準形式}
@@ -668,7 +685,7 @@ H=\frac{1}{2\pi}\int \di \sigma (T_{++}(\sigma)+T_{--}(\sigma))=L_0+\Lt_0\label{
 \cbk{A,BC}=\cbk{A,B}C+B\cbk{A,C},\qquad
 \cbk{BC,A}=\cbk{B,A}C+B\cbk{C,A}.\qquad
 \end{align}
-様々な量の間の括弧が次のように計算できます。
+様々な量の間の括弧が次のように計算できます。この計算では、\eqref{alphabyX},\eqref{xbyX}などの式を用います。
 \begin{align}
 \cbk{X(\sigma),\dot{X}(\sigma')}=
 4\pi i \delta(\sigma-\sigma'),
@@ -682,6 +699,9 @@ H=\frac{1}{2\pi}\int \di \sigma (T_{++}(\sigma)+T_{--}(\sigma))=L_0+\Lt_0\label{
 \cbk{\alpha_{n},\alpha_{m}}=n\delta_{n+m},\qquad
 \cbk{\alphat_{n},\alphat_{m}}=n\delta_{n+m},\qquad
 \cbk{\alpha_{n},\alphat_{m}}=0,
+\end{align}
+\begin{align}
+  \cbk{x,p}=i,
 \end{align}
 \begin{align}
 \cbk{L_n,L_m}=(n-m)L_{n+m},\qquad
@@ -708,7 +728,8 @@ H=\frac{1}{2\pi}\int \di \sigma (T_{++}(\sigma)+T_{--}(\sigma))=L_0+\Lt_0\label{
 \begin{align}
 [\alpha_{n},\alpha_{m}]=n\delta_{n+m},\qquad
 [\alphat_{n},\alphat_{m}]=n\delta_{n+m},\qquad
-[\alpha_{n},\alphat_{m}]=0,
+[\alpha_{n},\alphat_{m}]=0,\quad
+[x,p]=i
 \end{align}
 は導出されます。問題となるのは、\eqref{free-scalar-EM}で表されるエネルギー運動量テンソルです。
 これを少し詳しく見てみましょう。まず、$n\ne 0$なら
@@ -730,7 +751,13 @@ L_0:=\frac12 \alpha_0^2+\sum_{n=1}^{\infty}\alpha_{-n}\alpha_{n}.
 H=L_0+\Lt_0+A
 \end{align}
 と書きます。ここで$A$はc数です\footnote{場の理論の教科書で習うように、この「真空のエネルギー」$A$は素朴にやると発散します。しかし重力が結合していない場合にはHeisenberg方程式にこの$A$が現れないので物理的な時間発展には寄与しません。ここでは、後で世界面の重力と結合させて弦理論を作っていくので、その時には、この真空のエネルギー$A$について真面目に考えます。}。それは$[\alpha_n,\alpha_{-n}]=n$とc数なので、順序の不定性も
-c数になるからです。
+c数になるからです。\kyou{$L_0$が出てくるところには、これからもc数分の不定性があるかもしれないことは、覚えておいてください。}
+
+また、次のような交換関係が成り立ちます。
+\begin{align}
+  [H,\alpha_{n}]=-n\alpha_{n},\qquad [H,\alphat_{n}]=-n\alphat_{n}.
+\end{align}
+したがって、$\alpha_{n},\alphat_{n},\ (n>0)$が消滅演算子、$n<0$が生成演算子となります。
 
 次にHilbert空間について考えましょう。この系は$(x,p)$からなる「自由粒子」と$(\alpha_n,\alpha_{-n}), \ (\alphat_n,\alphat_{-n}),\ (n=1,2,\cdots)$ という無限個の調和振動子からなります。これを踏まえて、まず次のような消滅演算子で消える「Fock真空」$|k\rangle,\ k\in \Rb$を考えます。
 \begin{align}
@@ -739,7 +766,7 @@ c数になるからです。
 このFock真空$|k\rangle$に生成演算子$\alpha_{-n},\ \alphat_{-n},\ (n=1,2,\cdots)$ を次々とかけていくことによってFock空間が作られます。
 
 \section{光円錐ゲージ}
-これまで、１つの世界面のスカラーの理論を見てきました。弦理論にするためには、これを$D$個集めてきて
+前節では、１つの世界面のスカラーの理論を見てきました。弦理論にするためには、これを$D$個集めてきて
 さらに拘束条件を正しく考えればよいです。この拘束条件を取り扱う一つの方法は、残っている対称性を固定し、さらに拘束条件を解いてしまうという方法があります。このような方法の代表的なものが光円錐ゲージと呼ばれるものです。この講義では、主にこの光円錐ゲージによる量子化を取り扱います。
 
 \subsection{時空の光円錐座標と作用}
@@ -757,11 +784,11 @@ A^{\mu}B_{\mu}=-A^{+}B^{-}-A^{-}B^{+}+A^{i}B^{i}
 \end{align}
 となります。
 
-以前に出てきた弦の作用は、
+以前に出てきた弦の作用\eqref{gaugefixedaction}は、
 \begin{align}
 S=-\frac{1}{2\pi}\int d^2\sigma \del_{+}X^{\mu}\del_{-}X_{\mu}
 \end{align}
-であり、エネルギー運動量テンソルは
+であり、エネルギー運動量テンソル\eqref{constraint}は
 \begin{align}
 T_{++}=\frac12 \del_{+}X^{\mu}\del_{+}X_{\mu},\qquad
 T_{--}=\frac12 \del_{-}X^{\mu}\del_{-}X_{\mu}
@@ -783,7 +810,7 @@ X^{\mu}(\tau,\sigma)=x^{\mu}+2p^{\mu}\tau+i\sum_{n\ne 0} \left(
 です。次にこの対称性を固定することを考えます。
 \subsection{光円錐ゲージ固定}
 ゲージ対称性\eqref{residual-gauge}を用いて$X^{+}$を簡単な形にすることを考えます。
-$X^{+}$のモード展開は
+$X^{+}$のモード展開は$p^{+}\ne 0$の場合には
 \begin{align}
 X^{+}(\tau,\sigma)=&x^{+}+2p^{+}\tau+i\sum_{n\ne 0} \left(
 \frac{\alpha^{+}_{n}}{n}e^{-in\sigma^{+}}
@@ -795,10 +822,10 @@ X^{+}(\tau,\sigma)=&x^{+}+2p^{+}\tau+i\sum_{n\ne 0} \left(
 \begin{align}
 &\tau'=\frac12(\sigma'^{+}+\sigma'^{-})\\
 &
-\sigma'^{+}=\sigma^{+}+\frac12x^{+}+i\sum_{n\ne 0} \left(
+\sigma'^{+}=\sigma^{+}+\frac{1}{2p^{+}}x^{+}+\frac{i}{p^{+}}\sum_{n\ne 0} \left(
 \frac{\alpha^{+}_{n}}{n}e^{-in\sigma^{+}}
 \right),\qquad
-\sigma'^{-}=\sigma^{-}+\frac12x^{+}+i\sum_{n\ne 0} \left(
+\sigma'^{-}=\sigma^{-}+\frac{1}{2p^{+}}x^{+}+\frac{i}{p^{+}}\sum_{n\ne 0} \left(
 \frac{\alphat^{+}_{n}}{n}e^{-in\sigma^{-}}
 \right)\label{light-cone-gauge-transf}
 \end{align}
@@ -853,7 +880,7 @@ X^{-}(\tau,\sigma)=&x^{-}+2p^{-}\tau+i\sum_{n\ne 0} \left(
 $x^{-},p^{+}, X^{i},\ (i=1,\dots,D-2)$です。ただし、レベル一致条件\eqref{level-matching}は拘束条件として残ります。
 
 \subsection{光円錐ゲージによる量子化}
-さて、量子論を考えよう。光円錐ゲージをとった後でも横波方向の自由度$X^{i},\ (i=1,\dots, D-2)$
+さて、量子論を考えましょう。光円錐ゲージをとった後でも横波方向の自由度$X^{i},\ (i=1,\dots, D-2)$
 の量子化は前節の自由スカラー場がたくさんあると考えるだけでよいです。光円錐方向$X^{\pm}$に関しては、
 独立な自由度は$x^{-},p^{+}$しか残っていません。これらの独立なモードの交換関係を書いておきます。
 \begin{align}
@@ -864,7 +891,7 @@ $x^{-},p^{+}, X^{i},\ (i=1,\dots,D-2)$です。ただし、レベル一致条件
 \end{align}
 独立なモードの間の他の組み合わせは交換します。
 
-古典論と異なるのは、演算子順序の問題です。横波方向のエネルギー運動量テンソルのモードを考えると、前節でやったのと全く同じように$\Lp_0,\Ltp_0$のところに問題が出ます。ここでは、ひとまず$\Lp_0,\Ltp_0$の定義は正規順序積で行います。このときに問題になるのは、\eqref{solution-constraint}の0モードの部分である。このc数の不定性をひとまず$a$とおいて\eqref{solution-constraint}の量子化バージョンは
+古典論と異なるのは、演算子順序の問題です。横波方向のエネルギー運動量テンソルのモードを考えると、前節でやったのと全く同じように$\Lp_0,\Ltp_0$のところに問題が出ます。ここでは、ひとまず$\Lp_0,\Ltp_0$の定義は正規順序積で行います。このときに問題になるのは、\eqref{solution-constraint}の0モードの部分です。このc数の不定性をひとまず$a$とおいて\eqref{solution-constraint}の量子化バージョンは
 \begin{align}
 &
 \alpha_n^{-}=\frac{1}{p^{+}}\Lp_n,\qquad
@@ -964,7 +991,7 @@ $m^2=-1$となります。これは運動量が空間的ということであり
 \begin{align}
 m^2=2-2a\label{1mass}
 \end{align}
-となります。ここからLorentz対称性を考えることにより、$a$の値が決まります。まず、Lorentz対称性があるときには、質量がある場合には静止系を考えることにより、偏向はSO$(D-1)$の表現で決まり、質量がない場合はSO$(D-2)$の表現で決まることを思い出してください。今、質量があると仮定すると露わな対称性SO$(D-2)$から、少なくともSO$(D-1)$の（反対称テンソル）と（トレースの消える対称テンソル）が出てこなければなりません。しかしそうするとSO$(D-2)$のベクトルも出てこなければならないことになり、今のスペクトラムと合いません。つまり、{\em Lorentz不変性があるなら$N=\Nt=1$の状態は質量の無い状態でなければなりません。}そうすると、質量の式\eqref{1mass}から
+となります。ここからLorentz対称性を考えることにより、$a$の値が決まります。まず、Lorentz対称性があるときには、質量がある場合には静止系を考えることにより、偏向はSO$(D-1)$の表現で決まり、質量がない場合はSO$(D-2)$の表現で決まることを思い出してください。今、質量があると仮定すると露わな対称性SO$(D-2)$から、少なくともSO$(D-1)$の（反対称テンソル）と（トレースの消える対称テンソル）が出てこなければなりません。しかしそうするとSO$(D-2)$のベクトルも出てこなければならないことになり、今のスペクトラムと合いません。つまり、\kyou{Lorentz不変性があるなら$N=\Nt=1$の状態は質量の無い状態でなければなりません。}そうすると、質量の式\eqref{1mass}から
 \begin{align}
 a=1
 \end{align}
@@ -1042,6 +1069,25 @@ D=26,\qquad a=1
 \end{align}
 でなければなりません。
 
+\section{まとめ}
+この章では、ボゾン的弦理論を光円錐ゲージで取り扱いました。
+\begin{itemize}
+  \item 弦の作用はNambu-Goto作用、あるいはPolyakov作用で表されます。
+  \item ゲージ固定をすることにより、作用と拘束条件を得ることができます。
+  \item さらに残っているゲージ対称性を光円錐ゲージで固定することにより、拘束条件を解いてしまうことができます。ただき、明白なLorentz対称性は失います。
+  \item 量子論でLorentz対称性があるのは、$D=26$のときのみです。
+  \item このとき質量のない2階の対称テンソルの粒子（重力子）が、スペクトルの中に現れます。
+  \item ボゾン的弦理論では、スペクトルの中にタキオンを含むので実際には不安定な理論になります。
+\end{itemize}
+
+重力について一つだけ注意しておきます。今、質量のない2階のテンソル粒子があるといいました。実はこのような粒子があって、摂動論的にまともな相互作用がある理論があったとすると、この質量のない2階のテンソル粒子は必ず重力子で、時空の一般座標変換をゲージ対称性として持つことが一般的に結論されます。例えば
+\begin{mycite}
+  Matthew D. Schwartz, ``Quantum Field Theory and the Standard Model''
+\end{mycite}
+では初等的にこのことを説明してあります。
+
+弦理論が摂動論的にまともな相互作用があるということの説明は、この講義の範囲を超えますが、これを認めてもらえば、弦理論は少なくとも摂動論的に量子重力理論を記述しているということが結論されます。
+
 \chapter{超弦理論}
 
 \section{なぜ「超」か}
@@ -1084,7 +1130,7 @@ H\Psi=0 \quad \Rightarrow \del^2 \Psi =0
 H=Q^2\label{worldline-SUSY}
 \end{align}
 となるような演算子$Q$が存在して、拘束条件が$Q=0$となるようにすればよいと考えられます。
-式\eqref{worldline-SUSY}を満たすような生成子$Q,H$のなす対称性を（世界面の）「超対称性」(supersymmetry)と呼びます。まとめると、世界線の理論で、超対称性があり、それが拘束条件となるような理論を考えれば時空のDirac方程式が出てきます。
+式\eqref{worldline-SUSY}を満たすような生成子$Q,H$のなす対称性を（世界線の）「超対称性」(supersymmetry)と呼びます。まとめると、世界線の理論で、超対称性があり、それが拘束条件となるような理論を考えれば時空のDirac方程式が出てきます。
 
 超対称性について、さらに考えるために、まずはフェルミオンを記述するためのGrassmann代数を紹介しましょう。
 \section{Grassmann 代数}
@@ -1215,14 +1261,14 @@ $です。}。
 \begin{align}
 \delta_{\epsilon} L
 &=\int \di \theta 
-\left[\deldel{\Lh}{Y^{\mu}}\delta_{\epsilon} Y^{\mu}
-+\deldel{\Lh}{\del_{\tau} Y^{\mu}}\delta_{\epsilon} \del_{\tau} Y^{\mu}
-+\deldel{\Lh}{\Dh Y^{\mu}}\delta_{\epsilon} \Dh Y^{\mu}
+\left[\delta_{\epsilon} Y^{\mu}\deldel{\Lh}{Y^{\mu}}
++\delta_{\epsilon} \del_{\tau} Y^{\mu}\deldel{\Lh}{\del_{\tau} Y^{\mu}}
++\delta_{\epsilon} \Dh Y^{\mu}\deldel{\Lh}{\Dh Y^{\mu}}
 \right]\nonumber\\
 &=\int \di \theta 
-\left[\deldel{\Lh}{Y^{\mu}}\epsilon\Qh Y^{\mu}
-+\deldel{\Lh}{\del_{\tau} Y^{\mu}}\epsilon\Qh \del_{\tau} Y^{\mu}
-+\deldel{\Lh}{\Dh Y^{\mu}}\epsilon\Qh \Dh Y^{\mu}
+\left[\epsilon\Qh Y^{\mu}\deldel{\Lh}{Y^{\mu}}
++\epsilon\Qh \del_{\tau} Y^{\mu}\deldel{\Lh}{\del_{\tau} Y^{\mu}}
++\epsilon\Qh \Dh Y^{\mu}\deldel{\Lh}{\Dh Y^{\mu}}
 \right]\nonumber\\
 &=\int \di \theta \epsilon \Qh \Lh
 \end{align}
@@ -1240,6 +1286,7 @@ L=\int \di \theta \frac{i}{2}\del_{\tau} Y^{\mu} \Dh Y_{\mu}
 \label{susyQM0}
 \end{align}
 
+\subsection{超対称量子力学}\label{subsec:susyQM}
 この\eqref{susyQM0}で表される理論を正準量子化してみましょう。$X^{\mu},\psi^{\mu}$の正準共役運動量はそれぞれ
 \begin{align}
   P_{\mu}=\pdv{L}{\dot{X}^{\mu}}=\dot{X}_{\mu},\quad
@@ -1291,15 +1338,43 @@ L=\int \di \theta \frac{i}{2}\del_{\tau} Y^{\mu} \Dh Y_{\mu}
 \subsection{Dirac括弧とフェルミオンの正準交換関係*}
 
 \subsection{世界線の局所超対称性}
-普通の相対論的な粒子の場合に、拘束条件$H=0$がどこから出てきたのかを思い出してみると、それは世界線の座標変換\eqref{reparam2}の対称性があったからでした。同様に超対称性をゲージ化した理論を考えると、$Q=0$の拘束条件が課されることが期待できます。実際にやってみましょう。
+普通の相対論的な粒子の場合に、拘束条件$H=0$がどこから出てきたのかを思い出してみると、それは世界線の座標変換\eqref{reparam2}の対称性があったからでした。同様にパラメーターが$\tau$による局所的な超対称性をもつ理論を考えると、$Q=0$の拘束条件が課されることが期待できます。実際にやってみましょう。
 
 \eqref{particle-action2}の作用の中の補助場$e(\tau)$を超場に格上げすることにします。
 \begin{align}
-  E(\tau,\theta)=e(\tau)+i\theta \lambda(\tau)
+  E(\tau,\theta)=e(\tau)+i\theta \lambda(\tau).
 \end{align}
+これを用いて、次のようなLagrangianを考えます。
+\begin{align}
+  L=\int \dd{\theta} E^{-1}\del_{\tau}Y^{\mu}\Dh Y_{\mu}
+=\frac12(e^{-1}\dot{X}^2+ie^{-1}\psi_{\mu}\dot{\psi}^{\mu}+ie^{-2}\lambda \psi_{\mu}\dot{X}^{\mu}).\label{localSUSYLagrangian}
+\end{align}
+このLagrangianで表される理論には次の局所超対称性があります。$\epsilon(\tau)$をフェルミオン的で$\tau$に依存するパラメーターとして、
+\begin{align}
+  &\delta_{\epsilon}X^{\mu}=i\epsilon \psi^{\mu},\quad
+  &&\delta_{\epsilon}\psi^{\mu}=-\epsilon \dot{X}^{\mu},\\
+  &\delta_{\epsilon}e = i\epsilon \lambda,
+  && \delta_{\epsilon}\lambda = -\epsilon \dot{e}-2 \dot{\epsilon} e
+\end{align}
+という局所超対称変換を考えます。がんばって計算すると\eqref{localSUSYLagrangian}の$L$の変換は
+\begin{align}
+  \delta_{\epsilon}L=\frac{i}{2}\del_{\tau}(e^{-1}\epsilon \psi_{\mu}\dot{X}^{\mu})
+\end{align}
+と全微分になることから、これが対称性であることが分かります。
 
+さて世界線の一般座標変換と局所超対称性をゲージ固定することにします。次のような固定条件を課します。
+\begin{align}
+  e=1,\quad \lambda=0.
+\end{align}
+すると、\eqref{susyQM0}のLagrangianが得られることになります。ただし、$e,\lambda$の運動方程式からくる拘束条件があって、それぞれ
+\begin{align}
+  \frac12\dot{X}^2+\frac{i}{2} \psi_{\mu}\dot{\psi}^{\mu}=0,\quad \psi_{\mu}\dot{X}^{\mu}=0
+\end{align}
+となります。特に後者は超対称電荷$Q=0$という拘束条件です。\ref{subsec:susyQM}項で議論したことと合わせると、この拘束条件からDirac方程式が出ます。
 
 \section{2次元スピノール}
+さて、弦理論で世界面の超対称性を
+
 
 \section{世界面の超対称性}
 
