@@ -85,6 +85,9 @@
 \newcommand{\Lh}{\widehat{L}}
 
 \newcommand{\cbk}[1]{[#1]_{\mathrm{C}}}
+\newcommand{\pbk}[1]{\{#1\}_{\mathrm{P}}}
+\newcommand{\dbk}[1]{\{#1\}_{\mathrm{D}}}
+
 \newcommand{\di}{\mathrm{d}}
 
 %\pagestyle{headings}
@@ -1292,11 +1295,7 @@ L=\int \di \theta \frac{i}{2}\del_{\tau} Y^{\mu} \Dh Y_{\mu}
   P_{\mu}=\pdv{L}{\dot{X}^{\mu}}=\dot{X}_{\mu},\quad
   P_{\psi^{\mu}}=\pdv{\dot{\psi}^{\mu}}L=-\frac{i}{2}\psi_{\mu}.
 \end{align}
-ボゾンの方は通常どおりです。一方、フェルミオンの方は正準変数の間に非自明な関係がついていて、独立変数とは見做せなくなってしまっています。このような拘束条件がある場合の正準形式の取り扱いはDiracによって定式化されました。この詳細については、
-\begin{mycite}
-  九後 汰一郎「ゲージ場の量子論 1」
-\end{mycite}
-の５章に詳しく書いてあるので見てみてください。この処方を用いて正準量子化したときの正準交換関係は結果的に
+ボゾンの方は通常どおりです。一方、フェルミオンの方は正準変数の間に非自明な関係がついていて、独立変数とは見做せなくなってしまっています。このような拘束条件がある場合の正準形式の取り扱いはDiracによって定式化されました。この取扱については、簡単に次の項で触れます。この処方を用いて正準量子化したときの正準交換関係は結果的に
 \begin{align}
   [P_{\mu},X^{\nu}]=-i\delta_{\mu}^{\nu},\quad
   \{\psi^{\mu},\psi^{\nu}\}=\eta^{\mu\nu}
@@ -1336,6 +1335,73 @@ L=\int \di \theta \frac{i}{2}\del_{\tau} Y^{\mu} \Dh Y_{\mu}
 という拘束条件を課す必要があれば、それがDirac方程式になります。ただし、ここまでの議論では、この拘束条件はどこからも出てきません。
 
 \subsection{Dirac括弧とフェルミオンの正準交換関係*}
+ここで少し寄り道し、拘束条件のある正準形式とDirac括弧について触れます。詳しくは九後汰一郎「ゲージ場の量子論 1」を参照してください。
+
+形式的に正準変数$p_i,q_i,\ (i=1,\dots,N)$で表される相空間があるとします。Poisson括弧を
+\begin{align}
+  \pbk{A}{B}:=\sum_{i}\pdv{A}{p_i}\pdv{B}{q_i}-(-1)^{|A||B|}\pdv{B}{p_i}\pdv{A}{q_i}
+\end{align}
+と定義します。ここで$|A|$は
+\begin{align}
+  |A|:=\begin{cases}
+    0,&A\text{がボゾン的}\\
+    1,&A\text{がフェルミオン的}
+  \end{cases}
+\end{align}
+と定義します。
+
+拘束条件$\phi_{a},\ (a=1,\dots,r)$を$p_i,q_i$の関数として、拘束条件
+\begin{align}
+  \phi_{a}=0,\ (a=1,\dots,r)
+\end{align}
+を考えます。このとき、これらのPoisson括弧からできる行列
+\begin{align}
+  C_{ab}:=\pbk{\phi_a,\phi_b}
+\end{align}
+が、逆行列を持つとき、この拘束条件は\kyou{第2類}であるといいます。ここでは、拘束条件が第2類の場合を考えましょう。
+
+第2類の拘束条件がある場合、次のようなDirac括弧を考えるのが便利です。
+\begin{align}
+  \dbk{A,B}:=\pbk{A,B}-\sum_{a,b} \pbk{A,\phi_a} C^{-1}_{ab} \pbk{\phi_b,B}.
+\end{align}
+例えば$\phi_a$を含むようなDirac括弧は、
+\begin{align}
+  \dbk{\phi_a,A}=0
+\end{align}
+となります。ですから、Dirac括弧の計算では$\phi_a=0$として無矛盾になるようになっています。\footnote{逆にPoisson括弧の計算で$\phi_a=0$とすると矛盾が起こります。}
+実際Dirac括弧は、相空間を$\phi_a=0$の空間に限った場合の誘導されるシンプレクティック構造に対するPoisson括弧になっています。ですから、拘束条件を解いてしまってから量子化する代わりに、Dirac括弧を（反）交換関係に置き換えるという方法でも量子化できます。
+
+例として、フェルミオンのLagrangian
+\begin{align}
+  L=\frac{i}{2}\psi \dot{\psi}
+\end{align}
+を考えてみましょう。$\psi$に対する正準共役な運動量$P_{\psi}$は
+\begin{align}
+  P_{\psi}=-\frac{i}{2}\psi\label{egconstraint}
+\end{align}
+となり、$\psi$と$P_{\psi}$が独立でなくなってしまいます。言い換えると\eqref{egconstraint}は拘束条件になっています。まず、形式的に独立変数$\psi,P_{\psi}$を導入しPoisson括弧を定義します。
+\begin{align}
+  \pbk{\psi,\psi}=\pbk{P_{\psi},P_{\psi}}=0,\quad \pbk{P_{\psi},\psi}=1.
+\end{align}
+そして拘束条件
+\begin{align}
+  0=\phi:=P_{\psi}+\frac{i}{2}\psi
+\end{align}
+を課します。その上でDirac括弧を考えます。まず
+\begin{align}
+  C=\pbk{\phi,\phi}=i
+\end{align}
+となることを用いると
+\begin{align}
+  \dbk{\psi,\psi}=\pbk{\psi,\psi}-\pbk{\psi,\phi}C^{-1}\pbk{\phi,\psi}=i
+\end{align}
+と計算できます。
+
+量子化すると、反交換関係は
+\begin{align}
+  \{\psi,\psi\}=-i\dbk{\psi,\psi}=1
+\end{align}
+となります。
 
 \subsection{世界線の局所超対称性}
 普通の相対論的な粒子の場合に、拘束条件$H=0$がどこから出てきたのかを思い出してみると、それは世界線の座標変換\eqref{reparam2}の対称性があったからでした。同様にパラメーターが$\tau$による局所的な超対称性をもつ理論を考えると、$Q=0$の拘束条件が課されることが期待できます。実際にやってみましょう。
