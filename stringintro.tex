@@ -1678,11 +1678,39 @@ $\gamma_3$の固有値のことを\kyou{chirality}と呼びます。$\gamma_3$�
   \delta X=i\epsilon^{+}\psi_{+}+i\epsilon^{-}\psi_{-} ,\quad
   \delta \psi_{+}=-\epsilon^{+}\del_{+}X,\quad
   \delta \psi_{-}=-\epsilon^{-}\del_{-}X
+  \label{susytransf1}
 \end{align}
 \end{important}
 となります。実際この変換でLagrangian密度\eqref{susylagrangian1}が全微分を除いて不変であることが確かめられます。
 
 \subsection{超対称性のカレント}
+一般に対称性があると保存するカレントがあります。超対称性の場合にもカレントがあります。これを求めてみましょう。
+
+カレントの計算の仕方の一つは次のようなものです。超対称性の変換\eqref{susytransf1}で$\epsilon^{\pm}$を場所によらせて$\epsilon^{\pm}(\sigma)$とした変換を考えます。この場合Lagrangian密度の変換は$\epsilon^{\pm}$が場所によっている分、全微分からずれます。したがって、次のように書けるはずです。
+\begin{align}
+  \delta \Lcal =-\frac{i}{2\pi}\del^{\alpha}\epsilon^{b}G_{\alpha b}+(\text{全微分}),\ (b=\pm)
+\end{align}
+ここで前についている係数は、後で便利になるように決めたものです。ここに現れる$G_{\alpha b}$が超対称性のカレントになります。例えば場の配位が運動方程式を満たす場合、Lagrangian密度の任意の変分は全微分になりますから
+\begin{align}
+  \del^{\alpha}G_{\alpha b}=0
+\end{align}
+という保存則が成り立つことが分かります。
+
+実際に\eqref{susylagrangian1}でこの計算をやってみると
+\begin{align}
+  \delta \Lcal = \frac{1}{2\pi}
+  \left( 
+    2i\del_{-}\epsilon^{+} \psi_{+}\del_{+}X +2i \del_{+}\epsilon^{-}\psi_{-}\del_{-}X
+   \right))
+\end{align}
+となります。$\del^{\pm}=-2\del_{\mp}$であることに注意して読み取ると
+\begin{align}
+  G_{++}=\psi_{+}\del_{+}X,\quad G_{-+}=0,\\
+  G_{--}=\psi_{-}\del_{-}X,\quad G_{+-}=0.
+\end{align}
+を得ます。
+
+この計算から分かることは、$\epsilon^{\pm}$を、それぞれ$\sigma^{\pm}$だけによらせる、つまり$\epsilon^{+}(\sigma^{+}),\ \epsilon^{-}(\sigma^{-})$というパラメータで変換\eqref{susytransf1}を考えてもLagrangian密度\eqref{susylagrangian1}は全微分を除いて不変になります。この変換は\kyou{超共形対称性}の一部です。
 
 \subsection{エネルギー運動量テンソル}
 
