@@ -1439,10 +1439,143 @@ L=\int \di \theta \frac{i}{2}\del_{\tau} Y^{\mu} \Dh Y_{\mu}
 となります。特に後者は超対称電荷$Q=0$という拘束条件です。\ref{subsec:susyQM}項で議論したことと合わせると、この拘束条件からDirac方程式が出ます。
 
 \section{2次元スピノール}
-さて、弦理論で世界面の超対称性を
+さて、弦理論で世界面の超対称性を記述したいので世界面のボゾンとフェルミオンを導入する必要があります。世界面のボゾンはすでに導入しました。フェルミオンはスピノールとして導入したいので、ここでは2次元のスピノールの定式化について準備をします。
 
+\subsection{ガンマ行列}
+まず、2次元のガンマ行列を導入します。$\gamma^{\alpha},\ (\alpha=0,1)$を
+\begin{align}
+  \gamma^{0}=
+  \mqty(0 & -1 \\
+    1 &0),\qquad
+  \gamma^{1}=
+  \mqty(0 & 1 \\
+    1 &0)
+\end{align}
+とします。すると、このガンマ行列は
+\begin{align}
+  \{\gamma^{\alpha},\gamma^{\beta}\}=2\eta^{\alpha\beta}
+\end{align}
+の反交換関係を満たします。このガンマ行列が作用する2成分のスピノールを
+\begin{align}
+  \psi=\mqty(\psi^{+}\\ \psi^{-})
+\end{align}
+と書くと、例えば質量のない自由なDirac方程式は
+\begin{align}
+  \gamma^{\alpha}\del_{\alpha}\psi=0
+\end{align}
+と書けます。このスピノールに対する2次元のLorentz変換の生成子は
+\begin{align}
+  M^{01}:=\frac{1}{2} \gamma^{0}\gamma^{1}
+\end{align}
+となります。
+
+\subsection{Chirality}
+4次元のスピノールのときと同様にchiralityの行列を導入します。
+\begin{align}
+  \gamma_{3}:=\gamma^{0}\gamma^{1}
+  =\mqty(
+    -1 & 0 \\
+    0 & 1
+  ).
+\end{align}
+$\gamma_3$の固有値のことを\kyou{chirality}と呼びます。$\gamma_3$はLorentz変換の生成子$M^{01}$と可換ですから、chiralityはLorentz変換で不変です。chiralityの決まったスピノール
+\begin{align}
+  \mqty(\psi^{+}\\ 0),\quad
+  \mqty(0 \\ \psi^{-})
+\end{align}
+を\kyou{Weylスピノール}と呼びます。
+
+\subsection{C行列}
+次にC行列と呼ばれる行列を定義します。
+\begin{align}
+  C:=\mqty(0 & -1 \\ 1 & 0).
+\end{align}
+このC行列はユニタリー行列で次の性質を満たします。
+\begin{align}
+  C\gamma^{\alpha}C^{-1}=-\gamma^{\alpha T},\qquad C^T=-C.
+\end{align}
+このC行列を用いて荷電共役を定義します。まずDirac共役を
+\begin{align}
+  \bar{\psi}=\psi^{\dag}\gamma^0
+\end{align}
+で定義します。そして荷電共役は
+\begin{align}
+  \psi^{c}:=C\bar{\psi}^{T}
+\end{align}
+で定義します。今の表示では荷電共役は単に成分ごとの複素共役になります。
+\begin{align}
+  \psi^{c}=\psi^{*}.
+\end{align}
+
+この荷電共役について、いくつか注意を述べます。
+\begin{itemize}
+  \item $(M^{01}\psi^c)=M^{01}\psi^c$が成り立ちます。つまり$\psi^{c}$もスピノールの変換性を持ちます。
+  \item $(\gamma_3 \psi)^{c}=\gamma_3 \psi^c$が成り立ちます。つまり、荷電共役はchiralityを変えません。これは4次元の場合と異なることに注意してください。
+  \item $\psi^{c}=\psi$を満たすスピノールを\kyou{Majoranaスピノール}と呼びます。今の表示では成分ごとに実数のスピノールがMajoranaスピノールです。
+  \item Majoranaスピノールで、かつWeylスピノールのものを\kyou{Majorana-Weylスピノール}と呼びます。Majorana-Weylスピノールは実１成分になります。
+\end{itemize}
+
+\subsection{フェルミオンの作用}
+ガンマ行列やスピノールの準備ができたので、２次元の自由フェルミオンの作用を書きます。後々使うので、Majoranaフェルミオンの作用を考えます。Majoranaフェルミオンの場合
+\begin{align}
+  \bar{\psi}=\psi^{T}C
+\end{align}
+という関係式を満たすことを思い出して
+\begin{align}
+  S=-\frac{1}{4\pi}\int d^2 \sigma i\psi^{T}C\gamma^{\alpha}\del_{\alpha}\psi
+\end{align}
+とします。$\psi$がMajorana（成分ごとに実）のとき、作用が実になることを確かめてください。
+
+実は２次元ぐらいだと、ばらして成分で書いたほうが便利です。$\psi=\mqty(\psi^{+}\\ \psi^{-})$であることを思い出してください。間にはいっている行列を計算すると
+\begin{align}
+  C\gamma^{\alpha}\del_{\alpha}
+  =\mqty(0 & -1 \\
+         1 & 0 )
+  \mqty(
+    0 & -\del_{0}+\del_{1}\\
+    \del_{0}+\del_{1}&0
+  )
+  =-2\mqty(
+    \del_{+} & 0\\
+    0 & \del_{-}
+  )
+\end{align}
+となります。したがって作用は、
+\begin{align}
+  S=\frac{1}{2\pi}\int d^2\sigma \left[ 
+    i\psi^{+}\del_{+}\psi^{+}+i\psi^{-}\del_{-}\psi^{-}
+   \right]
+\end{align}
+となります。習慣としてスピノールの足$\pm$は下付きのものを使うことが多いのでそのようにします。スピノールの足はC行列で下げ、その逆行列で上げます。
+\begin{align}
+  \psi_{b}:=C_{bb'}\psi^{b'},\quad \psi^{b}:=(C^{-1})^{bb'}\psi_{b'},\quad (b,b'=\pm).
+\end{align}
+つまり
+\begin{align}
+  \psi_{-}=\psi^{+},\quad \psi_{+}=-\psi^{-}
+\end{align}
+となります。$\psi_{\pm}$を用いると、作用は
+\begin{important}
+  \begin{align}
+    S=\frac{1}{2\pi}\int d^2\sigma \left[ 
+      i\psi_{-}\del_{+}\psi_{-}+i\psi_{+}\del_{-}\psi_{+}
+     \right]
+  \end{align}    
+\end{important}
+となります。この形の作用が今後よく出てきます。
 
 \section{世界面の超対称性}
+さて、超対称性のある世界面の理論を考えることにしましょう。ここでは、粒子の場合と同様に超場形式と呼ばれる方法で世界面の超対称性を記述することにします。
+
+\subsection{超世界面}
+
+
+
+\subsection{超場と超対称変換}
+
+
+
+
 
 \section{２次元の自由フェルミオン場}
 
