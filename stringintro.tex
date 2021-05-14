@@ -84,11 +84,16 @@
 \newcommand{\Dh}{\widehat{D}}
 \newcommand{\Lh}{\widehat{L}}
 
+\newcommand{\Lcal}{\mathcal{L}}
+
 \newcommand{\cbk}[1]{[#1]_{\mathrm{C}}}
 \newcommand{\pbk}[1]{\{#1\}_{\mathrm{P}}}
 \newcommand{\dbk}[1]{\{#1\}_{\mathrm{D}}}
 
 \newcommand{\di}{\mathrm{d}}
+
+\newcommand{\Qd}{\widehat{Q}}
+\newcommand{\Dd}{\widehat{D}}
 
 %\pagestyle{headings}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -789,7 +794,7 @@ A^{\mu}B_{\mu}=-A^{+}B^{-}-A^{-}B^{+}+A^{i}B^{i}
 
 以前に出てきた弦の作用\eqref{gaugefixedaction}は、
 \begin{align}
-S=-\frac{1}{2\pi}\int d^2\sigma \del_{+}X^{\mu}\del_{-}X_{\mu}
+S=-\frac{1}{2\pi}\int \di^2\sigma \del_{+}X^{\mu}\del_{-}X_{\mu}
 \end{align}
 であり、エネルギー運動量テンソル\eqref{constraint}は
 \begin{align}
@@ -1108,7 +1113,7 @@ D=26,\qquad a=1
 \end{myquote}
 というものでした。この問題を解くために、そもそもボゾン的粒子からどうやってKlein-Gordon方程式が出てきたかを復習します。平方根を開いた作用（質量なし）は、
 \begin{align}
-S=\int d\tau \frac12 e^{-1} \dot{X}^2
+S=\int \di\tau \frac12 e^{-1} \dot{X}^2
 \end{align}
 です。ここで、ゲージ固定条件として$e=1$をおきます。これを置いただけではだめで、$e$に対する運動方程式を拘束条件として覚えておかなければなりません。この拘束条件は、Hamiltonianを$H=\frac12 P^2$として
 \begin{align}
@@ -1243,7 +1248,7 @@ i\epsilon \psi^{\mu} +\epsilon i\theta \dot{X}^{\mu}
 
 Lagrangianが、$Y,\ \del_{\tau}Y,\ \Dh Y$の関数$\Lh(Y,\del_{\tau}Y,\Dh Y)$を用いて
 \begin{align}
-L=\int d\theta \Lh(Y,\del_{\tau}Y,\Dh Y)
+L=\int \di\theta \Lh(Y,\del_{\tau}Y,\Dh Y)
 \end{align}
 と書けるとき、理論は超対称変換に対して不変です。これは次のようにして示すことができます。
 まず、
@@ -1522,7 +1527,7 @@ $\gamma_3$の固有値のことを\kyou{chirality}と呼びます。$\gamma_3$�
 \end{align}
 という関係式を満たすことを思い出して
 \begin{align}
-  S=-\frac{1}{4\pi}\int d^2 \sigma i\psi^{T}C\gamma^{\alpha}\del_{\alpha}\psi
+  S=-\frac{1}{4\pi}\int \di^2 \sigma i\psi^{T}C\gamma^{\alpha}\del_{\alpha}\psi
 \end{align}
 とします。$\psi$がMajorana（成分ごとに実）のとき、作用が実になることを確かめてください。
 
@@ -1542,7 +1547,7 @@ $\gamma_3$の固有値のことを\kyou{chirality}と呼びます。$\gamma_3$�
 \end{align}
 となります。したがって作用は、
 \begin{align}
-  S=\frac{1}{2\pi}\int d^2\sigma \left[ 
+  S=\frac{1}{2\pi}\int \di^2\sigma \left[ 
     i\psi^{+}\del_{+}\psi^{+}+i\psi^{-}\del_{-}\psi^{-}
    \right]
 \end{align}
@@ -1557,9 +1562,9 @@ $\gamma_3$の固有値のことを\kyou{chirality}と呼びます。$\gamma_3$�
 となります。$\psi_{\pm}$を用いると、作用は
 \begin{important}
   \begin{align}
-    S=\frac{1}{2\pi}\int d^2\sigma \left[ 
+    S=\frac{1}{2\pi}\int \di^2\sigma \left[ 
       i\psi_{-}\del_{+}\psi_{-}+i\psi_{+}\del_{-}\psi_{+}
-     \right]
+     \right]\label{free-fermion-action}
   \end{align}    
 \end{important}
 となります。この形の作用が今後よく出てきます。
@@ -1568,13 +1573,118 @@ $\gamma_3$の固有値のことを\kyou{chirality}と呼びます。$\gamma_3$�
 さて、超対称性のある世界面の理論を考えることにしましょう。ここでは、粒子の場合と同様に超場形式と呼ばれる方法で世界面の超対称性を記述することにします。
 
 \subsection{超世界面}
+粒子のときと同様に、世界面の座標$(\sigma^0,\sigma^1)$に加えてフェルミオン的な座標を導入します。今回はMajoranaスピノール１個分、つまり実成分の座標$\theta^{\pm}$を導入します。そして座標として
+\begin{align}
+  \sigma^{0},\sigma^{1},\theta^{+},\theta^{-}
+\end{align}
+で表される超世界面を考えます。これまでと同様に$\sigma^{\pm}:=\sigma^0\pm\sigma^1$とし、$\del_{\pm}:=\pdv{\sigma^{\pm}}=\frac{1}{2}(\del_{0}\pm\del_{1})$という記号をよく用います。
 
-
+超世界面の微分演算子として、次のようなものを導入します。
+\begin{align}
+  \Qd_{\pm}:=\pdv{\theta^{\pm}}+\theta^{\pm}\del_{\pm},\quad
+  \Dd_{\pm}:=\pdv{\theta^{\pm}}-\theta^{\pm}\del_{\pm}
+\end{align}
+を導入します。これらの微分演算子の間の反交換関係を計算すると
+\begin{align}
+&  \{\Qd_{\pm},\Qd_{\pm}\}=2i\del_{\pm},\qquad 
+  \{\Qd_{\pm},\Qd_{\mp}\}=0,\qquad 
+  \{\Dd_{\pm},\Dd_{\pm}\}=-2i\del_{\pm},\qquad 
+  \{\Dd_{\pm},\Dd_{\mp}\}=0,\nonumber\\
+& \{\Qd_{\pm},\Dd_{\pm}\}=\{\Qd_{\pm},\Dd_{\mp}\}=0
+\end{align}
 
 \subsection{超場と超対称変換}
+次に超場を導入します。超場$Y(\sigma,\theta)$はボゾン的で実でスカラーだとします。$Y$は$\theta^{\pm}$で展開して
+\begin{align}
+  Y(\sigma,\theta)=X(\sigma)+i\theta^{+}\psi_{+}(\sigma)+i\theta^{-}\psi_{-}(\sigma)+i\theta^{+}\theta^{-}F(\sigma)
+\end{align}
+と書くことができます。ここで$X,F$はボゾン的なスカラー場、$\psi_{\pm}$はフェルミオン的なMajoranaスピノール場（の成分）です。$X,F,\psi_{\pm}$を成分場と呼びます。
 
+この超場$Y$に対して超対称変換を次のように定義します。$\epsilon^{\pm}$をフェルミオン的なMajoranaスピノールの定数のパラメータとします。このパラメータによる$Y$の超対称変換を
+\begin{align}
+  \delta Y = (\epsilon^{+}\Qd_{+}+\epsilon^{-}\Qd_{-})Y\label{superfieldtransf}
+\end{align}
+とします。言い換えると成分場の変換は
+\begin{align}
+  \delta X+i\theta^{+}\delta \psi_{+}+i\theta^{-}\delta \psi_{-}+i\theta^{+}\theta^{-}\delta F = (\epsilon^{+}\Qd_{+}+\epsilon^{-}\Qd_{-})Y
+\end{align}
+という式の両辺の$\theta^{\pm}$の単項式の係数を比較することで得られます。具体的には
+\begin{align}
+  (\epsilon^{+}\Qd_{+}+\epsilon^{-}\Qd_{-})Y=i\epsilon^{+}\psi_{+}+i\epsilon^{-}\psi_{-} 
+  &+ i\theta^{+}(\epsilon^{-}F-\epsilon^{+}\del_{+}X)
+  + i\theta^{-}(-\epsilon^{+}F-\epsilon^{-}\del_{-}X)\nonumber\\
+  &+i\theta^{+}\theta^{-}
+  (i\epsilon^{+}\del_{+}\psi_{-}-i\epsilon^{-}\del_{-}\psi_{+})
+\end{align}
+となりますから成分場は
+\begin{align}
+  \delta X=i\epsilon^{+}\psi_{+}+i\epsilon^{-}\psi_{-} ,\quad
+  \delta \psi_{+}=\epsilon^{-}F-\epsilon^{+}\del_{+}X,\quad
+  \delta \psi_{-}=-\epsilon^{+}F-\epsilon^{-}\del_{-}X,\quad
+  \delta F=i\epsilon^{+}\del_{+}\psi_{-}-i\epsilon^{-}\del_{-}\psi_{+}
+\end{align}
+という変換になります。
 
+\subsection{大域的な超対称性を持つ作用}
+大域的な超対称性を持つ作用を書きます。超場を用いると、次のように超対称性が書けます。
 
+超対称性の変換が\eqref{superfieldtransf}になるようなものを超場と呼ぶことにします。この言葉遣いをすると
+\begin{itemize}
+  \item $Y$が超場なら$\del_{\pm}Y,\Dd_{\pm}Y$は超場です。
+  \item 超場の定数係数の多項式は超場です。
+  \item $Y$が超場のとき、例えば$\Qd_{\pm}Y$は超場ではありません。
+\end{itemize}
+したがって、$\Lt$を$Y,\Dd_{\pm}Y,\del_{\pm}Y,\dots$の多項式とします。このとき$\Lt$は超場です。すると
+\begin{align}
+  \Lcal=\int \di \theta^{+} \di \theta^{-} \Lt
+\end{align}
+の超対称変換は、$\Lt$が超場であることに注意すると
+\begin{align}
+  \delta \Lcal
+  =\int \di \theta^{+} \di \theta^{-} \delta\Lt
+  =\int \di \theta^{+} \di \theta^{-} (\epsilon^{+}\Qd_{+}+\epsilon^{-}\Qd_{-})\Lt
+  =(\text{全微分})
+\end{align}
+となるので、この理論は超対称性を持ちます。
+
+この講義で主に考えるのは、Lagrangian密度
+\begin{align}
+  \Lcal=\frac{1}{2\pi}\int \di \theta^{+} \di \theta^{-}\Dd_{+}Y\Dd_{-}Y
+\end{align}
+です。成分場で書くと
+\begin{align}
+  \Lcal=\frac{1}{2\pi}\left( 
+    \del_{+}X\del_{-}X+i\psi_{+}\del_{-}\psi_{+}+i\psi_{-}\del_{+}\psi_{-}
+    +F^2
+   \right)\label{susylagrangian0}
+\end{align}
+となります。
+
+\eqref{susylagrangian0}のなかの$F$のような作用に微分が含まれていない場を\kyou{補助場}と呼びます。補助場は運動方程式を用いて消去すると便利な場合があります\footnote{消去すると不便になる場合もあります。}。$F$に対する運動方程式は
+\begin{align}
+  F=0
+\end{align}
+となります。これを\eqref{susylagrangian0}のLagrangian密度に代入すると
+\begin{important}
+\begin{align}
+  \Lcal=\frac{1}{2\pi}\left( 
+    \del_{+}X\del_{-}X+i\psi_{+}\del_{-}\psi_{+}+i\psi_{-}\del_{+}\psi_{-}
+   \right)\label{susylagrangian1}
+\end{align}
+\end{important}
+となります。これは、\eqref{free-boson-action}の自由スカラー場と\eqref{free-fermion-action}の自由フェルミオン場を合わせただけの作用になります。$F$を消去した後の超対称の変換は
+\begin{important}
+  \begin{align}
+  \delta X=i\epsilon^{+}\psi_{+}+i\epsilon^{-}\psi_{-} ,\quad
+  \delta \psi_{+}=-\epsilon^{+}\del_{+}X,\quad
+  \delta \psi_{-}=-\epsilon^{-}\del_{-}X
+\end{align}
+\end{important}
+となります。実際この変換でLagrangian密度\eqref{susylagrangian1}が全微分を除いて不変であることが確かめられます。
+
+\subsection{超対称性のカレント}
+
+\subsection{エネルギー運動量テンソル}
 
 
 \section{２次元の自由フェルミオン場}
