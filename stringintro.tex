@@ -1713,7 +1713,27 @@ $\gamma_3$の固有値のことを\kyou{chirality}と呼びます。$\gamma_3$�
 この計算から分かることは、$\epsilon^{\pm}$を、それぞれ$\sigma^{\pm}$だけによらせる、つまり$\epsilon^{+}(\sigma^{+}),\ \epsilon^{-}(\sigma^{-})$というパラメータで変換\eqref{susytransf1}を考えてもLagrangian密度\eqref{susylagrangian1}は全微分を除いて不変になります。この変換は\kyou{超共形対称性}の一部です。
 
 \subsection{エネルギー運動量テンソル}
+エネルギー運動量テンソルも求めておきます。以前は計量で変分するという方法で求めましたが、ここでは少し違うやり方で求めましょう。
 
+無限小一般座標変換$\sigma^{\alpha}=\xi^{\alpha}(\sigma)$を考えます。このときの場の変換は
+\begin{align}
+  \delta X=-\xi^{\alpha}\del_{\alpha}X,\\
+  \delta \psi_{\pm}=-\xi^{\alpha}\del_{\alpha}\psi_{\pm}-\frac12(\del_{\pm}\xi^{\pm})\psi_{+}\label{susyconformaltransf}
+\end{align}
+とします。$\delta \psi_{\pm}$の第２項は改良（improve）と呼ばれるものに関係があるもので、ここでは説明しませんが系統的に求めることができます。
+
+このときのLagrangian密度\eqref{susylagrangian1}の変分は
+\begin{align}
+  \delta \Lcal = \frac{1}{2\pi}\del^{\alpha}\xi^{\beta}T_{\alpha\beta}+(\text{全微分})
+\end{align}
+となるはずです。実際計算すると
+\begin{align}
+  &T_{++}=\frac12\del_{+}X\del_{+}X+\frac{i}{2}\psi_{+}\del_{+}\psi_{+},\nonumber\\
+  &T_{--}=\frac12\del_{-}X\del_{-}X+\frac{i}{2}\psi_{-}\del_{-}\psi_{-},\nonumber\\
+  &T_{+-}=T_{-+}=0.
+\end{align}
+
+この計算から分かることは$\xi^{\pm}$がそれぞれ$\sigma^{\pm}$にしかよらない場合、作用は変換\eqref{susyconformaltransf}で不変になります。これは\kyou{共形対称性}です。
 
 \section{２次元の自由フェルミオン場}
 
