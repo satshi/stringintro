@@ -95,6 +95,8 @@
 \newcommand{\Qd}{\widehat{Q}}
 \newcommand{\Dd}{\widehat{D}}
 
+
+\newcommand{\psib}{\bar{\psi}}
 %\pagestyle{headings}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                        main part
@@ -1077,6 +1079,31 @@ D=26,\qquad a=1
 \end{align}
 でなければなりません。
 
+
+\subsection*{演習問題}
+作用\eqref{gaugefixedaction}を考えます。この作用はLorentz変換
+\begin{align}
+  \delta X^{\mu}(\sigma)=\epsilon^{\mu}{}_{\nu}X^{\nu}
+\end{align}
+で不変です。ただし$\epsilon^{\mu}{}_{\nu}$は無限小の変換のパラメーターで
+\begin{align}
+  \epsilon^{\mu}{}_{\nu}=\eta^{\mu\rho}\epsilon_{\rho\nu},\qquad \epsilon_{\mu\nu}=-\epsilon_{\nu\mu}
+\end{align}
+を満たします。
+\begin{enumerate}
+\item この対称性に対するNoetherカレント$J^{\mu\nu\alpha}$を求めてください。今の場合、$J^{\mu\nu\alpha}$は、
+\begin{align}
+  \frac12 \epsilon_{\mu\nu}J^{\mu\nu\alpha}=\pdv{\Lcal}{(\del_{\alpha}X^{\mu})}\delta X^{\mu}
+\end{align}
+として得られます。
+\item Noether電荷$M^{\mu\nu}$を$x^{\mu},p^{\mu},\alpha^{\mu}_{n},\alphat^{\mu}_{n}$を用いて表してください。ちなみにNoether電荷は
+\begin{align}
+  M^{\mu\nu}=\int d\sigma J^{\mu\nu 0}
+\end{align}
+で表されます。
+\end{enumerate}
+
+
 \section{まとめ}
 この章では、ボゾン的弦理論を光円錐ゲージで取り扱いました。
 \begin{itemize}
@@ -1446,7 +1473,7 @@ L=\int \di \theta \frac{i}{2}\del_{\tau} Y^{\mu} \Dh Y_{\mu}
 \section{2次元スピノール}
 さて、弦理論で世界面の超対称性を記述したいので世界面のボゾンとフェルミオンを導入する必要があります。世界面のボゾンはすでに導入しました。フェルミオンはスピノールとして導入したいので、ここでは2次元のスピノールの定式化について準備をします。
 
-\subsection{ガンマ行列}
+\subsection{ガンマ行列}\label{subsec:gamma}
 まず、2次元のガンマ行列を導入します。$\gamma^{\alpha},\ (\alpha=0,1)$を
 \begin{align}
   \gamma^{0}=
@@ -1527,7 +1554,7 @@ $\gamma_3$の固有値のことを\kyou{chirality}と呼びます。$\gamma_3$�
 \end{align}
 という関係式を満たすことを思い出して
 \begin{align}
-  S=-\frac{1}{4\pi}\int \di^2 \sigma i\psi^{T}C\gamma^{\alpha}\del_{\alpha}\psi
+  S=-\frac{1}{4\pi}\int \di^2 \sigma i\psi^{T}C\gamma^{\alpha}\del_{\alpha}\psi\label{fermionaction0}
 \end{align}
 とします。$\psi$がMajorana（成分ごとに実）のとき、作用が実になることを確かめてください。
 
@@ -1731,4 +1758,120 @@ $\gamma_3$の固有値のことを\kyou{chirality}と呼びます。$\gamma_3$�
 
 
 \chapter{D-brane}
+
+
+\appendix
+\chapter{局所超対称性を持つ作用}
+ここでは、本文で省略した、局所超対称性を持つ作用を解説します。
+
+\section{多脚場とスピン接続}
+超対称変換を２回やると並進になりますから、局所超対称性を持つ理論は必然的に一般座標変換に対する不変性を持ちます。したがって、一般座標変換で不変な枠組みでスピノールを定式化する必要があります。Lorentz対称性のスピノール表現はありますが、一般線形群のスピノール表現はありません。したがって、一般座標変換で不変な枠組みで、どのようにLorentz変換が入りこんでいるかが鍵となります。
+
+$d$次元の時空を考え、その座標の足を$\alpha,\beta,\dots=0,1,\dots,d-1$とします。計量を
+\begin{align}
+  \di s^2 = h_{\alpha\beta} \di \sigma^{\alpha}\di \sigma^{\beta}
+\end{align}
+とします。これは、各点の接空間に内積を入れたことに対応します。この各点の接空間はMinkowski空間ですから、座標とは関係なく直交基底をとることができます。この接空間（正確には余接空間）の基底を$e^{a}_{\alpha}\di \sigma^{\alpha}, \ a=0,1,\dots,d-1$とします。これは、
+\begin{align}
+  h_{\alpha\beta}=\eta_{ab}e^{a}_{\alpha}e^{b}_{\beta}\label{vielbein}
+\end{align}
+という関係式を満たします。このような$e^{a}_{\alpha}$を\kyou{多脚場(vielbein)}と呼びます。
+
+$e^{a}$のとり方には、各点でのLorentz変換の分の任意性があります。つまり$\Lambda^{a}{}_{b}(\sigma)$をLorentz変換の行列、つまり
+\begin{align}
+  \eta_{ab}\Lambda^{a}{}_{c}(\sigma)\Lambda^{b}{}_{d}(\sigma)=\eta_{cd}
+\end{align}
+を満たす行列として
+\begin{align}
+  e'^{a}_{\alpha}=\Lambda^{a}{}_{c}(\sigma)e^{b}_{\alpha}
+  \label{localLorentz}
+\end{align}
+としたものも\eqref{vielbein}を満たすので多脚場になります。\eqref{localLorentz}のような変換を\kyou{局所Lorentz変換}と呼びます。
+
+局所的な対称性、つまりゲージ対称性がある場合、それに対する共変微分やゲージ場を考えると便利です。局所Lorentz変換に対するゲージ場を$\omega_{\alpha}{}^{a}{}_{b}$と書いて\kyou{スピン接続}と呼びます。局所Lorentz変換のベクトル表現にしたがう場$v^{a}$に対して、共変微分は
+\begin{align}
+  \nabla_{\alpha}v^{a}=\del_{\alpha}v^{a}+\omega_{\alpha}{}^{a}{}_{b}v^{b}
+\end{align}
+と定義します。$v^{a},w^{a}$を局所Lorentz変換のベクトル表現にしたがう場として、$\eta_{bc}v^{b}w^{c}$は局所Lorentz変換で不変な場ですから$\nabla_{a}(\eta_{bc}v^{b}w^{c})=\del_{a}(\eta_{bc}v^{b}w^{c})$とすべきです。Leibniz則と$\nabla_{a}\eta_{bc}=0$を要請すると
+\begin{align}
+  \omega_{\alpha}{}^{ab}
+  =-\omega_{\alpha}{}^{ba}
+\end{align}
+という式が得られます。以降多脚場の足$a,b,\dots$の上げ下げは$\eta_{ab},\eta^{ab}$で行います。
+
+ここまでは一般論ですが、多脚場とスピン接続にはなんの関係もありません。ただし、計量を決めたときに自然に決まるスピン接続（Levi-Civita接続と呼ばれます）を考えることが多いです。これは、$e^{a}_{\alpha}$の共変微分が$0$だという要請をおくことで決まるものです。つまり
+\begin{align}
+  \nabla_{\alpha}e^{a}_{\beta}:=\del_{\alpha}e^{a}_{\beta}+\omega_{\alpha}{}^{a}{}_{b}e^{b}_{\alpha}-\Gamma^{\gamma}_{\alpha\beta}e^{a}_{\gamma}=0
+\end{align}
+という要請をおくものです。ここで$\Gamma^{\gamma}_{\alpha\beta}$はクリストッフェル記号です。ただし、要請として必要十分なのは$\alpha,\beta$に関して反対称部分
+\begin{align}
+  \del_{[\alpha}e^{a}_{\beta]}+\omega_{[\alpha}{}^{a}{}_{b}e^{b}_{\beta]}=0
+\end{align}
+です。今後、$\omega_{\alpha}{}^{a}{}_{b}$という記号はLevi-Civita接続を表すとします。
+
+この局所Lorentz変換に対してスピノール表現で変換する場を考え、それをスピノール場と呼ぶことにします。スピノール表現はLorentz群の表現ではなく、その２重被覆であるスピン群の表現ですから、スピン構造という構造を考えないといけないことに注意してください。ただし、局所的なLagrangian密度の表現には、どういうスピン構造を選んだかということは表れません。大域的な構造を考えるときに問題になります。
+
+ガンマ行列を$\gamma^{a},\ a=0,1,\dots,d-1$とします。これは、次の反交換関係を満たすようにします。
+\begin{align}
+  \{\gamma^{a},\gamma^{b}\}=2\eta^{ab}.
+\end{align}
+これを用いると$\gamma_{ab}:=\gamma_{[a}\gamma_{b]}$がLorentz群のLie代数のスピノール表現になります。したがってスピノール場$\psi$に対する共変微分は、
+\begin{align}
+  \nabla_{a}\psi:=\del_{\alpha}\psi+\frac14\omega_{\alpha}{}^{ab}\gamma_{ab}\psi
+\end{align}
+となります。
+
+\section{ガンマ行列のconvention}
+ここから２次元の場合に具体的に定式化していきます。ガンマ行列$\gamma^{a},\ a=0,1$は\ref{subsec:gamma}項で導入したように
+\begin{align}
+  \gamma^{0}=
+  \mqty(0 & -1 \\
+    1 &0),\qquad
+  \gamma^{1}=
+  \mqty(0 & 1 \\
+    1 &0)
+\end{align}
+とします。C行列を
+\begin{align}
+  C=\mqty(0 & -1 \\
+  1 &0)
+\end{align}
+とします。このとき
+\begin{align}
+  C^{T}=-C,\quad (C\gamma^{a})^{T}=C\gamma^{a},\quad (C\gamma^{ab})^{T}=C\gamma^{ab}
+\end{align}
+が成り立ちます。スピノール場$\psi$は２成分で、その成分を
+\begin{align}
+  \psi
+  =\mqty(\psi^{+}\\ \psi^{-})
+  =\mqty(\psi_{-}\\ -\psi_{+})
+\end{align}
+と書きます。この表示ではMajoranaスピノールは成分ごとに実です。一般にDirac共役は
+\begin{align}
+  \psib:=\psi^{\dag}\gamma^{0}
+\end{align}
+で定義しますが、Majoranaスピノールに対しては、
+\begin{align}
+  \psib=\psi^{T}C
+\end{align}
+が成り立ちます。これらを合わせると、$\psi$をMajoranaフェルミオンとして
+\begin{align}
+  \psib \gamma^a \psi=0,\quad \psib \gamma^{ab}\psi=0
+\end{align}
+などが成り立ちます。また$\gamma^{ab}$の独立なものは$\gamma^{01}$しかなく$\gamma^{a}\gamma^{01}=-\epsilon^{ab}\gamma_{b}$ですから
+\begin{align}
+  \psib \gamma^c\gamma_{ab}\psi=0\label{vanishingspinconnectionterm}
+\end{align}
+となります。
+
+$e_{a}^{\alpha}$を$e^{a}_{\alpha}$の逆行列とし、$\gamma^{\alpha}:=e^{\alpha}_{a}\gamma^{\alpha}$とします。これらを用いて作用\eqref{fermionaction0}を一般座標変換と局所Lorentz変換に対して不変にしたものは
+\begin{align}
+  S=-\frac{1}{4\pi}\int \di^2 \sigma e i\psib \gamma^{\alpha}\nabla_{\alpha}\psi
+\end{align}
+となります。ここで$e:=\det e=\sqrt{-h}$です。このなかの共変微分$\nabla_{\alpha}$の中のスピン接続の項は\eqref{vanishingspinconnectionterm}から消えますので、単に$\del_{\alpha}$に置き換えても良いです。
+
+\section{作用と対称性}
+局所超対称性のある作用を作っていきます。ここでは、Noether法と呼ばれる方法を用います。大層な名前がついていますが、基本的に「目の子で作る」方法です。
+
+
 \end{document}
