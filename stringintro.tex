@@ -99,6 +99,8 @@
 
 
 \newcommand{\psib}{\bar{\psi}}
+\newcommand{\chib}{\bar{\chi}}
+\newcommand{\epsilonb}{\bar{\epsilon}}
 %\pagestyle{headings}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                        main part
@@ -1785,6 +1787,7 @@ $\gamma_3$の固有値のことを\kyou{chirality}と呼びます。$\gamma_3$�
       \del_{+}X^{\mu}\del_{-}X_{\mu}+i\psi^{\mu}_{+}\del_{-}\psi_{+\mu}
       +i\psi^{\mu}_{-}\del_{+}\psi_{-\mu}
      \right)
+     \label{supergaugefixedaction}
   \end{align}    
 \end{important}
 となります。
@@ -1816,7 +1819,7 @@ $\gamma_3$の固有値のことを\kyou{chirality}と呼びます。$\gamma_3$�
     \delta_{\epsilon}\psi^{\mu}_{+}=-\epsilon^{+}\del_{+}X^{\mu}
     ,\quad
     \delta_{\epsilon}\psi^{\mu}_{-}=-\epsilon^{-}\del_{-}X^{\mu}
-    \label{superstringaction}
+    \label{superresidualtransformation}
   \end{align}    
 \end{important}
 となります。
@@ -1839,7 +1842,7 @@ $\gamma_3$の固有値のことを\kyou{chirality}と呼びます。$\gamma_3$�
 重要なことは、このスピン構造は世界面の計量と同様に動的だということです。したがって、スピン構造は１つだけでなく、すべてのセクターを考える必要があります。また、世界面の計量の運動方程式から拘束条件が出てきたのと同様に、スピン構造が動的であることにより、拘束条件が出てきます。これは、後でHilbert空間の元に課すことになるもので\kyou{GSO射影}と呼ばれています。
 
 \section{２次元の自由フェルミオン場}
-さて、超弦理論を解析していくためには、\eqref{superstringaction}の作用で表される系について知る必要があります。このうち$X^{\mu}$については、ボゾン的弦のところでやりました。また$\psi^{\mu}_{\pm}$は$D$個同じもののコピーがあるだけですから、一つの$\psi_{\pm}$だけ考えれば良いです。さらに$\psi_{+}$が分かれば$\psi_{-}$は完全に同様にできます。なのでここでは$\psi_{+}$一つに集中して、その力学を調べていきます。
+さて、超弦理論を解析していくためには、\eqref{supergaugefixedaction}の作用で表される系について知る必要があります。このうち$X^{\mu}$については、ボゾン的弦のところでやりました。また$\psi^{\mu}_{\pm}$は$D$個同じもののコピーがあるだけですから、一つの$\psi_{\pm}$だけ考えれば良いです。さらに$\psi_{+}$が分かれば$\psi_{-}$は完全に同様にできます。なのでここでは$\psi_{+}$一つに集中して、その力学を調べていきます。
 
 \subsection{作用とモード展開}
 Lagrangian密度は
@@ -2183,7 +2186,7 @@ $e^{a}$のとり方には、各点でのLorentz変換の分の任意性があり
 \end{align}
 となります。
 
-\section{ガンマ行列のconvention}
+\section{ガンマ行列とスピノール}
 ここから２次元の場合に具体的に定式化していきます。ガンマ行列$\gamma^{a},\ a=0,1$は\ref{subsec:gamma}項で導入したように
 \begin{align}
   \gamma^{0}=
@@ -2232,8 +2235,60 @@ $e_{a}^{\alpha}$を$e^{a}_{\alpha}$の逆行列とし、$\gamma^{\alpha}:=e^{\al
 \end{align}
 となります。ここで$e:=\det e=\sqrt{-h}$です。このなかの共変微分$\nabla_{\alpha}$の中のスピン接続の項は\eqref{vanishingspinconnectionterm}から消えますので、単に$\del_{\alpha}$に置き換えても良いです。
 
-\section{作用と対称性}
+\section{作用}
 局所超対称性のある作用を作っていきます。ここでは、Noether法と呼ばれる方法を用います。大層な名前がついていますが、基本的に「目の子で作る」方法です。
 
+まず\eqref{supergaugefixedaction}を一般座標変換と局所Lorentz変換に対して共変に書きます。
+\begin{align}
+  S_0=-\frac{1}{4\pi}\int \di^2\sigma e\left[ 
+    \frac12 h^{\alpha\beta}\del_{\alpha}X^{\mu}\del_{\beta}X_{\mu}
+    +i\psib^{\mu}\gamma^{\alpha}\nabla_{\alpha}\psi_{\mu}
+   \right]]
+\end{align}
+変換としては、\eqref{superresidualtransformation}を局所的にしたものを試してみることにしましょう
+\begin{align}
+  \delta_{0}X^{\mu}=i\epsilonb \psi^{\mu},\quad
+  \delta_{0}\psi^{\mu}=\frac12 \del_{\alpha}X^{\mu}\gamma^{\alpha}\epsilon,\quad
+  \delta_{0}e^{a}_{\alpha}=0.
+\end{align}
+これで変換を計算してみると
+\begin{align}
+  \delta_{0}S_{0}=-\frac{1}{4\pi}\int \di^2 \sigma e
+  \nabla_{\alpha}\epsilonb\gamma^{\beta}\gamma^{\alpha}\psi_{\mu}\del_{\beta}X^{\mu}\label{tempdelta0S0}
+\end{align}
+となります。
+
+さて、次の段階に行きます。\eqref{tempdelta0S0}を消すために、超対称性に対するゲージ場としてグラビティーノ場$\chi_{\alpha}$を導入します。これは、$\alpha$というベクトルの足を持ったMajoranaフェルミオンです。これの変換性を
+\begin{align}
+  \delta_{0}\chi_{\alpha}=-\nabla_{\alpha}\epsilon
+\end{align}
+とし、さらに作用に
+\begin{align}
+  S_1=-\frac{1}{4\pi}\int \di^2 \sigma e
+  \chib_{\alpha}\gamma^{\beta}\gamma^{\alpha}\psi_{\mu}\del_{\beta}X^{\mu}
+\end{align}
+を付け足します。すると
+\begin{align}
+  \delta_{0}(S_0+S_1)=-\frac{1}{4\pi}\int \di^2 e\left(-\epsilonb \gamma^{\alpha}\chib^{\beta}\del_{\alpha}X^{\mu}\del_{\beta}X_{\mu}+\frac12\epsilonb \gamma^{\gamma}\chi_{\gamma}h^{\alpha\beta}\del_{\alpha}X^{\mu}\del_{\beta}X_{\mu}  \right)+(\text{フェルミオン３次})
+\end{align}
+となります。このフェルミオン１次の項を消すように$\delta_{1}e^{a}_{\alpha}$を決めます。$\delta_{1}e^{a}_{\alpha}$はフェルミオン１次ですから、$\delta_1$でフェルミオン１次の項が出てくるのは$\delta_1 S_0$のみです。実際
+\begin{align}
+  \delta_1 e^{a}_{\alpha}=-\epsilonb \gamma^{a}\chi_{\alpha},\quad
+  \delta_1 (\text{他})=0
+\end{align}
+とすると
+\begin{align}
+  \delta_1 h_{\alpha\beta}=-2\epsilonb \gamma_{(\alpha}\chi_{\beta)},\quad
+  \delta_1 h^{\alpha\beta}=2\epsilonb \gamma^{(\alpha}\chi^{\beta)},\quad
+  \delta_1 e = -e \epsilonb \gamma^{\alpha}\chi_{\alpha}
+\end{align}
+となります。これを用いて計算すると
+\begin{align}
+  \delta_1 S_0=-\frac{1}{4\pi}\int \di^2 e\left(\epsilonb \gamma^{\alpha}\chib^{\beta}\del_{\alpha}X^{\mu}\del_{\beta}X_{\mu}-\frac12\epsilonb \gamma^{\gamma}\chi_{\gamma}h^{\alpha\beta}\del_{\alpha}X^{\mu}\del_{\beta}X_{\mu}  \right)+(\text{フェルミオン３次})
+\end{align}
+となります。
+
+次にフェルミオン３次の項を考えます。フェルミオン３次の項は$\psi$２次で$\chi$が１次の項と$\chi$が２次で$\psi$が１次の項に分けられることに注意して
+\section{対称性}
 
 \end{document}
