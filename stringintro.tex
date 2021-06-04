@@ -2203,9 +2203,17 @@ $e^{a}$のとり方には、各点でのLorentz変換の分の任意性があり
 \end{align}
 とします。このとき
 \begin{align}
-  C^{T}=-C,\quad (C\gamma^{a})^{T}=C\gamma^{a},\quad (C\gamma^{ab})^{T}=C\gamma^{ab}
+  C^{T}=-C,\quad (C\gamma^{a})^{T}=C\gamma^{a},\quad (C\gamma^{ab})^{T}=C\gamma^{ab}\label{symmetrygammamatrices}
 \end{align}
-が成り立ちます。スピノール場$\psi$は２成分で、その成分を
+が成り立ちます。また、chiralityの行列を
+\begin{align}
+  \gamma_3:=\gamma^{0}\gamma^{1}=\mqty(
+    -1 & 0\\
+    0 & 1
+  )
+\end{align}
+とします。
+スピノール場$\psi$は２成分で、その成分を
 \begin{align}
   \psi
   =\mqty(\psi^{+}\\ \psi^{-})
@@ -2223,11 +2231,24 @@ $e^{a}$のとり方には、各点でのLorentz変換の分の任意性があり
 \begin{align}
   \psib \gamma^a \psi=0,\quad \psib \gamma^{ab}\psi=0
 \end{align}
-などが成り立ちます。また$\gamma^{ab}$の独立なものは$\gamma^{01}$しかなく$\gamma^{a}\gamma^{01}=-\epsilon^{ab}\gamma_{b}$ですから
+などが成り立ちます。また$\gamma^{ab}$の独立なものは$\gamma^{01}=\gamma_3$しかなく$\gamma^{a}\gamma_3=-\epsilon^{ab}\gamma_{b}$ですから
 \begin{align}
   \psib \gamma^c\gamma_{ab}\psi=0\label{vanishingspinconnectionterm}
 \end{align}
 となります。
+
+スピノールの双線形形式の公式について少し説明します。$\chi,\lambda,\epsilon,\psi$をすべてMajoranaフェルミオンのスピノールとします。このとき\eqref{symmetrygammamatrices}から
+\begin{align}
+  \chib \psi = \psib \chi,\qquad \chib \gamma^{a}\psi,\qquad \chib \gamma_3 \psi = -\psib \gamma_3 \chi.
+\end{align}
+\begin{align}
+  -2\chib \psi \epsilonb \lambda =
+  \chib \gamma_{a} \lambda \epsilonb \gamma^{a}\psi+
+  \chib \gamma_{3} \lambda \epsilonb \gamma^{3}\psi+
+  \chib \lambda \epsilonb \psi,\\
+  -2\chib\psi \psib \lambda=\chib \lambda \psib \psi
+\end{align}
+などの公式が成り立ちます。
 
 $e_{a}^{\alpha}$を$e^{a}_{\alpha}$の逆行列とし、$\gamma^{\alpha}:=e^{\alpha}_{a}\gamma^{\alpha}$とします。これらを用いて作用\eqref{fermionaction0}を一般座標変換と局所Lorentz変換に対して不変にしたものは
 \begin{align}
@@ -2243,7 +2264,7 @@ $e_{a}^{\alpha}$を$e^{a}_{\alpha}$の逆行列とし、$\gamma^{\alpha}:=e^{\al
   S_0=-\frac{1}{4\pi}\int \di^2\sigma e\left[ 
     \frac12 h^{\alpha\beta}\del_{\alpha}X^{\mu}\del_{\beta}X_{\mu}
     +i\psib^{\mu}\gamma^{\alpha}\nabla_{\alpha}\psi_{\mu}
-   \right]]
+   \right]
 \end{align}
 変換としては、\eqref{superresidualtransformation}を局所的にしたものを試してみることにしましょう
 \begin{align}
