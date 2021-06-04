@@ -2112,6 +2112,80 @@ $L_n,G_r$の（反）交換関係を計算しておきましょう。がんば�
 \subsection{超対称性のある系と真空のエネルギー}
 
 \section{光円錐ゲージ}
+\subsection{ゲージ固定}
+さて、超弦理論に戻ります。ゲージ固定した後のLagrangian密度は\eqref{supergaugefixedaction}で表されます。もう一度書くと
+\begin{align}
+    \Lcal = \frac{1}{2\pi}\left( 
+      \del_{+}X^{\mu}\del_{-}X_{\mu}+i\psi^{\mu}_{+}\del_{-}\psi_{+\mu}
+      +i\psi^{\mu}_{-}\del_{+}\psi_{-\mu}
+     \right)
+     \label{supergaugefixedaction2}
+\end{align}
+また、エネルギー運動量テンソルと超対称カレントは
+\begin{align}
+  &T_{++}=\frac12\del_{+}X^{\mu}\del_{+}X_{\mu}+\frac{i}{2}\psi^{\mu}_{+}\del_{+}\psi_{+\mu},\quad &&
+T_{--}=\frac12\del_{-}X^{\mu}\del_{-}X_{\mu}+\frac{i}{2}\psi^{\mu}_{-}\del_{-}\psi_{-\mu},\nonumber\\
+&G_{++}=\psi^{\mu}_{+}\del_{+}X_{\mu},&&
+G_{--}=\psi^{\mu}_{-}\del_{-}X_{\mu}
+\end{align}    
+となります。これを用いて拘束条件は$T_{++}=T_{--}=0,G_{++}=G_{--}=0$となります。
+
+ゲージ固定後に残っているゲージ対称性は$\Ncal=(1,1)$超共形対称性です。ボゾン的な部分は$\xi^{+}(\sigma^{+}),\xi^{-}(\sigma^{-})$を無限小のパラメーターとして
+\begin{align}
+  \delta_{\xi}X^{\mu}=-\xi^{+}\del_{+}X^{\mu}-\xi^{-}\del_{-}X^{\mu},\ 
+  \delta_{\xi}\psi^{\mu}_{+}=-\xi^{+}\del_{+}\psi^{\mu}_{+}-\frac12 \del_{+}\xi^{+}\psi^{\mu}_{+},\ 
+  \delta_{\xi}\psi^{\mu}_{-}=-\xi^{-}\del_{-}\psi^{\mu}_{-}-\frac12 \del_{-}\xi^{-}\psi^{\mu}_{-}\label{superresifualtransformationbosonic2}
+\end{align}    
+と書けます。フェルミオン的な部分は、$\epsilon^{+}(\sigma^{+}),\ \epsilon^{-}(\sigma^{-})$をフェルミオン的なパラメーターとして
+\begin{align}
+  \delta_{\epsilon}X^{\mu}=i\epsilon^{+}\psi^{\mu}_{+}+i\epsilon^{-}\psi^{\mu}_{-}
+  ,\quad
+  \delta_{\epsilon}\psi^{\mu}_{+}=-\epsilon^{+}\del_{+}X^{\mu}
+  ,\quad
+  \delta_{\epsilon}\psi^{\mu}_{-}=-\epsilon^{-}\del_{-}X^{\mu}
+  \label{superresidualtransformation2}
+\end{align}    
+となります。
+
+\subsection{拘束条件}
+ボゾン的弦理論の時と同様にして光円錐ゲージでゲージ固定します。
+\begin{align}
+  X^{\pm}=\frac{1}{\sqrt{2}}(X^{0}\pm X^{D-1})
+\end{align}
+という光円錐座標をとり、ボゾン的弦理論のときと同様に\eqref{superresifualtransformationbosonic2}の対称性を使って
+\begin{align}
+  X^{+}(\tau,\sigma)=2p^{+} \tau
+\end{align}
+とします。また、\eqref{superresidualtransformation2}を用いて
+\begin{align}
+  \psi^{+}_{+}=\psi^{-}_{-}=0
+\end{align}
+とします。
+
+ここから、$T_{++}=0,\ T_{--}=0$という拘束条件を解いて
+\begin{align}
+  \del_{+}X^{-}&=\frac{1}{p^{+}}T^{\perp}_{++},\quad T^{\perp}_{++}:=\frac12\del_{+}X^{i}\del_{+}X^{i}+\frac{i}{2}\psi^{i}_{+}\del_{+}\psi^{i}_{+},\\
+  \del_{-}X^{-}&=\frac{1}{p^{+}}T^{\perp}_{--},\quad T^{\perp}_{--}:=\frac12\del_{-}X^{i}\del_{-}X^{i}+\frac{i}{2}\psi^{i}_{-}\del_{-}\psi^{i}_{-}
+\end{align}
+という関係式を得ます。$X^{-}$の自由度のうち、残るのは定数モード$x^{-}$のみです。またレベル一致条件$L^{\perp}_0=\Lt^{\perp}_0$が拘束条件として残ります。レベル一致条件は状態に課すことにします。
+
+同様に$G_{++}=0,\ G_{--}=0$を解くことができて
+\begin{align}
+  &\psi_{+}^{-}=\frac{1}{p^+}G^{\perp}_{++},\quad G^{\perp}_{++}:=\psi^{i}_{+}\del_{+}X^{i},\\
+  &\psi_{-}^{-}=\frac{1}{p^+}G^{\perp}_{--},\quad G^{\perp}_{--}:=\psi^{i}_{-}\del_{-}X^{i}
+\end{align}
+となります。これで$\psi_{\pm}^{-}$の自由度は完全に独立でなくなります。
+
+\subsection{量子化と臨界次元}
+さて、光円錐ゲージをとったので量子化しましょう。残っている自由度は、$x^{-},\ p^{+},\ X^{i}(\sigma),\ \psi^{i}_{\pm}(\sigma)$です。これらのモード展開したものの間の交換関係は
+\begin{align}
+  [\alpha_{m}^{i},\alpha_{n}^{j}]=m\delta_{m+n}\delta^{ij},\quad
+  [\alphat_{m}^{i},\alphat_{n}^{j}]=m\delta_{m+n}\delta^{ij},\quad
+  \{\psi^{i}_{r},\psi^{j}_{s}\}=\delta_{r+s}\delta^{ij},\quad
+  \{\psit^{i}_{r},\psit^{j}_{s}\}=\delta_{r+s}\delta^{ij}
+\end{align}
+となります。これ以外は交換または反交換します。
+
 
 \section{GSO射影}
 
