@@ -1770,13 +1770,13 @@ $\gamma_3$の固有値のことを\kyou{chirality}と呼びます。$\gamma_3$�
 \subsection{局所超対称性を持つ作用}
 ここまでで超対称性を持つ作用を作ることができました。これのコピーをたくさん作ったうえで、拘束条件として$G_{++}=G_{--}=0$というものが課されるようにしたいです。ボゾン的弦のときの類推からすると、超対称性のパラメーターを$\sigma^{\alpha}$によるようにした変換で不変な\kyou{局所超対称性}で不変な理論を考えればよいと期待できます。
 
-実際、これは正しいです。これは非常に技術的になるのでここでは詳しくは説明しません。興味ある人は
+実際、これは正しいです。これは非常に技術的になるのでここでは詳しくは説明しません。興味ある人は付録\ref{app:localSUSY}を見てください。またconventionが少々違いますが
 \begin{mycite}
   Green, Schwarz, Witten `` Superstring theory 1''
 \end{mycite}
-を参照してください。場として$X^{\mu},\ \psi^{\mu}_{\pm}$に加えて多脚場$e^{a}_{\alpha}$とグラビティーノ場$\chi_{\alpha \pm}$が入っています。多脚場$e^{a}_{\alpha}$は世界面の計量$h_{\alpha\beta}$と$h_{\alpha\beta}=\eta_{ab}e^{a}_{\alpha}e^{b}_{\beta}$と関係しているものです。
+に詳しい説明があります。場として$X^{\mu},\ \psi^{\mu}_{\pm}$に加えて多脚場$e^{a}_{\alpha}$とグラビティーノ場$\chi_{\alpha \pm}$が入っています。多脚場$e^{a}_{\alpha}$は世界面の計量$h_{\alpha\beta}$と$h_{\alpha\beta}=\eta_{ab}e^{a}_{\alpha}e^{b}_{\beta}$と関係しているものです。
 
-これをゲージ固定します。
+この作用は一般座標変換と局所Lorentz変換、局所超対称性の他にWeyl対称性、超Weyl対称性を持ちます。これらをゲージ固定します。
 \begin{align}
   e^{a}_{\alpha}=\delta^{a}_{\alpha},\quad \chi_{\alpha \pm}=0.
 \end{align}
@@ -2201,6 +2201,7 @@ G_{--}=\psi^{\mu}_{-}\del_{-}X_{\mu}
 
 \appendix
 \chapter{局所超対称性を持つ作用}
+\label{app:localSUSY}
 ここでは、本文で省略した、局所超対称性を持つ作用を解説します。
 
 \section{多脚場とスピン接続}
@@ -2408,6 +2409,7 @@ $e_{a}^{\alpha}$を$e^{a}_{\alpha}$の逆行列とし、$\gamma^{\alpha}:=e^{\al
   +i\psib^{\mu}\gamma^{\alpha}\nabla_{\alpha}\psi_{\mu}+i
   \chib_{\alpha}\gamma^{\beta}\gamma^{\alpha}\psi_{\mu}\del_{\beta}X^{\mu}
   +\frac{1}{4}\chib_{\alpha}\gamma^{\beta}\gamma^{\alpha}\chi_{\beta} \psib^{\mu}\psi_{\mu}\right]
+  \label{2dsugraaction}
 \end{align}
 となります。また変換は$\delta=\delta_0+\delta_1+\delta_2+\delta_3$で
 \begin{align}
@@ -2415,9 +2417,30 @@ $e_{a}^{\alpha}$を$e^{a}_{\alpha}$の逆行列とし、$\gamma^{\alpha}:=e^{\al
   \delta \psi^{\mu}=\frac12 \gamma^{\alpha}\epsilon(\del_{\alpha}X^{\mu}-i\psib^{\mu}\chi_{\alpha}),\nonumber\\
   \delta \chi_{\alpha}=-\nabla_{\alpha}\epsilon,\qquad
   \delta e^{a}_{\alpha}=-i\epsilonb \gamma^{a}\chi_{\alpha}
+  \label{2dlocalSUSYtransf}
 \end{align}
 となります。
 
 \section{対称性}
+
+作用\eqref{2dsugraaction}の対称性について見ておきましょう。まず、一般座標変換の対称性と局所Lorentz対称性は明白にあります。また、局所超対称性\eqref{2dlocalSUSYtransf}があります。
+
+それ以外に次のWeyl対称性があります。$w(\sigma)$を無限小で場所によっているスカラーのパラメーターとして
+\begin{align}
+  \delta_{w}X^{\mu}=0,\quad
+  \delta_{w}\psi^{\mu}=-\frac12 w\psi^{\mu},\quad
+  \delta_{w} e^{a}_{\alpha}=w e^{a}_{\alpha},\quad
+  \delta_{w} \chi_{\alpha}=\frac12 w\chi_{\alpha}
+\end{align}
+という変換で作用\eqref{2dsugraaction}は不変です。
+
+さらに次の超Weyl対称性があります。$\lambda(\sigma)$を無限小で場所によっているMajoranaフェルミオンのパラメーターとして
+\begin{align}
+  \delta_{\lambda}\chi_{\alpha}=\gamma_{\alpha}\lambda,\quad
+  \delta_{\lambda}(\text{他})=0
+\end{align}
+という変換で作用\eqref{2dsugraaction}は不変です。
+
+これらすべては世界面のゲージ対称性であり、超弦理論で重要な役割を果たします。
 
 \end{document}
