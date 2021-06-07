@@ -2348,42 +2348,76 @@ $e_{a}^{\alpha}$を$e^{a}_{\alpha}$の逆行列とし、$\gamma^{\alpha}:=e^{\al
 \end{align}
 これで変換を計算してみると
 \begin{align}
-  \delta_{0}S_{0}=-\frac{1}{4\pi}\int \di^2 \sigma e
+  \delta_{0}S_{0}=-\frac{1}{4\pi}\int \di^2 \sigma e i
   \nabla_{\alpha}\epsilonb\gamma^{\beta}\gamma^{\alpha}\psi_{\mu}\del_{\beta}X^{\mu}\label{tempdelta0S0}
 \end{align}
 となります。
 
 さて、次の段階に行きます。\eqref{tempdelta0S0}を消すために、超対称性に対するゲージ場としてグラビティーノ場$\chi_{\alpha}$を導入します。これは、$\alpha$というベクトルの足を持ったMajoranaフェルミオンです。これの変換性を
 \begin{align}
-  \delta_{0}\chi_{\alpha}=-\nabla_{\alpha}\epsilon
+  \delta_{1}\chi_{\alpha}=-\nabla_{\alpha}\epsilon,\quad \delta_{1}(\text{他})=0
 \end{align}
 とし、さらに作用に
 \begin{align}
-  S_1=-\frac{1}{4\pi}\int \di^2 \sigma e
+  S_1=-\frac{1}{4\pi}\int \di^2 \sigma e i
   \chib_{\alpha}\gamma^{\beta}\gamma^{\alpha}\psi_{\mu}\del_{\beta}X^{\mu}
 \end{align}
-を付け足します。すると
+を付け足します。こうすると$\delta_{0}S_0+\delta_{1}S_1=0$となります。しかし
 \begin{align}
-  \delta_{0}(S_0+S_1)=-\frac{1}{4\pi}\int \di^2 e\left(-\epsilonb \gamma^{\alpha}\chib^{\beta}\del_{\alpha}X^{\mu}\del_{\beta}X_{\mu}+\frac12\epsilonb \gamma^{\gamma}\chi_{\gamma}h^{\alpha\beta}\del_{\alpha}X^{\mu}\del_{\beta}X_{\mu}  \right)+(\text{フェルミオン３次})
+  \delta_{0}S_1=-\frac{1}{4\pi}\int \di^2 e\left(-i\epsilonb \gamma^{\alpha}\chib^{\beta}\del_{\alpha}X^{\mu}\del_{\beta}X_{\mu}+\frac{i}{2}\epsilonb \gamma^{\gamma}\chi_{\gamma}h^{\alpha\beta}\del_{\alpha}X^{\mu}\del_{\beta}X_{\mu}  \right)+(\text{フェルミオン３次})
 \end{align}
-となります。このフェルミオン１次の項を消すように$\delta_{1}e^{a}_{\alpha}$を決めます。$\delta_{1}e^{a}_{\alpha}$はフェルミオン１次ですから、$\delta_1$でフェルミオン１次の項が出てくるのは$\delta_1 S_0$のみです。実際
+となるので、まだ終わっていません。このフェルミオン１次の項を消すように$\delta_{2}e^{a}_{\alpha}$を決めます。$\delta_{2}e^{a}_{\alpha}$はフェルミオン１次ですから、$\delta_2$でフェルミオン１次の項が出てくるのは$\delta_2 S_0$のみです。実際
 \begin{align}
-  \delta_1 e^{a}_{\alpha}=-\epsilonb \gamma^{a}\chi_{\alpha},\quad
-  \delta_1 (\text{他})=0
+  \delta_2 e^{a}_{\alpha}=-i\epsilonb \gamma^{a}\chi_{\alpha},\quad
+  \delta_2 (\text{他})=0
 \end{align}
 とすると
 \begin{align}
-  \delta_1 h_{\alpha\beta}=-2\epsilonb \gamma_{(\alpha}\chi_{\beta)},\quad
-  \delta_1 h^{\alpha\beta}=2\epsilonb \gamma^{(\alpha}\chi^{\beta)},\quad
-  \delta_1 e = -e \epsilonb \gamma^{\alpha}\chi_{\alpha}
+  \delta_2 h_{\alpha\beta}=-2i\epsilonb \gamma_{(\alpha}\chi_{\beta)},\quad
+  \delta_2 h^{\alpha\beta}=2i\epsilonb \gamma^{(\alpha}\chi^{\beta)},\quad
+  \delta_2 e = -ie \epsilonb \gamma^{\alpha}\chi_{\alpha}
 \end{align}
 となります。これを用いて計算すると
 \begin{align}
-  \delta_1 S_0=-\frac{1}{4\pi}\int \di^2 e\left(\epsilonb \gamma^{\alpha}\chib^{\beta}\del_{\alpha}X^{\mu}\del_{\beta}X_{\mu}-\frac12\epsilonb \gamma^{\gamma}\chi_{\gamma}h^{\alpha\beta}\del_{\alpha}X^{\mu}\del_{\beta}X_{\mu}  \right)+(\text{フェルミオン３次})
+  \delta_2 S_0=-\frac{1}{4\pi}\int \di^2 e\left(i\epsilonb \gamma^{\alpha}\chib^{\beta}\del_{\alpha}X^{\mu}\del_{\beta}X_{\mu}-\frac{i}{2}\epsilonb \gamma^{\gamma}\chi_{\gamma}h^{\alpha\beta}\del_{\alpha}X^{\mu}\del_{\beta}X_{\mu}  \right)+(\text{フェルミオン３次})
+\end{align}
+となり、$(\delta_0+\delta_1+\delta_2)(S_0+S_1+S_2)=(\text{フェルミオン３次})$となるので、フェルミオンの１次まででは不変になります。
+
+次にフェルミオン３次の項を考えます。まず、
+\begin{align}
+  \delta_{0}S_1=-\frac{1}{4\pi}\int \di^2\sigma e\left[ 
+    \frac{1}{2}\chib_{\alpha}\gamma^{\beta}\gamma^{\alpha}\nabla_{\beta}\epsilon \psib_{\mu}\psi_{\mu}
+   \right]+\dots
+\end{align}
+という項が出てきます。これを消すために作用に
+\begin{align}
+  S_{2}=
+  -\frac{1}{4\pi}\int \di^2\sigma e\left[ 
+    \frac{1}{4}\chib_{\alpha}\gamma^{\beta}\gamma^{\alpha}\chi_{\beta} \psib^{\mu}\psi_{\mu}
+   \right]
+\end{align}
+というフェルミオン４次の項を足します。さらに、これらから出てくる$\psi$の２次、$\chi$の１次の項を消すために、変換に
+\begin{align}
+  \delta_{3}\psi^{\mu}=-\frac{i}{2}\gamma^{\alpha}\epsilon\psib^{\mu}\chi_{\alpha}
+\end{align}
+を加えます。
+
+ここまでの作用と変換を全部合わせると、作用が超対称変換で不変になることがチェックできます。作用はまとめて$S=S_0+S_1+S_2$で
+\begin{align}
+  S=-\frac{1}{4\pi}\int \di^2\sigma e \left[ \frac12 h^{\alpha\beta}\del_{\alpha}X^{\mu}\del_{\beta}X_{\mu}
+  +i\psib^{\mu}\gamma^{\alpha}\nabla_{\alpha}\psi_{\mu}+i
+  \chib_{\alpha}\gamma^{\beta}\gamma^{\alpha}\psi_{\mu}\del_{\beta}X^{\mu}
+  +\frac{1}{4}\chib_{\alpha}\gamma^{\beta}\gamma^{\alpha}\chi_{\beta} \psib^{\mu}\psi_{\mu}\right]
+\end{align}
+となります。また変換は$\delta=\delta_0+\delta_1+\delta_2+\delta_3$で
+\begin{align}
+  \delta X^{\mu}=i\epsilonb \psi^{\mu},\quad
+  \delta \psi^{\mu}=\frac12 \gamma^{\alpha}\epsilon(\del_{\alpha}X^{\mu}-i\psib^{\mu}\chi_{\alpha}),\nonumber\\
+  \delta \chi_{\alpha}=-\nabla_{\alpha}\epsilon,\qquad
+  \delta e^{a}_{\alpha}=-i\epsilonb \gamma^{a}\chi_{\alpha}
 \end{align}
 となります。
 
-次にフェルミオン３次の項を考えます。フェルミオン３次の項は$\psi$２次で$\chi$が１次の項と$\chi$が２次で$\psi$が１次の項に分けられることに注意して
 \section{対称性}
 
 \end{document}
