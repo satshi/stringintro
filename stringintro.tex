@@ -17,6 +17,15 @@
 \renewcommand{\bfdefault}{bx}
 \usepackage[libertine]{newtxmath}
 \usepackage{hyperref}
+\hypersetup{%
+ %setpagesize=false,
+ %bookmarksnumbered=true,%
+ %bookmarksopen=true,%
+ colorlinks=true,%
+ linkcolor=blue,
+ citecolor=blue,
+}
+
 \usepackage{pxjahyper}
 \usepackage{physics}
 \usepackage{graphicx}
@@ -1613,9 +1622,9 @@ $\gamma_3$の固有値のことを\kyou{chirality}と呼びます。$\gamma_3$�
 超世界面の微分演算子として、次のようなものを導入します。
 \begin{align}
   \Qd_{\pm}:=\pdv{\theta^{\pm}}+\theta^{\pm}\del_{\pm},\quad
-  \Dd_{\pm}:=\pdv{\theta^{\pm}}-\theta^{\pm}\del_{\pm}
+  \Dd_{\pm}:=\pdv{\theta^{\pm}}-\theta^{\pm}\del_{\pm}.
 \end{align}
-を導入します。これらの微分演算子の間の反交換関係を計算すると
+これらの微分演算子の間の反交換関係を計算すると
 \begin{align}
 &  \{\Qd_{\pm},\Qd_{\pm}\}=2i\del_{\pm},\qquad 
   \{\Qd_{\pm},\Qd_{\mp}\}=0,\qquad 
@@ -1623,6 +1632,7 @@ $\gamma_3$の固有値のことを\kyou{chirality}と呼びます。$\gamma_3$�
   \{\Dd_{\pm},\Dd_{\mp}\}=0,\nonumber\\
 & \{\Qd_{\pm},\Dd_{\pm}\}=\{\Qd_{\pm},\Dd_{\mp}\}=0
 \end{align}
+となります。
 
 \subsection{超場と超対称変換}
 次に超場を導入します。超場$Y(\sigma,\theta)$はボゾン的で実でスカラーだとします。$Y$は$\theta^{\pm}$で展開して
@@ -1732,7 +1742,7 @@ $\gamma_3$の固有値のことを\kyou{chirality}と呼びます。$\gamma_3$�
   \delta \Lcal = \frac{1}{2\pi}
   \left( 
     2i\del_{-}\epsilon^{+} \psi_{+}\del_{+}X +2i \del_{+}\epsilon^{-}\psi_{-}\del_{-}X
-   \right))
+   \right)
 \end{align}
 となります。$\del^{\pm}=-2\del_{\mp}$であることに注意して読み取ると
 \begin{align}
@@ -1750,7 +1760,7 @@ $\gamma_3$の固有値のことを\kyou{chirality}と呼びます。$\gamma_3$�
 無限小一般座標変換$\sigma^{\alpha}=\xi^{\alpha}(\sigma)$を考えます。このときの場の変換は
 \begin{align}
   \delta X=-\xi^{\alpha}\del_{\alpha}X,\\
-  \delta \psi_{\pm}=-\xi^{\alpha}\del_{\alpha}\psi_{\pm}-\frac12(\del_{\pm}\xi^{\pm})\psi_{+}\label{susyconformaltransf}
+  \delta \psi_{\pm}=-\xi^{\alpha}\del_{\alpha}\psi_{\pm}-\frac12(\del_{\pm}\xi^{\pm})\psi_{\pm}\label{susyconformaltransf}
 \end{align}
 とします。$\delta \psi_{\pm}$の第２項は改良（improve）と呼ばれるものに関係があるもので、ここでは説明しませんが系統的に求めることができます。
 
@@ -1840,6 +1850,12 @@ $\gamma_3$の固有値のことを\kyou{chirality}と呼びます。$\gamma_3$�
 という境界条件を課すことになります。また、スピン構造は$\psi^{\mu}_{+}$と$\psi^{\mu}_{-}$に対して別々に選ぶことができます。したがって、スピン構造の選び方によってNS-NSセクター、R-NSセクター、NS-Rセクター、R-Rセクターの４種類のセクターがあります。
 
 重要なことは、このスピン構造は世界面の計量と同様に動的だということです。したがって、スピン構造は１つだけでなく、すべてのセクターを考える必要があります。また、世界面の計量の運動方程式から拘束条件が出てきたのと同様に、スピン構造が動的であることにより、拘束条件が出てきます。これは、後でHilbert空間の元に課すことになるもので\kyou{GSO射影}と呼ばれています。
+
+\subsection*{演習問題}
+\begin{enumerate}
+  \item 超対称性のカレントの形\eqref{SUSYcurrent1}を導出してください。
+  \item エネルギー運動量テンソルの形\eqref{EMtensorSUSYsystem}を導出してください。
+\end{enumerate}
 
 \section{２次元の自由フェルミオン場}
 さて、超弦理論を解析していくためには、\eqref{supergaugefixedaction}の作用で表される系について知る必要があります。このうち$X^{\mu}$については、ボゾン的弦のところでやりました。また$\psi^{\mu}_{\pm}$は$D$個同じもののコピーがあるだけですから、一つの$\psi_{\pm}$だけ考えれば良いです。さらに$\psi_{+}$が分かれば$\psi_{-}$は完全に同様にできます。なのでここでは$\psi_{+}$一つに集中して、その力学を調べていきます。
