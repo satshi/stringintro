@@ -2087,6 +2087,7 @@ $L_n,G_r$の（反）交換関係を計算しておきましょう。がんば�
   [L_n,G_r]=\left( \frac{n}{2} -r\right)G_{r+n},\quad
   \{G_r,G_s\}=2L_{r+s}+\frac{c}{3}\left( r^2-\frac{1}{4} \right)\delta_{r+s},\quad
   c=\frac{3}{2}
+  \label{SCA}
 \end{align}
 となります。\eqref{VirasoroXpsi}と合わせて閉じた超Lie代数を作ります。この代数は$\Ncal=1$超共形代数と呼ばれます。特にNSセクター、Rセクターの超共形代数はそれぞれNS代数、R代数と呼ばれます。
 
@@ -2148,6 +2149,17 @@ Rセクターに関しても、ボゾンからは$\frac{1}{24}$、フェルミ�
   -2a=\sum_{n=1}^{\infty}n-\sum_{n=1}^{\infty}n　\Bigg|_{\text{くりこみ}}
 \end{align}
 となりますから、正則化すればカットオフが有限でも$0$になります。Rセクターの場合には、境界条件がボゾンとフェルミオンと同じですから、Hamiltonianと交換する超対称性の電荷があり、そのためにエネルギー密度だけでなく、エネルギーが$0$になっています。
+
+\subsection{演習問題}
+\eqref{SCA}が成り立つことを確かめよ。
+
+ヒント
+\begin{align}
+  [A,BC]=[A,B]C+B[A,C]
+   =\{A,B\}C-B\{A,C\},\\
+  \{A,BC\}=\{A,B\}C-B[A,C]
+  =[A,B]C-B\{A,C\}
+\end{align}
 
 \section{光円錐ゲージ}
 \subsection{ゲージ固定}
