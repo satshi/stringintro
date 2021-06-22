@@ -88,6 +88,7 @@
 \newcommand{\Nt}{\widetilde{N}}
 \newcommand{\Gt}{\widetilde{G}}
 \newcommand{\at}{\tilde{a}}
+\newcommand{\At}{\widetilde{A}}
 \newcommand{\psit}{\tilde{\psi}}
 \newcommand{\Lp}{L^{\perp}}
 \newcommand{\Ltp}{\widetilde{L}^{\perp}}
@@ -2319,6 +2320,88 @@ G_{--}=\psi^{\mu}_{-}\del_{-}X_{\mu}
 ここから先は$D=10$の場合のみを考えることにします。
 
 \subsection{Rセクター}
+Rセクターについても考えていきます。自由フェルミオンのRセクターのゼロモードについて議論を後回しにしていました。それをここで改めて考えてみます。
+
+まずは、$\psi_{n}^{i},\ n\in \Zb,\ i=1,\dots,8$に集中して考えます。（反）交換関係は
+\begin{align}
+  \{\psi_{n}^{i},\psi_{m}^{j}\}=\delta_{m+n}\delta^{ij},\qquad
+  [L_0,\psi^{i}_{n}]=-n\psi^{i}_{n}
+\end{align}
+となります。したがって$\psi^{i}_{n},\ n>0$が消滅、$n<0$が生成演算子となります。
+ここで、Fock真空を考えようとして
+\begin{align}
+  \psi_{n}^{i}\ket{R}=0,\ (n>0)
+\end{align}
+としたのは良いのですが、エネルギーを変えない演算子である$\psi^{i}_{0}$をどうするかが分からないのでした。
+\begin{align}
+  \psi^{i}_{0}\ket{R}=?
+\end{align}
+
+ですので、ここからゼロモード$\psi^{i}_{0},\ i=1,\dots,8$に集中して考えます。これらの反交換関係は
+\begin{align}
+  \{\psi^{i}_{0},\psi^{j}_{0}\}=\delta^{ij}
+\end{align}
+となりますから、これらはClifford代数をなします。その表現はガンマ行列と言ってもいいです。
+
+このClifford代数の表現、言い換えるとガンマ行列をもう少し具体的に作っていくことにします。次のような「生成消滅演算子」を定義します。
+\begin{align}
+  b_{I}=\frac{1}{\sqrt{2}}(\psi_{0}^{2I-1}+i\psi_{0}^{2I}),\quad
+  b^{\dag}_{I}=\frac{1}{\sqrt{2}}(\psi_{0}^{2I-1}-i\psi_{0}^{2I})
+  ,\quad I=1,2,3,4.
+\end{align}
+この$b_I,b^{\dag}_{I}$の反交換関係は
+\begin{align}
+  \{b_{I},b^{\dag}_{J}\}=\delta_{IJ}
+\end{align}
+と書けるので、フェルミオンの調和振動子の生成消滅演算子と思うことができます\footnote{ただし、今はゼロモードだけを議論しているのでエネルギーは変えないことに注意してください。なので$b$と$b^{\dag}$のどちらを生成と呼んで、どちらを消滅と呼ぶか等については任意性があります。}。これでFock空間を作ることにしましょう。次のような「Fock真空」$\ket{----}$を用意します。
+\begin{align}
+  b_{I}\ket{----}=0,\quad I=1,2,3,4.
+\end{align}
+ここから生成演算子をかけていって他の状態を作っていきます。
+\begin{align}
+  b^{\dag}_1\ket{----}=\ket{+---},\quad
+  b^{\dag}_2\ket{----}=\ket{-+--},\nonumber\\
+  b^{\dag}_3\ket{----}=\ket{--+-},\quad
+  b^{\dag}_4\ket{----}=\ket{---+}
+\end{align}
+などです。ただし、
+\begin{align}
+  b^{\dag}_1\ket{-+--}=\ket{++--}
+\end{align}
+と決めたとすると
+\begin{align}
+  b^{\dag}_2\ket{+---}=-\ket{++--}
+\end{align}
+となることに注意してください。$b^{\dag}_{2}$が2番目の$-$に当たりにいくときに、一番目の$+$を飛び越えないとだめなので、余分に$-$符号が付くと覚えておくとよいと思います。
+こうしてできるFock空間の状態は$\ket{\pm\pm\pm\pm}$の16個あります。これを表すラベルとして$A=(A_1,A_2,A_3,A_4),\quad A_{I}=\pm$を用意します。
+
+まとめるとRセクターのゼロモード$\psi^{i}_{0},\ i=1,\dots,8$の表現空間の基底は
+\begin{align}
+  \ket{A}=\ket{A_1A_2A_3A_4},\quad A_I=\pm
+\end{align}
+と表されます。
+
+このことを踏まえて、例えばRNSセクターを考えてみることにしましょう。Fock真空は
+\begin{align}
+  \ket{k,A}
+\end{align}
+のように表されます。$A$は先程見たような$\psi^{i}_{0}$の表現を表すラベルです。この状態は$a=\aR=0,\at=\aNS=\frac12$であることを考慮すると
+\begin{align}
+  N-a=0,\quad \Nt-\at=-\frac12
+\end{align}
+なのでレベル一致条件を満たしません。ですので励起状態を考える必要があります。上のFock真空に$\psit^{i}_{-\frac12}$をかけた状態
+\begin{align}
+  \psit^{i}_{-\frac12}\ket{k,A}
+\end{align}
+は、$N-a=\Nt-\at=0$となってレベル一致条件を満たします。また質量は\eqref{supermass}から$m^2=0$となります。この状態は、ベクトルの足を持ったスピノールで、時空のグラビティーノを含みます。
+
+ついでにRRセクターも見てみましょう。Fock真空は
+\begin{align}
+  \ket{k,A,\At}
+\end{align}
+となります。$A$は$\psi^{i}_{0}$の表現を表すラベル、$\At$は$\psit^{i}_{0}$の表現を表すラベルです。ここからは、様々な反対称テンソル場が現れます。これらはRR場と呼ばれています。
+
+このようにして、弦のスペクトルを見ていくことができますが、実はまだ非常に大事なことを議論していません。それはGSO射影で、次の節で見ていきます。
 
 \section{GSO射影}
 
