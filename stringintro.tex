@@ -87,6 +87,7 @@
 \newcommand{\Lt}{\widetilde{L}}
 \newcommand{\Nt}{\widetilde{N}}
 \newcommand{\Gt}{\widetilde{G}}
+\newcommand{\at}{\tilde{a}}
 \newcommand{\psit}{\tilde{\psi}}
 \newcommand{\Lp}{L^{\perp}}
 \newcommand{\Ltp}{\widetilde{L}^{\perp}}
@@ -110,6 +111,10 @@
 \newcommand{\psib}{\bar{\psi}}
 \newcommand{\chib}{\bar{\chi}}
 \newcommand{\epsilonb}{\bar{\epsilon}}
+
+\newcommand{\aNS}{a_{\mathrm{NS}}}
+\newcommand{\aR}{a_{\mathrm{R}}}
+
 %\pagestyle{headings}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                        main part
@@ -2138,7 +2143,7 @@ $L_n,G_r$の（反）交換関係を計算しておきましょう。がんば�
 
 まず、NSセクターを考えましょう。ボゾンからは$\frac{1}{24}$、フェルミオンからは\eqref{aNSfermion1}で計算したとおり$\frac{1}{48}$の寄与があるので合わせて
 \begin{align}
-  \frac{1}{24}+\frac{1}{48}=\frac{1}{16}
+  \frac{1}{24}+\frac{1}{48}=\frac{1}{16}\label{supervacuumenergyNS}
 \end{align}
 となります。
 
@@ -2156,7 +2161,7 @@ $L_n,G_r$の（反）交換関係を計算しておきましょう。がんば�
 
 Rセクターに関しても、ボゾンからは$\frac{1}{24}$、フェルミオンからは、\eqref{aRfermion1}で計算したとおり$-\frac{1}{24}$の寄与がありますから
 \begin{align}
-  \frac{1}{24}-\frac{1}{24}=0
+  \frac{1}{24}-\frac{1}{24}=0\label{supervacuumenergyR}
 \end{align}
 となります。
 
@@ -2166,7 +2171,7 @@ Rセクターに関しても、ボゾンからは$\frac{1}{24}$、フェルミ�
 \end{align}
 となりますから、正則化すればカットオフが有限でも$0$になります。Rセクターの場合には、境界条件がボゾンとフェルミオンと同じですから、Hamiltonianと交換する超対称性の電荷があり、そのためにエネルギー密度だけでなく、エネルギーが$0$になっています。
 
-\subsection{演習問題}
+\subsection*{演習問題}
 \eqref{SCA}が成り立つことを確かめよ。
 
 ヒント
@@ -2196,7 +2201,7 @@ G_{--}=\psi^{\mu}_{-}\del_{-}X_{\mu}
 \end{align}    
 となります。これを用いて拘束条件は$T_{++}=T_{--}=0,G_{++}=G_{--}=0$となります。
 
-ゲージ固定後に残っているゲージ対称性は$\Ncal=(1,1)$超共形対称性です。ボゾン的な部分は$\xi^{+}(\sigma^{+}),\xi^{-}(\sigma^{-})$を無限小のパラメーターとして
+ゲージ固定後に残っているゲージ対称性は$\Ncal=(1,1)$超共形対称性です。ボゾン的な部分は$\xi^{+}(\sigma^{+}),\xi^{-}(\sigma^{-})$を無限小のボゾン的なパラメーターとして
 \begin{align}
   \delta_{\xi}X^{\mu}=-\xi^{+}\del_{+}X^{\mu}-\xi^{-}\del_{-}X^{\mu},\ 
   \delta_{\xi}\psi^{\mu}_{+}=-\xi^{+}\del_{+}\psi^{\mu}_{+}-\frac12 \del_{+}\xi^{+}\psi^{\mu}_{+},\ 
@@ -2224,14 +2229,15 @@ G_{--}=\psi^{\mu}_{-}\del_{-}X_{\mu}
 \end{align}
 とします。また、\eqref{superresidualtransformation2}を用いて
 \begin{align}
-  \psi^{+}_{+}=\psi^{-}_{-}=0
+  \psi^{+}_{+}=\psi^{+}_{-}=0
 \end{align}
 とします。
 
 ここから、$T_{++}=0,\ T_{--}=0$という拘束条件を解いて
 \begin{align}
-  \del_{+}X^{-}&=\frac{1}{p^{+}}T^{\perp}_{++},\quad T^{\perp}_{++}:=\frac12\del_{+}X^{i}\del_{+}X^{i}+\frac{i}{2}\psi^{i}_{+}\del_{+}\psi^{i}_{+},\\
+  \del_{+}X^{-}&=\frac{1}{p^{+}}T^{\perp}_{++},\quad T^{\perp}_{++}:=\frac12\del_{+}X^{i}\del_{+}X^{i}+\frac{i}{2}\psi^{i}_{+}\del_{+}\psi^{i}_{+},\label{alpha-zeromode}\\
   \del_{-}X^{-}&=\frac{1}{p^{+}}T^{\perp}_{--},\quad T^{\perp}_{--}:=\frac12\del_{-}X^{i}\del_{-}X^{i}+\frac{i}{2}\psi^{i}_{-}\del_{-}\psi^{i}_{-}
+  \label{alphatilde-zeromode}
 \end{align}
 という関係式を得ます。$X^{-}$の自由度のうち、残るのは定数モード$x^{-}$のみです。またレベル一致条件$L^{\perp}_0=\Lt^{\perp}_0$が拘束条件として残ります。レベル一致条件は状態に課すことにします。
 
@@ -2245,13 +2251,74 @@ G_{--}=\psi^{\mu}_{-}\del_{-}X_{\mu}
 \subsection{量子化と臨界次元}
 さて、光円錐ゲージをとったので量子化しましょう。残っている自由度は、$x^{-},\ p^{+},\ X^{i}(\sigma),\ \psi^{i}_{\pm}(\sigma)$です。これらのモード展開したものの間の交換関係は
 \begin{align}
+  &[x^{-},p^{+}]=-i,\quad[x^{i},p^{j}]=i\delta^{ij},\quad
   [\alpha_{m}^{i},\alpha_{n}^{j}]=m\delta_{m+n}\delta^{ij},\quad
-  [\alphat_{m}^{i},\alphat_{n}^{j}]=m\delta_{m+n}\delta^{ij},\quad
-  \{\psi^{i}_{r},\psi^{j}_{s}\}=\delta_{r+s}\delta^{ij},\quad
+  [\alphat_{m}^{i},\alphat_{n}^{j}]=m\delta_{m+n}\delta^{ij},\nonumber\\
+  &\{\psi^{i}_{r},\psi^{j}_{s}\}=\delta_{r+s}\delta^{ij},\quad
   \{\psit^{i}_{r},\psit^{j}_{s}\}=\delta_{r+s}\delta^{ij}
 \end{align}
 となります。これ以外は交換または反交換します。
 
+量子化したときに、演算子順序の問題が出るのは\eqref{alpha-zeromode}と\eqref{alphatilde-zeromode}のゼロモードです。\eqref{alpha-zeromode}のゼロモードは
+\begin{align}
+  \alpha^{-}_{0}=p^{-}=\frac{1}{p^{+}}\left(\frac12 p^{i}p^{i}+N-a  \right),\quad N:=\sum_{n=1}^{\infty}\alpha_{-n}^{i}\alpha_{n}^{i}+\sum_{r>0}r\psi_{-r}\psi_{r}\label{alpha-zeromode2}
+\end{align}
+となります。$a$は、NSセクターの場合、\eqref{supervacuumenergyNS}から
+\begin{align}
+  \aNS=\frac{D-2}{2}
+\end{align}
+となり、Rセクターの場合\eqref{supervacuumenergyR}から
+\begin{align}
+  \aR=0
+\end{align}
+となります。一方、\eqref{alphatilde-zeromode}の方は
+\begin{align}
+  \alphat^{-}_{0}=p^{-}=\frac{1}{p^{+}}\left(\frac12 p^{i}p^{i}+\Nt-\at  \right),\quad \Nt:=\sum_{n=1}^{\infty}\alphat_{-n}^{i}\alphat_{n}^{i}+\sum_{r>0}r\psit_{-r}\psit_{r}\label{alphatilde-zeromode2}
+\end{align}
+となります。$\at$はNSセクター、Rセクターの場合にそれぞれ上の$\aNS,\aR$と等しくなります。
+
+\eqref{alpha-zeromode2}と\eqref{alphatilde-zeromode2}からレベル一致条件
+\begin{align}
+  N-a=\Nt-\at\label{superlevelmatching}
+\end{align}
+および質量の式
+\begin{align}
+  m^2=-p^2=2p^{+}p^{-}-p^{i}p^{i}=N+\Nt-a-\at\label{supermass}
+\end{align}
+を得ます。
+
+さてボゾン的弦の場合と同じようにスペクトルを考えることで、臨界次元を求めましょう。とりあえず、NSNSセクターを考えます。このときのFock真空を$\ket{k}$を
+\begin{align}
+  \alpha_{n}^{i}\ket{k}=\alpha_{n}^{i}\ket{k}=\psi_{r}^{i}\ket{k}=\psit_{r}^{i}\ket{k}=0,\ (n,r>0),\nonumber\\
+  p^{i}\ket{k}=k^i\ket{k},\quad p^{+}\ket{k}=k^{+}\ket{k}
+\end{align}
+を満たす状態とします。この状態はレベル一致条件\eqref{superlevelmatching}を満たし、その質量は\eqref{supermass}より
+\begin{align}
+  m^2=-2\aNS
+\end{align}
+となります。したがって、この状態はタキオンです。
+
+次に第1励起状態を考えます。レベル一致条件を満たす第1励起状態は
+\begin{align}
+  \psi_{-\frac12}^{i}\psit_{-\frac12}^{j}\ket{k}
+\end{align}
+です。これは、SO$(D-2)$の既約表現として2階反対称テンソル、トレースレス対称テンソル、スカラーを含みます。ボゾン的弦のときと同じ議論で、Lorentz対称性があるなら、この状態は質量がゼロでなければなりません。\eqref{supermass}と合わせると
+\begin{align}
+  0=m^2=2(\frac12 -\aNS)=2(\frac12 -\frac{D-2}{16})
+\end{align}
+とならなければならないので臨界次元
+\begin{important}
+  \begin{align}
+    D=10
+  \end{align}
+\end{important}
+を得ます。
+
+ボゾン的弦のときと同様に、Lorentz変換の生成子の交換関係を考えることによっても、$\aNS=\frac12,\quad D=10$を得ることが出来ます。
+
+ここから先は$D=10$の場合のみを考えることにします。
+
+\subsection{Rセクター}
 
 \section{GSO射影}
 
