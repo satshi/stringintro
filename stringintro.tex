@@ -120,6 +120,19 @@
 \newcommand{\Rp}{\mathrm{R}+}
 \newcommand{\Rm}{\mathrm{R}-}
 
+\newcommand{\triv}{\mathbf{1}}
+\newcommand{\etv}{\mathbf{8_v}}
+\newcommand{\ets}{\mathbf{8_s}}
+\newcommand{\etc}{\mathbf{8_c}}
+\newcommand{\tweta}{\mathbf{28_{a}}}
+\newcommand{\thfvg}{\mathbf{35_{g}}}
+\newcommand{\thfvp}{\mathbf{35}_{+}}
+\newcommand{\thfvm}{\mathbf{35}_{-}}
+\newcommand{\fsxt}{\mathbf{56_t}}
+\newcommand{\fsxs}{\mathbf{56_s}}
+\newcommand{\fsxc}{\mathbf{56_c}}
+
+
 %\pagestyle{headings}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                        main part
@@ -2478,8 +2491,125 @@ Rセクターのフェルミオン数について、もう一つだけ補足で�
 type IIA, type IIB ともにタキオンを含んでいません。また、type IIA, type IIB ともにNSNSセクターに重力子を含んでいるので、量子重力理論になります。さらに細かい性質や、type IIAとtype IIBの違いを見るためには、SO(8)の表現論について知っておく必要があります。次の節では、SO(8)の表現論の必要な部分をまとめた後、type IIA, type IIBの超弦理論の無質量のスペクトルに注目して考察します。
 
 \section{超弦理論の時空の超対称性}
+実は、type IIB超弦理論、type IIA超弦理論には時空の超対称性があります。これは定式化のところで述べた世界面の超対称性とは別のものです。超弦理論の「超」は、実はこの時空の超対称性の「超」です。
+
+これを含めて時空の描像を詳しく見るために、無質量のスペクトルを詳しく調べてみます。そのためにSO(8)の表現について必要なことをまとめておきます。
+
 \subsection{SO(8)の表現論}
+今光円錐ゲージであらわに見えている対称性はSO(8)\footnote{正確には群としては普遍被覆であるSpin(8)を考えています。}です。このSO(8)の表現についてまとめておきます。
+
+まず、普通のベクトル表現があります。これは$8$次元表現です。このベクトル表現を$\etv$と書くことにします。
+
+次にスピノール表現について考えます。そのためにガンマ行列をとります。行列$\gamma^{i},\ (i=1,\dots,8)$を
+\begin{align}
+  \{\gamma^{i},\gamma^{j}\}=2\delta^{ij}
+\end{align}
+を満たすようにとります。行列のサイズは最低$16\times 16$必要なので、そのようにしておきます。また、全ての$\gamma^{i}$を実対称行列にとることができるので、そのようにしておきます。
+
+カイラリティーの行列を$\gamma_9:=\gamma^{1}\dots \gamma^{8}$とします。こうすると
+\begin{align}
+  \gamma_9^{2}=1,\qquad \{\gamma_9,\gamma^{i}\}=0
+\end{align}
+という関係を満たします。したがって、$\gamma_9$はSO(8)の生成子と交換します。また、$\gamma_9$の固有値は$\pm 1$です。$16$次元のDiracスピノール表現は、2つのWeylスピノール表現に分かれます。
+\begin{itemize}
+  \item $\gamma_9\Psi = +\Psi$となる8次元表現をspinor表現と呼び$\ets$と書くことにします。
+  \item $\gamma_9\Psi = -\Psi$となる8次元表現をcospinor表現と呼び$\etc$と書くことにします。
+\end{itemize}
+
+ここまでをまとめると、SO(8)には3種類の8次元表現$\etv,\ets,\etc$があります。これらは同値ではない表現です。SO(8)は結構面白い群で、trialityと呼ばれる性質を持っています。$\etv,\ets,\etc$は、このtrialityで入れ替わる３つの表現です。
+
+これらの表現のテンソル積を考えることにします。まず$\etv\otimes\etv$を考えます。これは、２階のテンソルになりますが、これまで何回か出てきたように、これはスカラー$\triv$、反対称テンソル$\tweta$、トレースレス対称テンソル$\thfvg$の３つの既約表現に分解できます。つまり
+\begin{align}
+  \etv\otimes\etv=\triv \oplus \tweta\oplus \thfvg
+\end{align}
+と書くことができます。
+
+次にスピノールについて説明します。最初に一つの例を答えだけ示します。
+\begin{align}
+  \ets\otimes\ets=\triv \oplus \tweta \oplus \thfvp
+  \label{tensor8s8s}
+\end{align}
+となります。$\thfvp$は自己双対４階反対称テンソルです。
+
+自己双対について少し説明します。４階反対称テンソル$t^{i_1i_2i_3i_4}$に対して、そのHodge双対$\tilde{t}^{i_1i_2i_3i_4}$を
+\begin{align}
+  \tilde{t}^{i_1i_2i_3i_4}=\frac{1}{4!}\epsilon^{i_1i_2i_3i_4i_5i_6i_7i_8}t^{i_5i_6i_7i_8}
+\end{align}
+として定義します。ここで、$\epsilon^{i_1i_2\dots i_8}$は、完全反対称テンソルで、$\epsilon^{12\dots 8}=+1$となるものです。$\tilde{\tilde{t}}^{i_1i_2i_3i_4}=t^{i_1i_2i_3i_4}$を満たします。
+\begin{itemize}
+  \item $\tilde{t}^{i_1i_2i_3i_4}=t^{i_1i_2i_3i_4}$を満たすものを\kyou{自己双対}といいます。
+  \item $\tilde{t}^{i_1i_2i_3i_4}=-t^{i_1i_2i_3i_4}$を満たすものを\kyou{反自己双対}といいます。
+\end{itemize}
+４階反対称テンソルは自己双対なものと反自己双対なものの２つの既約表現に分かれます。
+
+テンソル積の分解\eqref{tensor8s8s}の理解の仕方の一つは次のようなものです。$\Psi,\Psi'$を両方とも$\ets$に属するスピノールとします。この$\Psi$と$\Psi'$の積は一般のテンソル積表現になりますから、ここからどのような既約表現が出てくるかを見ればよいです。これには
+\begin{align}
+  \Psi^{T}\gamma^{i_1\dots i_p}\Psi'
+  \label{spinorbilinear}
+\end{align}
+を全て考えればよいことになります。\eqref{spinorbilinear}は、次のような性質を持ちます。
+\begin{itemize}
+  \item $p$が奇数なら
+  \begin{align}
+    \Psi^{T}\gamma^{i_1\dots i_p}\Psi'=0
+  \end{align}
+  です。これは、次のように示せます。
+  \begin{align}
+    \Psi^{T}\gamma^{i_1\dots i_p}\Psi'=
+    \Psi^{T}\gamma^{i_1\dots i_p}\gamma_9\Psi'=
+    -\Psi^{T}\gamma_9\gamma^{i_1\dots i_p}\Psi'=
+    -\Psi^{T}\gamma^{i_1\dots i_p}\Psi'
+  \end{align}
+  となって、自分自身に$-$を付けたものと等しいので$0$になります。
+  \item $p>8$のものは$p<4$の線形結合で書くことができます。これは頑張って計算することで証明出来る式
+  \begin{align}
+    \gamma^{i_1\dots i_p}=\frac{1}{(8-p)!}\epsilon^{i_1\dots i_8}\gamma_{i_{p+1}\dots i_8}\label{gamma9dual}
+  \end{align}
+  を用いると分かります。
+\end{itemize}
+これらの事実を用いると、$p=0,2,4$の場合のみが独立であることが分かります。さらに\eqref{gamma9dual}を用いると$p=4$のときに出てくる４階反対称テンソルは自己双対であることが分かります。結果\eqref{tensor8s8s}が得られます。
+同様の考え方をすると
+\begin{align}
+  \etc\otimes\etc=\triv \oplus \tweta \oplus \thfvm,\quad
+  \ets\otimes\etc=\etv \oplus \fsxt
+\end{align}
+が得られます。ここで$\thfvm$は反自己双対4階反対称テンソル、$\fsxt$は3階反対称テンソルです。
+
+さらに$\etv\otimes \ets$を考えます。これは、ベクトルの足$i$を持ったスピノール$\Psi_i$で$\gamma_9 \Psi_i=\Psi_i$を満たすものを考えれば良いことになります。これは、そのままでは既約表現ではありません。それは
+\begin{align}
+  \Xi:=\gamma^{i}\Psi_i
+\end{align}
+とすると、$\Xi$は部分表現になります。$\Xi$は
+\begin{align}
+  \gamma_9\Xi
+  =\gamma_9\gamma^{i}\Psi_i
+  =-\gamma^{i}\gamma_9\Psi_i
+  =-\gamma^{i}\Psi_i
+  =-\Xi
+\end{align}
+となるので$\etc$表現です。これを除いた$56$次元表現は既約表現になっていて、これを$\fsxs$と書くことにします。つまり
+\begin{align}
+  \etv\otimes \ets=\etc\oplus\fsxs
+\end{align}
+となります。同様に考えて
+\begin{align}
+  \etv\otimes \etc=\ets\oplus\fsxc
+\end{align}
+となります。
+
+ここまでのテンソル積の結果をまとめておきます。
+\begin{align}
+  &\etv\otimes\etv=\triv \oplus \tweta\oplus \thfvg,\quad
+  \ets\otimes\ets=\triv \oplus \tweta\oplus \thfvp,\quad
+  \etc\otimes\etc=\triv \oplus \tweta\oplus \thfvm,\nonumber\\
+  &\ets\otimes \etc=\etv\otimes\fsxt,\quad
+  \etv\otimes \ets=\etc\otimes\fsxs,\quad
+  \etv\otimes \etc=\ets\otimes\fsxc.
+\end{align}
+こうしてまとめて書いてみるとtrialityが成り立っていることが、よく分かると思います。
+
 \subsection{無質量スペクトル}
+
 \subsection{時空の超対称性}
 
 \chapter{D-brane}
