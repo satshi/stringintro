@@ -2609,6 +2609,77 @@ type IIA, type IIB ともにタキオンを含んでいません。また、type
 こうしてまとめて書いてみるとtrialityが成り立っていることが、よく分かると思います。
 
 \subsection{無質量スペクトル}
+さてtype IIB超弦理論とtype IIA超弦理論の無質量スペクトルを調べましょう。低エネルギーでは、無質量の場のみが重要になります。
+
+まず、RセクターのGSO射影とchiralityの関係について述べます。$\psi^{i}_{+},\ i=1,\dots,8$からできるRセクターの基底状態は、
+\begin{align}
+  \ket{A}=\ket{A_1A_2A_3A_4},\quad
+  A_a=\pm
+\end{align}
+と表される16個の状態でした。このときフェルミオン数は
+\begin{align}
+  (-1)^{F}\ket{A}=A_1A_2A_3A_4\ket{A}
+\end{align}
+です。ところで、作り方から、例えば
+\begin{align}
+  A_1\ket{A}=(2b_1^\dag b_1-1)\ket{A}=2i\psi^{1}_{0}\psi^{2}_{0}\ket{A}
+\end{align}
+となります。ところで、$\psi_0^{i}$と$\gamma^{i}$は、基底状態に作用する場合には、
+\begin{align}
+  \sqrt{2}\psi_{0}^{i}=\gamma^{i}
+\end{align}
+と関係づけられます。これらをまとめると
+\begin{align}
+  (-1)^{F}=\gamma_9
+\end{align}
+となります。したがって、$\Rp$の基底状態は$\ets$表現になり、$\Rm$の基底状態は$\etc$表現になります
+
+さてこれらを踏まえてtype IIBを見てみましょう。
+\begin{itemize}
+  \item NSNSセクターは$(\NSp,\NSp)$をとってきます。無質量の状態は
+  \begin{align}
+    \psi_{-\frac12}^{i}\psit_{-\frac12}^{j}\ket{k}
+  \end{align}
+  となるのでその表現は既約表現に分解すると
+  \begin{align}
+    \etv\otimes\etv= \triv \oplus \tweta\oplus \thfvg
+  \end{align}
+  になります。左辺に出てくる表現の粒子を作る場を順番にdilaton場 $\Phi$、B場$B_2$、計量$G$という名前がついています。
+  \item RNSセクターは$(\Rp,\NSp)$をとってきます。無質量の状態は
+  \begin{align}
+    \psit_{-\frac12}^{i}\ket{k,A}
+  \end{align}
+  となります。これを既約表現に分解すると
+  \begin{align}
+    \etv\otimes\ets= \etc \oplus \fsxs
+  \end{align}
+  になります。左辺に出てくる表現の粒子を作る場を順番にdilatino場 $\lambda_{c1}$、gravitino場$\Psi_{s1}$という名前がついています。
+  \item NSRセクターは$(\NSp,\Rp)$をとってきます。無質量の状態は
+  \begin{align}
+    \psi_{-\frac12}^{i}\ket{k,\At}
+  \end{align}
+  となります。これを既約表現に分解すると
+  \begin{align}
+    \etv\otimes\ets= \etc \oplus \fsxs
+  \end{align}
+  になります。左辺に出てくる表現の粒子を作る場を順番にdilatino場 $\lambda_{c2}$、gravitino場$\Psi_{s2}$という名前がついています。
+  \item RRセクターは$(\Rp,\Rp)$をとってきます。無質量の状態は
+  \begin{align}
+    \ket{k,A,\At}
+  \end{align}
+  となります。これを既約表現に分解すると
+  \begin{align}
+    \ets\otimes\ets= \triv\oplus \tweta \oplus \thfvp
+  \end{align}
+  になります。左辺に出てくる表現の粒子を作る場を順番にRR0形式場$C_0$、RR2形式場$C_2$、RR4形式場$C_4$、という名前がついています。
+\end{itemize}
+まとめるとtype IIB超弦理論の無質量の場は、次のものです。
+\begin{align}
+  &\text{ボゾン：}\Phi,\ B_2,\ G,\ C_0,\ C_2,\ C_4,\\
+  &\text{フェルミオン：} \lambda_{c1},\ \lambda_{c2},\ \Psi_{s1},\ \Psi_{s2}
+\end{align}
+特に、2つのdilatinoが同じchirality、gravitino ２つが同じchirality、自己双対4形式があるので、type IIB 超弦理論はカイラルな理論になっています。
+
 
 \subsection{時空の超対称性}
 
