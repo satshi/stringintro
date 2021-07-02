@@ -2715,6 +2715,92 @@ Type IIBのグラビティーノは２つとも同じchiralityであり、超対
 
 この章では、D-braneについて調べていきます。まずは、D-braneとは何か、そしてD-braneを調べることがどうして重要かについて述べます。
 
+まず、D-braneとは何かについて説明します。一言で言うなら
+\begin{important}
+  弦理論において、時空の中で開弦が端を持つことができるような物体
+\end{important}
+と言えます。つまり、開いた弦があるときには、必ずその端はD-braneにくっついています。例えばボゾン的弦理論で、26次元の中を自由に動く開弦を考えるとは、時空を満たしているD-braneを考えていることになります。弦理論の中でD-braneは有限の張力を持った動的な物体です。
+
+次にどうしてD-braneが重要かを説明します。
+\begin{itemize}
+  \item D-braneを導入することで、非可換ゲージ理論が現れます。（非可換）ゲージ理論は現実の素粒子の力を記述する理論です。また、理論的にも非常に興味深い性質を持っています。
+  \item D-braneは弦理論におけるソリトン的な物体で、双対性などの非摂動論的性質を理解する鍵となります。
+\end{itemize}
+
+D-braneを調べるには様々な手段がありますが、最も基本的なのは、D-braneにくっついている開弦を調べることです。例えば、この開弦のスペクトルを調べることで、D-brane系でどのような励起があるかを調べることができます。この講義では、このD-braneにくっついた開弦のスペクトルを詳しく調べることにします。
+
+\begin{figure}
+  \centering
+  \includegraphics[width=8cm]{generalbrane.pdf}
+  \caption{D-braneの配位と、それに端を持つ開弦の例。様々な種類の粒子がD-braneの配位から現れる。}
+\end{figure}
+
+
+\section{境界のある２次元自由スカラー場}
+
+開いた弦は、世界面の理論として、境界のある２次元の場の理論を考えることになります。ここでは、その準備として２次元の１つのスカラー場の理論を考えましょう。
+
+\subsection{作用と境界条件}
+
+空間方向の座標を$\sigma$とし、$0\le \sigma \le \pi$とします。$\sigma=0$と$\sigma=\pi$が境界になります。時間方向の座標を$\tau$とします。
+
+スカラー場を$X(\sigma)$とし、その作用を
+\begin{align}
+  S=\frac{1}{8\pi}\int \di \tau \int_{0}^{\pi}\di \sigma \left( (\del_{\tau}X)^2-(\del_{\sigma}X)^2 \right)
+  \label{actionscalarwithboundary}
+\end{align}
+とします。
+
+境界がある理論を考えているので、境界条件をどう取るかを考える必要があります。ここでは運動方程式を考えることで、発見法的に境界条件としてどのようなものがあるかを考えます。\eqref{actionscalarwithboundary}の変分をとると
+\begin{align}
+  \delta S&
+  =\frac{1}{4\pi}\int \di \tau \int_{0}^{\pi}\di \sigma \left( \del_{\tau}X\del_{\tau}\delta X - \del_{\sigma}X\del_{\sigma}\delta X \right)\nonumber\\
+  &=\frac{1}{4\pi}\int \di \tau \int_{0}^{\pi}\di \sigma \left( (-\del_{\tau}^2X+\del_{\sigma}^2X)\delta X+\del_{\tau}(X\del_{\tau}\delta X) - \del_{\sigma}(X\del_{\sigma}\delta X) \right)
+\end{align}
+となります。被積分関数の第１項から運動方程式が出ます。第2項は通常の最小作用の原理の設定では、時間の端での境界条件を課すので消えます。第3項が問題でこれを計算すると
+\begin{align}
+  \delta S = \cdots +\frac{1}{4\pi}\int \di \tau [-\del_{\sigma}X \delta X]_{\sigma=0}^{\pi}
+\end{align}
+となります。$\delta S=0$となるためには、適切な境界条件を課す必要があります。例えば$\sigma=0$での境界条件を考えてみましょう。$\del_{\sigma}X(0)\delta X(0)=0$となる必要がありますから、例えば次の2つの境界条件があり得ます。
+\begin{itemize}
+  \item Neumann境界条件（自由端条件）$\del_{\sigma} X(0)=0$. $\sigma=0$で表される弦の端は$X$方向に自由に動くことができるので、「D-braneは$X$方向に伸びている」ということができます。\\
+  \begin{center}
+    \includegraphics{NBC.pdf}    
+  \end{center}
+  \item Dirichlet境界条件（固定端条件）$X(0)=v$（定数）.$\sigma=0$で表される弦の端は$X=v$のところにしかくっつけないので、「D-braneは$X=v$の場所にある」ということができます。\\
+  \begin{center}
+    \includegraphics{DBC.pdf}    
+  \end{center}
+\end{itemize}
+同様にして$\sigma=\pi$の方の境界にもNeumann境界条件とDirichlet境界条件の2種類が考えられます。合わせると、$\sigma=0,\pi$の境界条件をNあるいはDで表すことにして、NN, DN, ND, DD の4種類の境界条件のとり方が考えられます。
+
+さて、このような境界条件の場合にエネルギー運動量テンソルがどうなるか見てみましょう。エネルギー運動量テンソルは、以前見たように
+\begin{align}
+  T_{++}=\frac12 \del_{+}X\del_{+}X,\quad
+  T_{--}=\frac12 \del_{-}X\del_{-}X,\quad
+  \del_{\pm}:=\frac12 (\del_{\tau}\pm \del_{\sigma})
+\end{align}
+となります。例えば$\sigma=0$でNeumann境界条件であったとすると$\del_{\sigma}X(0)=0$ですから
+\begin{align}
+  \del_{+}X(0)=\del_{-}X(0)=\frac12 \del_{\tau}X(0)
+\end{align}
+となります。したがって$\sigma=0$で$T_{++}=T_{--}$が成り立ちます。一方$\sigma=0$でDirichlet境界条件であったとすると$\del_{\tau}X(0)=0$ですから
+\begin{align}
+  \del_{+}X(0)=-\del_{-}X(0)=\frac12 \del_{\sigma}X(0)
+\end{align}
+となります。したがって、やはり$\sigma=0$で$T_{++}=T_{--}$が成り立ちます。まとめるとNeumann境界条件の場合もDirichlet境界条件の場合も境界で
+\begin{important}
+  \begin{align}
+    T_{++}=T_{--}\label{gluingcondition}
+  \end{align}
+\end{important}
+が成り立ちます。ここでは発見法的に境界条件を考えましたが、実は\eqref{gluingcondition}が原理的に境界条件が満たさなければならない条件です。
+\eqref{gluingcondition}は境界で$T_{01}=0$と書けます。
+これは、エネルギーの流れの境界の垂直方向成分が$0$ということですから、（エネルギーが端に溜まることなく）エネルギーが保存するということと等価です。
+
+\subsection{2重化トリック}
+
+
 \appendix
 \chapter{局所超対称性を持つ作用}
 \label{app:localSUSY}
