@@ -2917,6 +2917,69 @@ NN境界条件では、
 となります。
 
 \subsubsection*{--- DD境界条件 ---}
+DD境界条件
+\begin{align}
+  X(\tau,0)=v_0,\quad X(\tau,\pi)=v_{\pi}
+\end{align}
+の場合を考えます。この場合
+\begin{align}
+  X(\tau,\sigma)=v_{0}\left( 1-\frac{\sigma}{\pi} \right)+v_{\pi}\frac{\sigma}{\pi}+\widetilde{X}(\tau,\sigma)
+\end{align}
+として$\widetilde{X}(\tau,\sigma)$を定義すると
+\begin{align}
+  \widetilde{X}(\tau,0)=\widetilde{X}(\tau,\pi)=0
+\end{align}
+となります。したがって
+\begin{align}
+  \widetilde{X}(\tau,\sigma)=\sum_{n=1}^{\infty}A_{n}(\tau)\sin n\sigma
+\end{align}
+となります。つまり
+\begin{align}
+  X(\tau,\sigma)=v_{0}\left( 1-\frac{\sigma}{\pi} \right)+v_{\pi}\frac{\sigma}{\pi}+\sum_{n=1}^{\infty}A_{n}(\tau)\sin n\sigma
+\end{align}
+となります。これを運動方程式に代入すると
+\begin{align}
+  \ddot{A}_{n}(\tau)+nA_{n}(\tau)=0 \quad (n=1,2,3,\dots)
+\end{align}
+という調和振動子の運動方程式になります。その一般解は
+\begin{align}
+  A_{n}(\tau)=B_{n}e^{-in\tau}+C_{n}e^{in\tau}
+\end{align}
+となります。定数を再定義して
+\begin{align}
+  X(\tau,\sigma)=v_{0}+\frac{v_{\pi}-v_{0}}{\pi}\sigma+2\sum_{n\ne 0}^{\infty}\frac{\alpha_{n}}{n}e^{-in\tau}\sin n\sigma
+\end{align}
+となります。
+
+量子化します。交換関係はこれまでと同じで
+\begin{align}
+  [\alpha_n,\alpha_m]=n\delta_{n+m}
+\end{align}
+となります。
+
+また
+\begin{align}
+  X(\tau,\sigma)=v_{0}+\frac{v_{\pi}-v_{0}}{\pi}\sigma+v_{\pi}\frac{\sigma}{\pi}+i\sum_{n\ne 0}^{\infty}\frac{\alpha_{n}}{n}\left( e^{-in\sigma^{+}}-e^{-in\sigma^{-}} \right)
+\end{align}
+と書けるので
+\begin{align}
+  \del_{+}X(\tau,\sigma)=\frac{v_{\pi}-v_{0}}{2\pi}+\sum_{n\ne 0}\alpha_{n}e^{-in\sigma^{+}}=\sum_{n\in \Zb}\alpha_{n}e^{-in\sigma^{+}},\qquad \alpha_{0}:=\frac{v_{\pi}-v_{0}}{2\pi}
+\end{align}
+となります。同様に
+\begin{align}
+  \del_{-}X(\tau,\sigma)=-\sum_{n\in \Zb}\alpha_{n}e^{-in\sigma^{-}}
+\end{align}
+となります。これらは、次のように二重化トリックで$\del_{+}X(\tau,\sigma),\ (0\le \sigma \le 2\pi)$にまとめることができます。
+\begin{align}
+  \del_{+}X(\tau,\sigma)=
+  \begin{cases}
+    \del_{+}X(\tau,\sigma)& (0\le \sigma \le \pi)\\
+    -\del_{-}X(\tau,2\pi-\sigma) & (\pi\le \sigma \le 2\pi)
+  \end{cases}.
+\end{align}
+
+
+
 \subsubsection*{--- DN境界条件 ---}
 \subsubsection*{--- ND境界条件 ---}
 
