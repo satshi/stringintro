@@ -2798,7 +2798,127 @@ D-braneを調べるには様々な手段がありますが、最も基本的な�
 \eqref{gluingcondition}は境界で$T_{01}=0$と書けます。
 これは、エネルギーの流れの境界の垂直方向成分が$0$ということですから、（エネルギーが端に溜まることなく）エネルギーが保存するということと等価です。
 
-\subsection{2重化トリック}
+\subsection{二重化トリック}
+ここでは、境界のある共形場理論の標準的な取り扱いの一つである二重化トリックについて説明します。これは、$0\le \sigma \le \pi$での理論を$0\le \sigma \le 2\pi$で（反）周期的境界条件の場の言葉に書き換える方法です。
+
+エネルギー運動量テンソル$T_{++}(\tau,\sigma),\ (0\le \sigma \le 2\pi)$を次のように定義します。
+\begin{align}
+  T_{++}(\tau,\sigma):=
+  \begin{cases}
+    T_{++}(\tau,\sigma)& (0\le \sigma \le \pi)\\
+    T_{--}(\tau,2\pi-\sigma) & (\pi\le \sigma \le 2\pi)
+  \end{cases}.
+\end{align}
+このように定義すると、次のような理由で周期境界条件の場合のエネルギー運動量テンソルのうち$T_{++}$だけをとってきたものと同じような性質を満たします。
+\begin{itemize}
+  \item 境界条件\eqref{gluingcondition}から$T_{++}(\tau,\sigma)$は、$\sigma=\pi$で連続、$T_{++}(\tau,2\pi)=T_{++}(\tau,0)$となります。
+  \item $0\le \sigma \le 2\pi$で$\del_{-}T_{++}=0$を満たします。
+\end{itemize}
+これらの性質からモード展開できて
+\begin{align}
+  T_{++}(\tau,\sigma)=\sum_{n\in\Zb}
+  L_{n}e^{-in\sigma^{+}}
+\end{align}
+となります。
+
+また、二重化トリックの言葉を用いると古典的なHamiltonianは
+\begin{align}
+  H=\frac{1}{2\pi}\int_{0}^{\pi}(T_{++}+T_{--})
+  =\frac{1}{2\pi}\int_{0}^{2\pi}T_{++}
+  =L_{0}
+\end{align}
+となります。量子化するとc数分ずれる可能性があります。
+
+\subsection{モード展開}
+ここから、もっと具体的にスカラー場の運動方程式を解いてモード展開をしていきます。NN, DD, ND, DNの各境界条件をそれぞれ見ていきます。
+\subsubsection*{--- NN境界条件 ---}
+NN境界条件では、
+\begin{align}
+  \del_{\sigma}X\Bigg|_{\sigma=0,\pi}=0
+\end{align}
+となりますから、一般に
+\begin{align}
+  \del_{\sigma}X(\tau,\sigma)=\sum_{n=1}^{\infty}\At_n(t)\sin n\sigma
+\end{align}
+と展開することができます。ここから$X(\tau,\sigma)$は
+\begin{align}
+  X(\tau,\sigma)=A_{0}(\tau)+\sum_{n=1}^{\infty}A_{n}(\tau)\cos n\sigma\label{NNmodes0}
+\end{align}
+と展開できます。
+
+\eqref{NNmodes0}を運動方程式
+\begin{align}
+  \del_{\tau}^2X-\del_{\sigma}^2X=0
+\end{align}
+に代入して整理すると$A_n\ (n=0,1,2,\dots)$に対する方程式
+\begin{align}
+  \ddot{A}_{n}+n^2 A_n=0
+\end{align}
+を得ます。$n=0$のときは自由粒子の運動方程式と同じなので$x,p$を定数として一般解を
+\begin{align}
+  A_{0}(\tau)=x+4p\tau
+\end{align}
+と書くことができます。$n>0$のときには、調和振動子なので一般解は
+\begin{align}
+  A_{n}(\tau)=B_{n}e^{-in\tau}+C_{n}e^{in\tau}
+\end{align}
+となります。積分定数を適当に再定義し、\eqref{NNmodes0}に代入して整理すると
+\begin{align}
+  X(\tau,\sigma)=x+4p\tau+2i\sum_{n\ne 0}
+  \frac{\alpha_{n}}{n}e^{-in\tau}\cos n\sigma
+\end{align}
+となります。$x,p,\alpha_{n}\ (n\in \Zb, n \ne 0)$が積分定数になります。
+
+量子化しましょう。正準交換関係は、$[X(\sigma),\dot{X}(\sigma')]=4\pi i \delta(\sigma-\sigma')$です。ここから、$x,p,\alpha_{n}$の交換関係は
+\begin{align}
+  [x,p]=i,\quad [\alpha_{n},\alpha_{m}]=n\delta_{n+m}
+\end{align}
+となります。これ以外は交換します。
+
+さらに
+\begin{align}
+  X=x+4p\tau+i\sum_{n\ne 0}\frac{\alpha_{n}}{n}(e^{-in\sigma^{+}}+e^{-in\sigma^{-}})
+\end{align}
+と書けることに注目すると
+\begin{align}
+  \del_{+}X=2p+\sum_{n\ne 0}\alpha_{n}e^{-in\sigma^{+}}
+  =\sum_{n\in \Zb}\alpha_{n}e^{-in\sigma^{+}}
+\end{align}
+となります。最後の式では、$\alpha_{0}:=2p$と定義しました。同様にして
+\begin{align}
+  \del_{-}=\sum_{n\in \Zb}\alpha_{n}e^{-in\sigma^{-}}
+\end{align}
+となります。これらは、次のように二重化トリックで$\del_{+}X(\tau,\sigma),\ (0\le \sigma \le 2\pi)$にまとめることができます。
+\begin{align}
+  \del_{+}X(\tau,\sigma)=
+  \begin{cases}
+    \del_{+}X(\tau,\sigma)& (0\le \sigma \le \pi)\\
+    \del_{-}X(\tau,2\pi-\sigma) & (\pi\le \sigma \le 2\pi)
+  \end{cases}.
+\end{align}
+
+これを用いると二重化トリックしたエネルギー運動量テンソルは、周期境界条件の場合と同様の計算で
+\begin{align}
+  T_{++}=\frac12 \del_{+}X\del_{+}X
+  =\frac12 \sum_{k}\sum_{m}\alpha_{n}\alpha_{m}e^{-i(k+m)\sigma^{+}}
+  =\sum_{n}\frac12\sum_{m}\alpha_{n-m}\alpha_{m}e^{-in\sigma^{+}}
+\end{align}
+となります。演算子順序によるc数の不定性の部分も周期境界条件の場合と同じで
+\begin{align}
+  L_{n}=\frac12\sum_{m\in\Zb}\alpha_{n-m}\alpha_{m} \quad (n\ne 0),\nonumber\\
+  L_{0}=\frac12 \alpha_{0}^2+\sum_{m=1}^{\infty}\alpha_{-m}\alpha_{m}
+\end{align}
+となります。
+
+真空のエネルギーも周期境界条件の$T_{++}$の方だけの場合と同じで
+\begin{align}
+  \frac12\sum_{m\in\Zb}\alpha_{-m}\alpha_{m}=L_{0}-\frac{1}{24}
+\end{align}
+となります。
+
+\subsubsection*{--- DD境界条件 ---}
+\subsubsection*{--- DN境界条件 ---}
+\subsubsection*{--- ND境界条件 ---}
 
 
 \appendix
