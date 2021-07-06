@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="generalbrane.svg">
+  <defs
+     id="defs2">
+    <rect
+       id="rect892"
+       height="7.9375"
+       width="7.9375"
+       y="52.916667"
+       x="26.458333" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="3.527027"
+     inkscape:cx="140.46722"
+     inkscape:cy="168.49001"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="true"
+     inkscape:snap-grids="true"
+     inkscape:window-width="1638"
+     inkscape:window-height="1298"
+     inkscape:window-x="12"
+     inkscape:window-y="7"
+     inkscape:window-maximized="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid833" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="レイヤー 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="opacity:0.5;fill:#ebff5b;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:3.8;stroke-dasharray:none;stroke-opacity:1"
+       d="m 26.458333,13.229167 v 33.072916 l -18.5208331,11.90625 1e-7,-35.71875 z"
+       id="path835"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:#ffe75b;fill-opacity:1;stroke:#000000;stroke-width:0.165;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;opacity:0.43"
+       d="m 18.520833,17.197917 26.458334,0 V 51.59375 l -26.458334,-10e-7 V 17.197917"
+       id="path852"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:none;stroke:#ff0000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 10.583333,27.78125 c 0,0 1.322917,1.322916 3.96875,1.322916 2.645833,0 1.322917,-3.96875 1.322917,-3.96875"
+       id="path854" />
+    <path
+       id="path854-9"
+       d="m 15.875,34.395834 c 0,0 0.422725,1.022853 3.068558,1.022853 2.645833,0 3.546025,-2.34577 3.546025,-2.34577"
+       style="fill:none;stroke:#ff0000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       sodipodi:nodetypes="csc" />
+    <path
+       id="path854-8"
+       d="m 11.456154,39.414807 c 0,0 9.710513,2.918526 11.169269,1.31582 1.780949,-1.956693 15.73916,-2.366044 15.73916,-2.366044"
+       style="fill:none;stroke:#ff0000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       sodipodi:nodetypes="csc" />
+    <path
+       id="path835-5"
+       d="M 34.395834,22.489581 52.916667,13.229167 V 46.302083 L 34.395834,58.208333 V 22.489581"
+       style="opacity:0.5;fill:#ebff5b;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:3.8;stroke-dasharray:none;stroke-opacity:1"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       id="path854-3"
+       d="m 26.458333,23.8125 c 0,0 -1.907993,3.275354 0.722789,2.993542 3.245962,-0.347709 3.245961,-1.670625 3.245961,-1.670625"
+       style="fill:none;stroke:#ff0000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       sodipodi:nodetypes="csc" />
+    <text
+       transform="matrix(0.83332453,-0.53742212,0.51666014,0.86681166,0,0)"
+       id="text848"
+       y="66.246155"
+       x="2.4532039"
+       style="font-size:2.64111px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';letter-spacing:0px;word-spacing:0px;stroke-width:0.16507"
+       xml:space="preserve"><tspan
+         style="font-size:2.64111px;stroke-width:0.16507"
+         y="66.246155"
+         x="2.4532039"
+         id="tspan846"
+         sodipodi:role="line">D-brane</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.74321px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';letter-spacing:0px;word-spacing:0px;stroke-width:0.171451"
+       x="-22.710684"
+       y="54.027435"
+       id="text848-8"
+       transform="matrix(0.8772002,-0.51054141,0.54386298,0.82345561,0,0)"><tspan
+         sodipodi:role="line"
+         id="tspan846-8"
+         x="-22.710684"
+         y="54.027435"
+         style="font-size:2.74321px;stroke-width:0.171451">D-brane</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.64111px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';letter-spacing:0px;word-spacing:0px;stroke-width:0.16507"
+       x="29.171469"
+       y="19.692003"
+       id="text848-5"
+       transform="matrix(0.99157509,-0.00558502,-0.02991683,1.008665,0,0)"><tspan
+         sodipodi:role="line"
+         id="tspan846-84"
+         x="29.171469"
+         y="19.692003"
+         style="font-size:2.64111px;stroke-width:0.16507">D-brane</tspan></text>
+    <text
+       inkscape:transform-center-y="18.327542"
+       inkscape:transform-center-x="-7.5527175"
+       transform="matrix(0.87063277,-0.00595737,0.00785894,1.1485361,0,0)"
+       id="text888"
+       y="27.915369"
+       x="9.4909353"
+       style="font-size:2.40084px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';letter-spacing:0px;word-spacing:0px;stroke-width:0.20007"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.40084px;font-family:'Yu Mincho';-inkscape-font-specification:'Yu Mincho';fill:#ff0000;stroke-width:0.20007"
+         y="27.915369"
+         x="9.4909353"
+         id="tspan886"
+         sodipodi:role="line">ゲージ場</tspan></text>
+    <text
+       style="font-family:'Times New Roman';font-size:3.88055556px;line-height:1.25;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:'Times New Roman, ';white-space:pre;shape-inside:url(#rect892);"
+       id="text890"
+       xml:space="preserve" />
+    <text
+       inkscape:transform-center-y="13.302691"
+       inkscape:transform-center-x="-6.0086918"
+       transform="matrix(0.72215291,0.01543255,-0.02455507,0.78985096,1.1818454,11.636801)"
+       id="text888-0-5"
+       y="39.656078"
+       x="20.238909"
+       style="font-size:2.50107px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';letter-spacing:0px;word-spacing:0px;white-space:pre;inline-size:23.432;stroke-width:0.208423"
+       xml:space="preserve"><tspan
+         x="20.238909"
+         y="39.656078"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.50107px;font-family:'Yu Mincho';-inkscape-font-specification:'Yu Mincho';fill:#ff0000;stroke-width:0.208423">質量</tspan><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.50107px;font-family:'Yu Mincho';-inkscape-font-specification:'Yu Mincho';fill:#ff0000;stroke-width:0.208423">ある</tspan><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.50107px;font-family:'Yu Mincho';-inkscape-font-specification:'Yu Mincho';fill:#ff0000;stroke-width:0.208423">ベクトル</tspan><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.50107px;font-family:'Yu Mincho';-inkscape-font-specification:'Yu Mincho';fill:#ff0000;stroke-width:0.208423">場</tspan></tspan><tspan
+         x="20.238909"
+         y="43.075695"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.50107px;font-family:'Yu Mincho';-inkscape-font-specification:'Yu Mincho';fill:#ff0000;stroke-width:0.208423">（</tspan><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.50107px;font-family:'Yu Mincho';-inkscape-font-specification:'Yu Mincho';fill:#ff0000;stroke-width:0.208423">W</tspan><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.50107px;font-family:'Yu Mincho';-inkscape-font-specification:'Yu Mincho';fill:#ff0000;stroke-width:0.208423">ボゾン）</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.40084px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';letter-spacing:0px;word-spacing:0px;stroke-width:0.20007"
+       x="28.25621"
+       y="26.445158"
+       id="text888-5"
+       transform="matrix(0.87063278,-0.00595737,0.00785894,1.1485361,0,0)"
+       inkscape:transform-center-x="-7.5527175"
+       inkscape:transform-center-y="18.327542"><tspan
+         sodipodi:role="line"
+         id="tspan886-0"
+         x="28.25621"
+         y="26.445158"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.40084px;font-family:'Yu Mincho';-inkscape-font-specification:'Yu Mincho';fill:#ff0000;stroke-width:0.20007">ゲージ場</tspan></text>
+    <text
+       inkscape:transform-center-y="18.327542"
+       inkscape:transform-center-x="-7.5527175"
+       transform="matrix(0.87063278,-0.00595737,0.00785894,1.1485361,0,0)"
+       id="text888-5-5"
+       y="32.852921"
+       x="11.388515"
+       style="font-size:2.40084px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';letter-spacing:0px;word-spacing:0px;stroke-width:0.20007"
+       xml:space="preserve"><tspan
+         id="tspan970"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.40084px;font-family:'Yu Mincho';-inkscape-font-specification:'Yu Mincho';fill:#ff0000;stroke-width:0.20007"
+         y="32.852921"
+         x="11.388515"
+         sodipodi:role="line">bifundamental matter</tspan></text>
+  </g>
+</svg>
