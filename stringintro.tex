@@ -2682,8 +2682,306 @@ type IIA, type IIB ともにタキオンを含んでいません。また、type
 
 
 \subsection{時空の超対称性}
+以前に説明したように、スピンが1以上（つまりスカラー、スピノール以外）で質量のない粒子があって、まともな相互作用があると、それに伴うゲージ対称性があり、その粒子はそのゲージ対称性のゲージ粒子になるという定理があります。ここでは特にフェルミオンの場に注目します。Type IIB、type IIA超弦理論にはスピン１以上の無質量のフェルミオンとして
+\begin{itemize}
+  \item Tyep IIB：$\fsxs,\fsxs$.
+  \item Tyep IIA：$\fsxs,\fsxc$.
+\end{itemize}
+があります。これらは、グラビティーノと呼ばれます。対応するゲージ対称性は局所超対称性であり、グラビティーノはその対称性のゲージ粒子になっています。
+
+Type IIBのグラビティーノは２つとも同じchiralityであり、超対称性はカイラルなものになっています。この超対称性は「type IIBの超対称性」と呼ばれます。一方、type IIA のグラビティーノはchiralityが異なるものが１つづつあり、超対称性は非カイラルなものになっています。この超対称性は「type IIA の超対称性」と呼ばれます。
+
+無質量スペクトルについて調べてみましょう。Type IIB, type IIA ともに、ボゾンがNSNSセクターとRRセクターから$8\times 8+8\times 8=128$個あり、フェルミオンがNSRセクターとRNSセクターから$8\times 8+8\times 8=128$個あるので、数が等しいです。これも超対称性があることの帰結です。有質量のスペクトルを調べて見ると、ちゃんと各質量ごとにボゾンの数とフェルミオンの数が等しくなっていて、これも超対称性があることの帰結です。
+
+超対称性と低エネルギー有効理論について少しコメントします。超弦理論で、非常に低エネルギーの散乱のみを考える場合、無質量の場のみが寄与することになります。その散乱を再現するような無質量の場のみで書かれた理論を低エネルギー有効理論と呼びます。実はtype IIB、type IIAの超対称性があると、無質量の理論はどういう場があるかも含めて作用の微分の２次までで、完全に決まってしまうことになります。これらの理論を、それぞれ「type IIBの超重力理論」「type IIAの超重力理論」と呼びます。これらの超重力理論は、弦理論の様々な性質を調べる上で、非常に有効なツールになります。
+
+\section{まとめ}
+
+この章では超弦理論を取り扱いました。
+\begin{itemize}
+  \item 時空のフェルミオンを記述するための一つの方法は世界面の局所超対称性を導入することです。
+  \item 世界面のボゾン$X^{\mu}$に対応して、フェルミオン$\psi_{\pm}^{\mu}$を導入することで、超対称性のある作用を書くことができます。
+  \item 世界面の局所超対称性のある作用を書くことができます。これが、超弦理論の作用です。ゲージ固定することによって、ゲージ固定された作用、拘束条件としてエネルギー運動量テンソル$=0$と超対称性のカレント$=0$、残っているゲージ対称性として$\Ncal=(1,1)$超共形対称性が得られます。
+  \item スピン構造という世界面に付属する自由度があります。超弦理論ではこれが動的になり、非常に重要な役割を果たします。シリンダーでは、フェルミオンが反周期的であるNSセクターと周期的であるRセクターがあります。$\psi^{\mu}_{+}$と$\psi^{\mu}_{-}$に対して独立にスピン構造を取れます。
+  \item 例えばNSNSセクターの無質量の部分を見ることにより、臨界次元$D=10$を得ます。
+  \item スピン構造が動的であることから来る拘束条件がGSO射影です。GSO射影の仕方によって type IIB, type IIAという異なる２つの超弦理論が存在します。
+  \item 超弦理論には時空の超対称性があります。
+\end{itemize}
+
 
 \chapter{D-brane}
+
+\section{D-braneとは？}
+
+この章では、D-braneについて調べていきます。まずは、D-braneとは何か、そしてD-braneを調べることがどうして重要かについて述べます。
+
+まず、D-braneとは何かについて説明します。一言で言うなら
+\begin{important}
+  弦理論において、時空の中で開弦が端を持つことができるような物体
+\end{important}
+と言えます。つまり、開いた弦があるときには、必ずその端はD-braneにくっついています。例えばボゾン的弦理論で、26次元の中を自由に動く開弦を考えるとは、時空を満たしているD-braneを考えていることになります。弦理論の中でD-braneは有限の張力を持った動的な物体です。
+
+次にどうしてD-braneが重要かを説明します。
+\begin{itemize}
+  \item D-braneを導入することで、非可換ゲージ理論が現れます。（非可換）ゲージ理論は現実の素粒子の力を記述する理論です。また、理論的にも非常に興味深い性質を持っています。
+  \item D-braneは弦理論におけるソリトン的な物体で、双対性などの非摂動論的性質を理解する鍵となります。
+\end{itemize}
+
+D-braneを調べるには様々な手段がありますが、最も基本的なのは、D-braneにくっついている開弦を調べることです。例えば、この開弦のスペクトルを調べることで、D-brane系でどのような励起があるかを調べることができます。この講義では、このD-braneにくっついた開弦のスペクトルを詳しく調べることにします。
+
+\begin{figure}
+  \centering
+  \includegraphics[width=8cm]{generalbrane.pdf}
+  \caption{D-braneの配位と、それに端を持つ開弦の例。様々な種類の粒子がD-braneの配位から現れる。}
+\end{figure}
+
+
+\section{境界のある２次元自由スカラー場}
+
+開いた弦は、世界面の理論として、境界のある２次元の場の理論を考えることになります。ここでは、その準備として２次元の１つのスカラー場の理論を考えましょう。
+
+\subsection{作用と境界条件}
+
+空間方向の座標を$\sigma$とし、$0\le \sigma \le \pi$とします。$\sigma=0$と$\sigma=\pi$が境界になります。時間方向の座標を$\tau$とします。
+
+スカラー場を$X(\sigma)$とし、その作用を
+\begin{align}
+  S=\frac{1}{8\pi}\int \di \tau \int_{0}^{\pi}\di \sigma \left( (\del_{\tau}X)^2-(\del_{\sigma}X)^2 \right)
+  \label{actionscalarwithboundary}
+\end{align}
+とします。
+
+境界がある理論を考えているので、境界条件をどう取るかを考える必要があります。ここでは運動方程式を考えることで、発見法的に境界条件としてどのようなものがあるかを考えます。\eqref{actionscalarwithboundary}の変分をとると
+\begin{align}
+  \delta S&
+  =\frac{1}{4\pi}\int \di \tau \int_{0}^{\pi}\di \sigma \left( \del_{\tau}X\del_{\tau}\delta X - \del_{\sigma}X\del_{\sigma}\delta X \right)\nonumber\\
+  &=\frac{1}{4\pi}\int \di \tau \int_{0}^{\pi}\di \sigma \left( (-\del_{\tau}^2X+\del_{\sigma}^2X)\delta X+\del_{\tau}(X\del_{\tau}\delta X) - \del_{\sigma}(X\del_{\sigma}\delta X) \right)
+\end{align}
+となります。被積分関数の第１項から運動方程式が出ます。第2項は通常の最小作用の原理の設定では、時間の端での境界条件を課すので消えます。第3項が問題でこれを計算すると
+\begin{align}
+  \delta S = \cdots +\frac{1}{4\pi}\int \di \tau [-\del_{\sigma}X \delta X]_{\sigma=0}^{\pi}
+\end{align}
+となります。$\delta S=0$となるためには、適切な境界条件を課す必要があります。例えば$\sigma=0$での境界条件を考えてみましょう。$\del_{\sigma}X(0)\delta X(0)=0$となる必要がありますから、例えば次の2つの境界条件があり得ます。
+\begin{itemize}
+  \item Neumann境界条件（自由端条件）$\del_{\sigma} X(0)=0$. $\sigma=0$で表される弦の端は$X$方向に自由に動くことができるので、「D-braneは$X$方向に伸びている」ということができます。\\
+  \begin{center}
+    \includegraphics{NBC.pdf}    
+  \end{center}
+  \item Dirichlet境界条件（固定端条件）$X(0)=v$（定数）.$\sigma=0$で表される弦の端は$X=v$のところにしかくっつけないので、「D-braneは$X=v$の場所にある」ということができます。\\
+  \begin{center}
+    \includegraphics{DBC.pdf}    
+  \end{center}
+\end{itemize}
+同様にして$\sigma=\pi$の方の境界にもNeumann境界条件とDirichlet境界条件の2種類が考えられます。合わせると、$\sigma=0,\pi$の境界条件をNあるいはDで表すことにして、NN, DN, ND, DD の4種類の境界条件のとり方が考えられます。
+
+さて、このような境界条件の場合にエネルギー運動量テンソルがどうなるか見てみましょう。エネルギー運動量テンソルは、以前見たように
+\begin{align}
+  T_{++}=\frac12 \del_{+}X\del_{+}X,\quad
+  T_{--}=\frac12 \del_{-}X\del_{-}X,\quad
+  \del_{\pm}:=\frac12 (\del_{\tau}\pm \del_{\sigma})
+\end{align}
+となります。例えば$\sigma=0$でNeumann境界条件であったとすると$\del_{\sigma}X(0)=0$ですから
+\begin{align}
+  \del_{+}X(0)=\del_{-}X(0)=\frac12 \del_{\tau}X(0)
+\end{align}
+となります。したがって$\sigma=0$で$T_{++}=T_{--}$が成り立ちます。一方$\sigma=0$でDirichlet境界条件であったとすると$\del_{\tau}X(0)=0$ですから
+\begin{align}
+  \del_{+}X(0)=-\del_{-}X(0)=\frac12 \del_{\sigma}X(0)
+\end{align}
+となります。したがって、やはり$\sigma=0$で$T_{++}=T_{--}$が成り立ちます。まとめるとNeumann境界条件の場合もDirichlet境界条件の場合も境界で
+\begin{important}
+  \begin{align}
+    T_{++}=T_{--}\label{gluingcondition}
+  \end{align}
+\end{important}
+が成り立ちます。ここでは発見法的に境界条件を考えましたが、実は\eqref{gluingcondition}が原理的に境界条件が満たさなければならない条件です。
+\eqref{gluingcondition}は境界で$T_{01}=0$と書けます。
+これは、エネルギーの流れの境界の垂直方向成分が$0$ということですから、（エネルギーが端に溜まることなく）エネルギーが保存するということと等価です。
+
+\subsection{二重化トリック}
+ここでは、境界のある共形場理論の標準的な取り扱いの一つである二重化トリックについて説明します。これは、$0\le \sigma \le \pi$での理論を$0\le \sigma \le 2\pi$で（反）周期的境界条件の場の言葉に書き換える方法です。
+
+エネルギー運動量テンソル$T_{++}(\tau,\sigma),\ (0\le \sigma \le 2\pi)$を次のように定義します。
+\begin{align}
+  T_{++}(\tau,\sigma):=
+  \begin{cases}
+    T_{++}(\tau,\sigma)& (0\le \sigma \le \pi)\\
+    T_{--}(\tau,2\pi-\sigma) & (\pi\le \sigma \le 2\pi)
+  \end{cases}.
+\end{align}
+このように定義すると、次のような理由で周期境界条件の場合のエネルギー運動量テンソルのうち$T_{++}$だけをとってきたものと同じような性質を満たします。
+\begin{itemize}
+  \item 境界条件\eqref{gluingcondition}から$T_{++}(\tau,\sigma)$は、$\sigma=\pi$で連続、$T_{++}(\tau,2\pi)=T_{++}(\tau,0)$となります。
+  \item $0\le \sigma \le 2\pi$で$\del_{-}T_{++}=0$を満たします。
+\end{itemize}
+これらの性質からモード展開できて
+\begin{align}
+  T_{++}(\tau,\sigma)=\sum_{n\in\Zb}
+  L_{n}e^{-in\sigma^{+}}
+\end{align}
+となります。
+
+また、二重化トリックの言葉を用いると古典的なHamiltonianは
+\begin{align}
+  H=\frac{1}{2\pi}\int_{0}^{\pi}(T_{++}+T_{--})
+  =\frac{1}{2\pi}\int_{0}^{2\pi}T_{++}
+  =L_{0}
+\end{align}
+となります。量子化するとc数分ずれる可能性があります。
+
+\subsection{モード展開}
+ここから、もっと具体的にスカラー場の運動方程式を解いてモード展開をしていきます。NN, DD, ND, DNの各境界条件をそれぞれ見ていきます。
+\subsubsection*{--- NN境界条件 ---}
+NN境界条件では、
+\begin{align}
+  \del_{\sigma}X\Bigg|_{\sigma=0,\pi}=0
+\end{align}
+となりますから、一般に
+\begin{align}
+  \del_{\sigma}X(\tau,\sigma)=\sum_{n=1}^{\infty}\At_n(t)\sin n\sigma
+\end{align}
+と展開することができます。ここから$X(\tau,\sigma)$は
+\begin{align}
+  X(\tau,\sigma)=A_{0}(\tau)+\sum_{n=1}^{\infty}A_{n}(\tau)\cos n\sigma\label{NNmodes0}
+\end{align}
+と展開できます。
+
+\eqref{NNmodes0}を運動方程式
+\begin{align}
+  \del_{\tau}^2X-\del_{\sigma}^2X=0
+\end{align}
+に代入して整理すると$A_n\ (n=0,1,2,\dots)$に対する方程式
+\begin{align}
+  \ddot{A}_{n}+n^2 A_n=0
+\end{align}
+を得ます。$n=0$のときは自由粒子の運動方程式と同じなので$x,p$を定数として一般解を
+\begin{align}
+  A_{0}(\tau)=x+4p\tau
+\end{align}
+と書くことができます。$n>0$のときには、調和振動子なので一般解は
+\begin{align}
+  A_{n}(\tau)=B_{n}e^{-in\tau}+C_{n}e^{in\tau}
+\end{align}
+となります。積分定数を適当に再定義し、\eqref{NNmodes0}に代入して整理すると
+\begin{align}
+  X(\tau,\sigma)=x+4p\tau+2i\sum_{n\ne 0}
+  \frac{\alpha_{n}}{n}e^{-in\tau}\cos n\sigma
+\end{align}
+となります。$x,p,\alpha_{n}\ (n\in \Zb, n \ne 0)$が積分定数になります。
+
+量子化しましょう。正準交換関係は、$[X(\sigma),\dot{X}(\sigma')]=4\pi i \delta(\sigma-\sigma')$です。ここから、$x,p,\alpha_{n}$の交換関係は
+\begin{align}
+  [x,p]=i,\quad [\alpha_{n},\alpha_{m}]=n\delta_{n+m}
+\end{align}
+となります。これ以外は交換します。
+
+さらに
+\begin{align}
+  X=x+4p\tau+i\sum_{n\ne 0}\frac{\alpha_{n}}{n}(e^{-in\sigma^{+}}+e^{-in\sigma^{-}})
+\end{align}
+と書けることに注目すると
+\begin{align}
+  \del_{+}X=2p+\sum_{n\ne 0}\alpha_{n}e^{-in\sigma^{+}}
+  =\sum_{n\in \Zb}\alpha_{n}e^{-in\sigma^{+}}
+\end{align}
+となります。最後の式では、$\alpha_{0}:=2p$と定義しました。同様にして
+\begin{align}
+  \del_{-}=\sum_{n\in \Zb}\alpha_{n}e^{-in\sigma^{-}}
+\end{align}
+となります。これらは、次のように二重化トリックで$\del_{+}X(\tau,\sigma),\ (0\le \sigma \le 2\pi)$にまとめることができます。
+\begin{align}
+  \del_{+}X(\tau,\sigma)=
+  \begin{cases}
+    \del_{+}X(\tau,\sigma)& (0\le \sigma \le \pi)\\
+    \del_{-}X(\tau,2\pi-\sigma) & (\pi\le \sigma \le 2\pi)
+  \end{cases}.
+\end{align}
+
+これを用いると二重化トリックしたエネルギー運動量テンソルは、周期境界条件の場合と同様の計算で
+\begin{align}
+  T_{++}=\frac12 \del_{+}X\del_{+}X
+  =\frac12 \sum_{k}\sum_{m}\alpha_{n}\alpha_{m}e^{-i(k+m)\sigma^{+}}
+  =\sum_{n}\frac12\sum_{m}\alpha_{n-m}\alpha_{m}e^{-in\sigma^{+}}
+\end{align}
+となります。演算子順序によるc数の不定性の部分も周期境界条件の場合と同じで
+\begin{align}
+  L_{n}=\frac12\sum_{m\in\Zb}\alpha_{n-m}\alpha_{m} \quad (n\ne 0),\nonumber\\
+  L_{0}=\frac12 \alpha_{0}^2+\sum_{m=1}^{\infty}\alpha_{-m}\alpha_{m}
+\end{align}
+となります。
+
+真空のエネルギーも周期境界条件の$T_{++}$の方だけの場合と同じで
+\begin{align}
+  \frac12\sum_{m\in\Zb}\alpha_{-m}\alpha_{m}=L_{0}-\frac{1}{24}
+\end{align}
+となります。
+
+\subsubsection*{--- DD境界条件 ---}
+DD境界条件
+\begin{align}
+  X(\tau,0)=v_0,\quad X(\tau,\pi)=v_{\pi}
+\end{align}
+の場合を考えます。この場合
+\begin{align}
+  X(\tau,\sigma)=v_{0}\left( 1-\frac{\sigma}{\pi} \right)+v_{\pi}\frac{\sigma}{\pi}+\widetilde{X}(\tau,\sigma)
+\end{align}
+として$\widetilde{X}(\tau,\sigma)$を定義すると
+\begin{align}
+  \widetilde{X}(\tau,0)=\widetilde{X}(\tau,\pi)=0
+\end{align}
+となります。したがって
+\begin{align}
+  \widetilde{X}(\tau,\sigma)=\sum_{n=1}^{\infty}A_{n}(\tau)\sin n\sigma
+\end{align}
+となります。つまり
+\begin{align}
+  X(\tau,\sigma)=v_{0}\left( 1-\frac{\sigma}{\pi} \right)+v_{\pi}\frac{\sigma}{\pi}+\sum_{n=1}^{\infty}A_{n}(\tau)\sin n\sigma
+\end{align}
+となります。これを運動方程式に代入すると
+\begin{align}
+  \ddot{A}_{n}(\tau)+nA_{n}(\tau)=0 \quad (n=1,2,3,\dots)
+\end{align}
+という調和振動子の運動方程式になります。その一般解は
+\begin{align}
+  A_{n}(\tau)=B_{n}e^{-in\tau}+C_{n}e^{in\tau}
+\end{align}
+となります。定数を再定義して
+\begin{align}
+  X(\tau,\sigma)=v_{0}+\frac{v_{\pi}-v_{0}}{\pi}\sigma+2\sum_{n\ne 0}^{\infty}\frac{\alpha_{n}}{n}e^{-in\tau}\sin n\sigma
+\end{align}
+となります。
+
+量子化します。交換関係はこれまでと同じで
+\begin{align}
+  [\alpha_n,\alpha_m]=n\delta_{n+m}
+\end{align}
+となります。
+
+また
+\begin{align}
+  X(\tau,\sigma)=v_{0}+\frac{v_{\pi}-v_{0}}{\pi}\sigma+v_{\pi}\frac{\sigma}{\pi}+i\sum_{n\ne 0}^{\infty}\frac{\alpha_{n}}{n}\left( e^{-in\sigma^{+}}-e^{-in\sigma^{-}} \right)
+\end{align}
+と書けるので
+\begin{align}
+  \del_{+}X(\tau,\sigma)=\frac{v_{\pi}-v_{0}}{2\pi}+\sum_{n\ne 0}\alpha_{n}e^{-in\sigma^{+}}=\sum_{n\in \Zb}\alpha_{n}e^{-in\sigma^{+}},\qquad \alpha_{0}:=\frac{v_{\pi}-v_{0}}{2\pi}
+\end{align}
+となります。同様に
+\begin{align}
+  \del_{-}X(\tau,\sigma)=-\sum_{n\in \Zb}\alpha_{n}e^{-in\sigma^{-}}
+\end{align}
+となります。これらは、次のように二重化トリックで$\del_{+}X(\tau,\sigma),\ (0\le \sigma \le 2\pi)$にまとめることができます。
+\begin{align}
+  \del_{+}X(\tau,\sigma)=
+  \begin{cases}
+    \del_{+}X(\tau,\sigma)& (0\le \sigma \le \pi)\\
+    -\del_{-}X(\tau,2\pi-\sigma) & (\pi\le \sigma \le 2\pi)
+  \end{cases}.
+\end{align}
+
+
+
+\subsubsection*{--- DN境界条件 ---}
+\subsubsection*{--- ND境界条件 ---}
 
 
 \appendix
