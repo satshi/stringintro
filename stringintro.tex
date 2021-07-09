@@ -132,6 +132,7 @@
 \newcommand{\fsxs}{\mathbf{56_s}}
 \newcommand{\fsxc}{\mathbf{56_c}}
 
+\newcommand{\Zbh}{\Zb+\frac12}
 
 %\pagestyle{headings}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2042,9 +2043,9 @@ Fock真空$\ket{0}$を
 \begin{align}
   \frac12\sum_{r}r\psi_{-r}\psi_{r}
   =
-  \frac 12 \sum_{r>0}\psi_{-r}\psi_{r}
-  +  \frac 12 \sum_{r<0}\psi_{-r}\psi_{r}
-  =\sum_{r>0}\psi_{-r}\psi_{r}-\frac12 \sum_{r>0}r
+  \frac 12 \sum_{r>0}r\psi_{-r}\psi_{r}
+  +  \frac 12 \sum_{r<0}r\psi_{-r}\psi_{r}
+  =\sum_{r>0}r\psi_{-r}\psi_{r}-\frac12 \sum_{r>0}r
 \end{align}
 としたときのc数$a=\frac12 \sum_{r>0}r$を求めます。
 
@@ -2055,11 +2056,11 @@ NSセクターの場合$r\in \Zb+\frac12$ですからゼータ関数スキーム
 \end{align}
 となります。ここでHurwitzゼータ関数$\zeta(s,b)$を$\Re s >1,\ 0< b \le 1$に対して
 \begin{align}
-  \zeta(s,b)=\sum_{n=0}^{\infty}\frac{1}{(n+b)^s}
+  \zeta(s,b)=\sum_{n=0}^{\infty}\frac{1}{(n+b)^s}\label{zetafunction}
 \end{align}
 と定義します。他の領域には、解析接続で定義します。解析接続を実際にやると
 \begin{align}
-  \zeta(-1,b)=-\frac{1}{12}+\frac12 b -\frac12 b^2
+  \zeta(-1,b)=-\frac{1}{12}+\frac12 b -\frac12 b^2\label{zetavalue}
 \end{align}
 となることが知られています。
 
@@ -2916,7 +2917,7 @@ NN境界条件では、
 
 真空のエネルギーも周期境界条件の$T_{++}$の方だけの場合と同じで
 \begin{align}
-  \frac12\sum_{m\in\Zb}\alpha_{-m}\alpha_{m}=L_{0}-\frac{1}{24}
+  \frac12\sum_{m\in\Zb}\alpha_{-m}\alpha_{m}\Bigg|_{\text{くりこみ}}=L_{0}-\frac{1}{24}
 \end{align}
 となります。
 
@@ -2981,12 +2982,113 @@ DD境界条件
     -\del_{-}X(\tau,2\pi-\sigma) & (\pi\le \sigma \le 2\pi)
   \end{cases}.
 \end{align}
-
+このとき$\del_{+}X(\tau,0)\del_{+}X(\tau,2\pi)$を満たします。
+ここから$T_{++}=\frac12\del_{+}X\del_{+}X=\sum_{n\in \Zb}L_{n}e^{-in\sigma^{+}}$として$L_n$を計算しますが、これは周期境界条件の場合と同じです。
+\begin{align}
+  L_{n}=\frac12 \sum_{m\in\Zb}\alpha_{n-m}\alpha_{m},\quad (n\ne 0),\quad
+  L_{0}=\frac12 \alpha_{0}^2+\sum_{m=1}^{\infty}\alpha_{-m}\alpha_{m}.
+\end{align}
+真空のエネルギーも同様で
+\begin{align}
+  \frac12 \sum_{m\in\Zb}\alpha_{n-m}\alpha_{m}\Bigg|_{\text{くりこみ}}=L_0-\frac{1}{24}
+\end{align}
+となります。
 
 
 \subsubsection*{--- DN境界条件 ---}
-\subsubsection*{--- ND境界条件 ---}
+DN境界条件の場合、
+\begin{align}
+  X(\tau,0)=v_0,\quad \del_{\sigma}X(\tau,\pi)=0
+\end{align}
+を満たします。このとき$X$は
+\begin{align}
+  X(\tau,\sigma)=v_0+\sum_{r\in \Zbh,\ r>0}A_{r}(\tau)\sin r\sigma
+\end{align}
+と展開することができます。これを運動方程式に代入すると、多数の調和振動子になります。これを解くと
+\begin{align}
+  A_{r}(\tau)=B_{r}e^{-ir\tau}+C_{r}e^{ir\tau}
+\end{align}
+となります。積分定数を適当に再定義して
+\begin{align}
+  X(\tau,\sigma)=v_{0}+2\sum_{r\in \Zbh}\frac{\alpha_{r}}{r}e^{-ir\tau}\sin r\sigma
+\end{align}
+を得ます。モードの交換関係は
+\begin{align}
+  [\alpha_{r},\alpha_{s}]=r\delta_{r+s}
+\end{align}
+となります。
 
+微分を計算していきます。
+\begin{align}
+  &\del_{+}X=\sum_{r\in \Zbh}\alpha_{r}e^{-ir\sigma^{+}},\\
+  &\del_{-}X=-\sum_{r\in \Zbh}\alpha_{r}e^{-ir\sigma^{-}}.
+\end{align}
+となります。これらは、次のように二重化トリックで$\del_{+}X(\tau,\sigma),\ (0\le \sigma \le 2\pi)$にまとめることができます。
+\begin{align}
+  \del_{+}X(\tau,\sigma)=
+  \begin{cases}
+    \del_{+}X(\tau,\sigma)& (0\le \sigma \le \pi)\\
+    \del_{-}X(\tau,2\pi-\sigma) & (\pi\le \sigma \le 2\pi)
+  \end{cases}.
+\end{align}
+こうすると$\del_{+}X(\tau,0)=-\del_{+}X(\tau,2\pi)$と反周期境界条件になります。
+
+エネルギー運動量テンソルは
+\begin{align}
+  T_{++}
+  =\frac12 \sum_{r,s\in \Zbh}\alpha_{s}\alpha_{r} e^{-i(r+s)\sigma^{+}}
+  =\frac12 \sum_{n\in\Zb}\sum_{r\in \Zbh}\alpha_{n-r}\alpha_{r} e^{-in\sigma^{+}}
+\end{align}
+となりますから、
+\begin{align}
+  L_{n}=\frac12 \sum_{r\in \Zbh}
+  \alpha_{n-r}\alpha_{r},\quad (n\ne 0),\quad
+  L_{0}=\sum_{r\in \Zbh,r>0}\alpha_{-r}\alpha_{r}+b
+\end{align}
+となります。$b$はこれから決めるc数です。
+
+$b$を決めましょう。これは、Virasoro代数の一部
+\begin{align}
+  [L_{1},L_{-1}]=2L_0
+\end{align}
+が成り立つように決めます。Fock真空を$\ket{0},\ \alpha_{r}\ket{0}=0\ (r>0),\ \braket{0}{0}=1$として、ここから
+\begin{align}
+  2b
+  &=\bra{0}[L_{1},L_{-1}]\ket{0}
+  =\bra{0}L_{1}L_{-1}\ket{0}
+  =\sum_{r,s}\frac14\bra{0}\alpha_{1-s}\alpha_{s}\alpha_{-1-r}\alpha_{r}\ket{0}\nonumber\\
+  &
+  =\frac14\bra{0}\alpha_{\frac12}\alpha_{\frac12}\alpha_{-\frac12}\alpha_{-\frac12}\ket{0}
+  =\frac14\bra{0}\alpha_{\frac12}\alpha_{-\frac12}\alpha_{\frac12}\alpha_{-\frac12}\ket{0}
+  +\frac18\bra{0}\alpha_{\frac12}\alpha_{-\frac12}\ket{0}
+  =\frac18
+\end{align}
+となるので
+\begin{align}
+  b=\frac{1}{16}
+\end{align}
+を得ます。しがたって
+\begin{align}
+  L_{0}=\sum_{r\in \Zbh,r>0}\alpha_{-r}\alpha_{r}+\frac{1}{16}
+\end{align}
+となります。真空のエネルギーは
+\begin{align}
+  \frac12 \sum_{r\in \Zbh}\alpha_{-r}\alpha_{r}\Bigg|_{\text{くりこみ}}
+  =
+  \sum_{r\in \Zbh,\ r>0}\alpha_{-r}\alpha_{r}
+  +\frac12 \sum_{r\in \Zbh,\ r>0}r\Bigg|_{\text{くりこみ}}
+  =
+  \sum_{r\in \Zbh,\ r>0}\alpha_{-r}\alpha_{r}
+  +\frac{1}{48}
+\end{align}
+となります。ここでは、\eqref{zetafunction}と\eqref{zetavalue}から$\zeta(-1,\frac12)=\frac{1}{24}$であることを用いました。
+
+\subsubsection*{--- ND境界条件 ---}
+DN境界条件の場合、
+\begin{align}
+  X(\tau,0)=v_0,\quad \del_{\sigma}X(\tau,\pi)=0
+\end{align}
+を満たします。これは、DN境界条件の場合とほぼ同様に考えることができます。
 
 \appendix
 \chapter{局所超対称性を持つ作用}
