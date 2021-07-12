@@ -2647,15 +2647,6 @@ type IIA, type IIB ともにタキオンを含んでいません。また、type
     \etv\otimes\etv= \triv \oplus \tweta\oplus \thfvg
   \end{align}
   になります。左辺に出てくる表現の粒子を作る場を順番にdilaton場 $\Phi$、B場$B_2$、計量$G$という名前がついています。
-  \item RNSセクターは$(\Rp,\NSp)$をとってきます。無質量の状態は
-  \begin{align}
-    \psit_{-\frac12}^{i}\ket{k,A}
-  \end{align}
-  となります。これを既約表現に分解すると
-  \begin{align}
-    \etv\otimes\ets= \etc \oplus \fsxs
-  \end{align}
-  になります。左辺に出てくる表現の粒子を作る場を順番にdilatino場 $\lambda_{c1}$、gravitino場$\Psi_{s1}$という名前がついています。
   \item NSRセクターは$(\NSp,\Rp)$をとってきます。無質量の状態は
   \begin{align}
     \psi_{-\frac12}^{i}\ket{k,\At}
@@ -2665,6 +2656,15 @@ type IIA, type IIB ともにタキオンを含んでいません。また、type
     \etv\otimes\ets= \etc \oplus \fsxs
   \end{align}
   になります。左辺に出てくる表現の粒子を作る場を順番にdilatino場 $\lambda_{c2}$、gravitino場$\Psi_{s2}$という名前がついています。
+  \item RNSセクターは$(\Rp,\NSp)$をとってきます。無質量の状態は
+  \begin{align}
+    \psit_{-\frac12}^{i}\ket{k,A}
+  \end{align}
+  となります。これを既約表現に分解すると
+  \begin{align}
+    \etv\otimes\ets= \etc \oplus \fsxs
+  \end{align}
+  になります。左辺に出てくる表現の粒子を作る場を順番にdilatino場 $\lambda_{c1}$、gravitino場$\Psi_{s1}$という名前がついています。
   \item RRセクターは$(\Rp,\Rp)$をとってきます。無質量の状態は
   \begin{align}
     \ket{k,A,\At}
@@ -2681,6 +2681,49 @@ type IIA, type IIB ともにタキオンを含んでいません。また、type
   &\text{フェルミオン：} \lambda_{c1},\ \lambda_{c2},\ \Psi_{s1},\ \Psi_{s2}
 \end{align}
 特に、2つのdilatinoが同じchirality、gravitino ２つが同じchirality、自己双対4形式があるので、type IIB 超弦理論はカイラルな理論になっています。
+
+次にtype IIAを見てみましょう。
+\begin{itemize}
+  \item NSNSセクターはIIBと同じで$(\NSp,\NSp)$をとってきます。
+  その表現は既約表現に分解すると
+  \begin{align}
+    \etv\otimes\etv= \triv \oplus \tweta\oplus \thfvg
+  \end{align}
+  になります。左辺に出てくる表現の粒子を作る場は順番にdilaton場 $\Phi$、B場$B_2$、計量$G$です。
+  \item NSRセクターは$(\NSp,\Rm)$をとってきます。無質量の状態は
+  \begin{align}
+    \psi_{-\frac12}^{i}\ket{k,\At}
+  \end{align}
+  となります。これを既約表現に分解すると
+  \begin{align}
+    \etv\otimes\etc= \ets \oplus \fsxc
+  \end{align}
+  になります。左辺に出てくる表現の粒子を作る場を順番にdilatino場 $\lambda_{s}$、gravitino場$\Psi_{c}$という名前がついています。
+  \item RNSセクターは$(\Rp,\NSp)$をとってきます。無質量の状態は
+  \begin{align}
+    \psit_{-\frac12}^{i}\ket{k,A}
+  \end{align}
+  となります。これを既約表現に分解すると
+  \begin{align}
+    \etv\otimes\ets= \etc \oplus \fsxs
+  \end{align}
+  になります。左辺に出てくる表現の粒子を作る場を順番にdilatino場 $\lambda_{c}$、gravitino場$\Psi_{s}$という名前がついています。
+  \item RRセクターは$(\Rp,\Rm)$をとってきます。無質量の状態は
+  \begin{align}
+    \ket{k,A,\At}
+  \end{align}
+  となります。これを既約表現に分解すると
+  \begin{align}
+    \ets\otimes\etc= \etv\oplus\fsxt
+  \end{align}
+  になります。左辺に出てくる表現の粒子を作る場を順番にRR1形式場$C_1$、RR3形式場$C_3$という名前がついています。
+\end{itemize}
+まとめるとtype IIA超弦理論の無質量の場は、次のものです。
+\begin{align}
+  &\text{ボゾン：}\Phi,\ B_2,\ G,\ C_1,\ C_3,\\
+  &\text{フェルミオン：} \lambda_{c},\ \lambda_{s},\ \Psi_{s},\ \Psi_{c}
+\end{align}
+特に、2つのdilatinoが反対のchirality、gravitino ２つが反対のchiralityなのでtype IIA超弦理論は非カイラルな理論になっています。
 
 
 \subsection{時空の超対称性}
@@ -3089,11 +3132,66 @@ $b$を決めましょう。これは、Virasoro代数の一部
 となります。ここでは、\eqref{zetafunction}と\eqref{zetavalue}から$\zeta(-1,\frac12)=\frac{1}{24}$であることを用いました。
 
 \subsubsection*{--- ND境界条件 ---}
-DN境界条件の場合、
+ND境界条件の場合、
 \begin{align}
-  X(\tau,0)=v_0,\quad \del_{\sigma}X(\tau,\pi)=0
+  \del_{\sigma}X(\tau,0)=0,\quad X(\tau,\pi)=v_{\pi}
 \end{align}
 を満たします。これは、DN境界条件の場合とほぼ同様に考えることができます。
+このとき$X$は
+\begin{align}
+  X(\tau,\sigma)=v_{\pi}+\sum_{r\in \Zbh,\ r>0}A_{r}(\tau)\cos r\sigma
+\end{align}
+と展開することができます。これを運動方程式に代入すると、多数の調和振動子になります。これを解くと
+\begin{align}
+  A_{r}(\tau)=B_{r}e^{-ir\tau}+C_{r}e^{ir\tau}
+\end{align}
+となります。積分定数を適当に再定義して
+\begin{align}
+  X(\tau,\sigma)=v_{\pi}+2i\sum_{r\in \Zbh}\frac{\alpha_{r}}{r}e^{-ir\tau}\cos r\sigma
+\end{align}
+を得ます。モードの交換関係は
+\begin{align}
+  [\alpha_{r},\alpha_{s}]=r\delta_{r+s}
+\end{align}
+となります。
+
+微分を計算していきます。
+\begin{align}
+  &\del_{+}X=\sum_{r\in \Zbh}\alpha_{r}e^{-ir\sigma^{+}},\\
+  &\del_{-}X=\sum_{r\in \Zbh}\alpha_{r}e^{-ir\sigma^{-}}.
+\end{align}
+となります。これらは、次のように二重化トリックで$\del_{+}X(\tau,\sigma),\ (0\le \sigma \le 2\pi)$にまとめることができます。
+\begin{align}
+  \del_{+}X(\tau,\sigma)=
+  \begin{cases}
+    \del_{+}X(\tau,\sigma)& (0\le \sigma \le \pi)\\
+    -\del_{-}X(\tau,2\pi-\sigma) & (\pi\le \sigma \le 2\pi)
+  \end{cases}.
+\end{align}
+こうすると$\del_{+}X(\tau,0)=-\del_{+}X(\tau,2\pi)$と反周期境界条件になります。
+
+エネルギー運動量テンソルは
+\begin{align}
+  T_{++}
+  =\frac12 \sum_{r,s\in \Zbh}\alpha_{s}\alpha_{r} e^{-i(r+s)\sigma^{+}}
+  =\frac12 \sum_{n\in\Zb}\sum_{r\in \Zbh}\alpha_{n-r}\alpha_{r} e^{-in\sigma^{+}}
+\end{align}
+となりますから、
+\begin{align}
+  L_{n}=\frac12 \sum_{r\in \Zbh}
+  \alpha_{n-r}\alpha_{r},\quad (n\ne 0),\quad
+  L_{0}=\sum_{r\in \Zbh,r>0}\alpha_{-r}\alpha_{r}+\frac{1}{16}
+\end{align}
+となります。$L_0$の定数部分はDNの場合と全く同じ計算になるので$\frac{1}{16}$です。
+
+真空のエネルギーもDNの場合と全く同じで
+\begin{align}
+  \frac12 \sum_{r\in \Zbh}\alpha_{-r}\alpha_{r}\Bigg|_{\text{くりこみ}}
+  =
+  \sum_{r\in \Zbh,\ r>0}\alpha_{-r}\alpha_{r}
+  +\frac{1}{48}
+\end{align}
+となります。
 
 \appendix
 \chapter{局所超対称性を持つ作用}
