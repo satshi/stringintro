@@ -3017,6 +3017,7 @@ DD境界条件
 と書けるので
 \begin{align}
   \del_{+}X(\tau,\sigma)=\frac{v_{\pi}-v_{0}}{2\pi}+\sum_{n\ne 0}\alpha_{n}e^{-in\sigma^{+}}=\sum_{n\in \Zb}\alpha_{n}e^{-in\sigma^{+}},\qquad \alpha_{0}:=\frac{v_{\pi}-v_{0}}{2\pi}
+  \label{DDmodeexp}
 \end{align}
 となります。同様に
 \begin{align}
@@ -3190,6 +3191,45 @@ ND境界条件の場合、
   =
   \sum_{r\in \Zbh,\ r>0}\alpha_{-r}\alpha_{r}
   +\frac{1}{48}
+\end{align}
+となります。
+
+\section{ボゾン的弦におけるD-brane}
+さて、2次元の境界付きの自由スカラー場の理論の準備は終えたので、実際に弦理論におけるD-braneの解析を進めましょう。
+
+\subsection{1枚の平らなD-brane}
+まずは、一番簡単なところで26次元時空にある、1枚の平らなD-braneを考えます。この理論では、閉じた弦の他に、D-braneにくっついている開弦があります。この開弦を調べることにより、D-braneがあることによる余分な励起にどのようなものがあるかを調べることが出来ます。
+
+この平らなD-braneは$X^0,\dots,X^{p}$方向にのびていて、$X^{p+1},\dots,X^{25}$方向には局在しているとします。このように空間方向$p$次元にのびているD-braneをD$p$-braneと呼びます。ここにくっついている開弦の世界面の場の理論においては
+\begin{itemize}
+  \item $X^0,\dots,X^{p}$がNN境界条件。
+  \item $X^0,\dots,X^{p}$がDD境界条件。
+\end{itemize}
+になります。この講義では光円錐ゲージを考えたいので、$p\ge 1$の場合を考えます。
+
+さて光円錐ゲージを考えましょう。閉弦の場合と同様に
+\begin{align}
+  X^{\pm}:=\frac{1}{\sqrt{2}}(X^{0}\pm X^{1})
+\end{align}
+として、ゲージ固定条件
+\begin{align}
+  X^{+}(\tau,\sigma)=4p^{+}\tau
+\end{align}
+を課します。こうすると拘束条件
+\begin{align}
+  T_{++}(\tau,\sigma)-a=0
+\end{align}
+を解くことができて
+\begin{align}
+  \del_{+}X^{-}=\frac{1}{2p^{+}}\left( \frac12 \del_{+}X^{i}\del_{+}X^{i}-a \right),\quad i=2,\dots,26
+\end{align}
+となります。今、$a$は、NN, DD方向からの寄与が$\frac{1}{24}$ですから、$a=1$となります。このゼロモードを考えると
+\begin{align}
+  \alpha^{-}_{0}=\frac{1}{2p^{+}}\left( \frac12 \alpha_{0}^{\ell}\alpha_{0}^{\ell}+N-1 \right),\quad N:=\sum_{n=1}^{\infty} \alpha_{-n}^{i}\alpha_{n}^{i},\quad \ell=2,\dots,p
+\end{align}
+となります。ここで、DD境界条件のボゾンのゼロモードは\eqref{DDmodeexp}のように表され、しかも今は1枚しかD-braneがないので$v_0=v_{\pi}$となり、ゼロモードは消えることを用いました。要するに、D-braneの伸びていない方向には開弦は運動量を持てないということです。$\alpha^{\mu}_{0}=2p^{\mu}$であることを考慮すると$(p+1)$次元の意味での質量$m^2$は
+\begin{align}
+  m^2:=2p^{+}p^{-}-p^{\ell}p^{\ell}=\frac{N-1}{2}
 \end{align}
 となります。
 
