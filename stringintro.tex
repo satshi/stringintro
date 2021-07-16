@@ -3198,7 +3198,14 @@ ND境界条件の場合、
 さて、2次元の境界付きの自由スカラー場の理論の準備は終えたので、実際に弦理論におけるD-braneの解析を進めましょう。
 
 \subsection{1枚の平らなD-brane}
-まずは、一番簡単なところで26次元時空にある、1枚の平らなD-braneを考えます。この理論では、閉じた弦の他に、D-braneにくっついている開弦があります。この開弦を調べることにより、D-braneがあることによる余分な励起にどのようなものがあるかを調べることが出来ます。
+まずは、一番簡単なところで26次元時空にある、1枚の平らなD-braneを考えます（図\ref{fig:singlebrane}参照）。この系では、閉じた弦の他に、D-braneにくっついている開弦があります。この開弦を調べることにより、D-braneがあることによる余分な励起にどのようなものがあるかを調べることが出来ます。
+\begin{figure}
+  \centering
+  \includegraphics[scale=1.5]{singlebrane.pdf}
+  \caption{１枚のD$p$-brane。閉弦に加えて、D-braneに端を持つ開弦が励起として存在します。}
+  \label{fig:singlebrane}
+\end{figure}
+
 
 この平らなD-braneは$X^0,\dots,X^{p}$方向にのびていて、$X^{p+1},\dots,X^{25}$方向には局在しているとします。このように空間方向$p$次元にのびているD-braneをD$p$-braneと呼びます。ここにくっついている開弦の世界面の場の理論においては
 \begin{itemize}
@@ -3225,13 +3232,85 @@ ND境界条件の場合、
 \end{align}
 となります。今、$a$は、NN, DD方向からの寄与が$\frac{1}{24}$ですから、$a=1$となります。このゼロモードを考えると
 \begin{align}
-  \alpha^{-}_{0}=\frac{1}{2p^{+}}\left( \frac12 \alpha_{0}^{\ell}\alpha_{0}^{\ell}+N-1 \right),\quad N:=\sum_{n=1}^{\infty} \alpha_{-n}^{i}\alpha_{n}^{i},\quad \ell=2,\dots,p
+  \alpha^{-}_{0}=\frac{1}{2p^{+}}\left( \frac12 \alpha_{0}^{\ell}\alpha_{0}^{\ell}+N-1 \right),\quad N:=\sum_{n=1}^{\infty} \alpha_{-n}^{i}\alpha_{n}^{i},\quad \ell=2,\dots,p\label{singlebranezeromode}
 \end{align}
 となります。ここで、DD境界条件のボゾンのゼロモードは\eqref{DDmodeexp}のように表され、しかも今は1枚しかD-braneがないので$v_0=v_{\pi}$となり、ゼロモードは消えることを用いました。要するに、D-braneの伸びていない方向には開弦は運動量を持てないということです。$\alpha^{\mu}_{0}=2p^{\mu}$であることを考慮すると$(p+1)$次元の意味での質量$m^2$は
 \begin{align}
-  m^2:=2p^{+}p^{-}-p^{\ell}p^{\ell}=\frac{N-1}{2}
+  m^2:=2p^{+}p^{-}-p^{\ell}p^{\ell}=\frac{N-1}{2}\label{massopen1Dp}
 \end{align}
 となります。
+
+さて、スペクトルを調べていきましょう。まず、Fock真空$\ket{k}$は
+\begin{align}
+  p^{+}\ket{k}=k^{+}\ket{k}
+  p^{\ell}\ket{k}=k^{\ell}\ket{k}\ (\ell=2,\dots,p),\nonumber\\
+ \alpha_{n}^{i}\ket{k}=0\ (n>0,\ i=2,\dots,25)
+\end{align}
+という状態です。これは$N=0$なので\eqref{massopen1Dp}より$m^2=-\frac12$となるのでタキオンになります。
+
+次に第１励起状態を見てみましょう。この状態は
+\begin{align}
+  \alpha_{-1}^{\ell}\ket{k},\quad 
+  \alpha_{-1}^{j}\ket{k}\ (j=p+1,\dots,25)
+\end{align}
+です。この状態は$N=1$なので質量は\eqref{massopen1Dp}より$m^2=0$となって無質量状態となります。これらの無質量の場は両方とも重要な意味があります。
+\begin{itemize}
+  \item $\alpha_{-1}^{\ell}\ket{k}$は、$(p+1)$次元のLorentz群のうち、あらわに見えているSO$(p-1)$に対してベクトル表現になっています。ですから、$(p+1)$次元のベクトル粒子になります。これは、このD-braneの上にU(1)ゲージ対称性があることを示します。
+  \item $\alpha_{-1}^{j}\ket{k}$は$(p+1)$次元のスカラー粒子になります。また、$(p+1)$次元の言葉で言うと内部対称性である、D-braneに垂直方向の回転であるSO$(25-p)$のベクトル表現になっています。今考えている系はD-braneの存在により、時空の並進対称性を一部破っています。$\alpha_{-1}^{j}\ket{k}$のスカラー粒子の対称性に対する変換性を考えると、これらが並進対称性の自発的破れによるNGボゾンであることが分かります。言い換えると、このスカラー場はD-braneの垂直方向のゆらぎを表します。
+\end{itemize}
+
+\subsection{2枚の並行なD-brane}
+次に２枚の平行なD$p$-braneを考えます(図\ref{fig:parallelbrane}参照)。２つのbraneは$X^{25}$方向のみに離れていて、座標はそれぞれ$X^{25}=0$、$X^{25}=v$とします。この系では、閉弦、それぞれの片方のD-braneにくっついている開弦に加えて、２つのD-braneをつなぐ開弦が励起としてあります。
+\begin{figure}
+  \centering
+  \includegraphics[scale=1.5]{parallelbrane.pdf}
+  \caption{2枚の並行なD$p$-brane。}
+  \label{fig:parallelbrane}
+\end{figure}
+
+片方のD-braneだけにくっついている開弦は前項で調べたので、ここでは２つのbraneをつなぐ開弦を考えましょう。この場合やはり
+\begin{itemize}
+  \item $X^0,\dots,X^{p}$がNN境界条件。
+  \item $X^0,\dots,X^{p}$がDD境界条件。
+\end{itemize}
+となります。なので、ほとんど前項の解析と同様にできます。前項の解析との違いは、DD方向のうち$X^{25}$のゼロモードが$0$にならないことです。したがって、光円錐ゲージで拘束条件を解いたとき\eqref{singlebranezeromode}が変更されて
+\begin{align}
+  \alpha^{-}_{0}=\frac{1}{2p^{+}}\left( \frac12 \alpha_{0}^{\ell}\alpha_{0}^{\ell}+\frac12 \alpha_{0}^{25}\alpha_{0}^{25}+N-1 \right),\quad N:=\sum_{n=1}^{\infty} \alpha_{-n}^{i}\alpha_{n}^{i},\quad \alpha_{0}^{25}=\frac{v}{2\pi}
+\end{align}
+となります。したがって、$(p+1)$次元の意味での質量は
+\begin{align}
+  m^2=\left( \frac{v}{4\pi} \right)^2+\frac12(N-1)
+\end{align}
+となります。
+
+スペクトルを調べましょう。Fock真空$\ket{k}$は$N=0$ですから、その質量は$m^2=\left( \frac{v}{4\pi} \right)^2-1$となります。これは、$v$が小さいときにはタキオンですが、ある程度大きくなると有質量になります。
+
+第１励起状態は、$\alpha_{-1}^{\ell}\ket{k}\  (\ell=2,\dots,p),\ 
+\alpha_{-1}^{j}\ket{k}\ (j=p+1,\dots,25)$です。その質量は
+\begin{align}
+  m^2=\left( \frac{v}{4\pi} \right)^2
+\end{align}
+ですから$v\ne 0$のときには有質量になります。$\alpha_{-1}^{\ell}\ket{k}$はSO$(p-1)$のベクトルになります。$(p+1)$次元の有質量ベクトル粒子の一部になります。$(p+1)$次元の有質量ベクトル粒子の偏光は$p$個ありますから、$\alpha_{-1}^{\ell}\ket{k}$以外にもう一つこのベクトル粒子の偏光になっているものがあります。これはSO$(p-1)$のスカラーである$\alpha_{-1}^{25}\ket{k}$です。それ以外のスカラー$\alpha_{-1}^{j}\ket{k}\ (j=p+1,\dots,24)$は、$(p+1)$次元のスカラー粒子になっています。
+
+さて、開弦のスペクトルについてまとめておきましょう。そのために２つのD-braneに①、②というラベルをふります。そして例えば①と②をつなぐ弦を①②弦などと呼ぶことにします。①①弦から①のD-brane上にU(1)ゲージ場ができます。このU(1)対称性をU$(1)_1$と呼ぶことにします。同様に②②弦によって作られるゲージ場のU(1)対称性をU$(1)_2$と呼ぶことにします。①②弦や②①弦はこれらのU(1)対称性について電荷を持つことになります。これらの電荷について表にまとめておきます。
+\begin{table}
+  \centering
+  \begin{tabular}{|c|c|c|}\hline
+    & U$(1)_1$電荷 & U$(1)_2$電荷\\ \hline
+    ①①弦無質量ベクトル、スカラー & 0 & 0 \\ \hline
+    ②②弦無質量ベクトル、スカラー & 0 & 0 \\ \hline
+    ①②弦有質量ベクトル、スカラー & $+1$ & $-1$ \\ \hline
+    ②①弦有質量ベクトル、スカラー & $-1$ & $+1$ \\ \hline
+  \end{tabular}
+  \caption{平行な２枚のD-braneの各種開弦の電荷}
+  \label{tab:charges}
+\end{table}
+
+ここで、$v\to 0$とした場合に何がおこるかを考えてみましょう。それまで有質量だった①②弦と②①弦から出てくるベクトル場やスカラー場が無質量になります。これに伴い、ゲージ対称性が拡大します。表\ref{tab:charges}も考え合わせると、拡大された対称性はU$(2)$になります。スカラー場は、随伴表現になります。こうして、非可換なゲージ対称性が現れることになります。$v\ne 0$は、この随伴表現のスカラー場が真空期待値を持つことを意味します。この真空期待値によりゲージ対称性がU$(2)$から自発的に敗れてU$(1)\times $U$(1)$になり、一部のゲージ場が有質量になります。つまりHiggs機構を起こすのです。
+
+ここで少し不思議なのは、２つのD-braneの位置は２つの数（あるいは、垂直方向の２つのベクトル）だったのですが、U$(2)$が回復する点では、$2\times 2$の行列（からなるベクトル）になります。これは、古典的には非常に想像しにくいので場の理論、あるいは弦理論独特の現象です。
+
+同様にして$n$枚の重なったD-braneがあるときには、U$(n)$のゲージ対称性が現れます。そこには随伴表現の無質量スカラー場があり、これが真空期待値をとることにより一般にはU$(1)^n$に自発的に破れます。
 
 \appendix
 \chapter{局所超対称性を持つ作用}
