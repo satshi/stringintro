@@ -3031,10 +3031,10 @@ DD境界条件
     -\del_{-}X(\tau,2\pi-\sigma) & (\pi\le \sigma \le 2\pi)
   \end{cases}.
 \end{align}
-このとき$\del_{+}X(\tau,0)\del_{+}X(\tau,2\pi)$を満たします。
+このとき$\del_{+}X(\tau,0)=\del_{+}X(\tau,2\pi)$を満たします。
 ここから$T_{++}=\frac12\del_{+}X\del_{+}X=\sum_{n\in \Zb}L_{n}e^{-in\sigma^{+}}$として$L_n$を計算しますが、これは周期境界条件の場合と同じです。
 \begin{align}
-  L_{n}=\frac12 \sum_{m\in\Zb}\alpha_{n-m}\alpha_{m},\quad (n\ne 0),\quad
+  L_{n}=\frac12 \sum_{m\in\Zb}\alpha_{n-m}\alpha_{m}\quad (n\ne 0),\quad
   L_{0}=\frac12 \alpha_{0}^2+\sum_{m=1}^{\infty}\alpha_{-m}\alpha_{m}.
 \end{align}
 真空のエネルギーも同様で
@@ -3072,7 +3072,7 @@ DN境界条件の場合、
   &\del_{+}X=\sum_{r\in \Zbh}\alpha_{r}e^{-ir\sigma^{+}},\\
   &\del_{-}X=-\sum_{r\in \Zbh}\alpha_{r}e^{-ir\sigma^{-}}.
 \end{align}
-となります。これらは、次のように二重化トリックで$\del_{+}X(\tau,\sigma),\ (0\le \sigma \le 2\pi)$にまとめることができます。
+となります。これらは、次のように二重化トリックで$\del_{+}X(\tau,\sigma)\ (0\le \sigma \le 2\pi)$にまとめることができます。
 \begin{align}
   \del_{+}X(\tau,\sigma)=
   \begin{cases}
@@ -3210,7 +3210,7 @@ ND境界条件の場合、
 この平らなD-braneは$X^0,\dots,X^{p}$方向にのびていて、$X^{p+1},\dots,X^{25}$方向には局在しているとします。このように空間方向$p$次元にのびているD-braneをD$p$-braneと呼びます。ここにくっついている開弦の世界面の場の理論においては
 \begin{itemize}
   \item $X^0,\dots,X^{p}$がNN境界条件。
-  \item $X^0,\dots,X^{p}$がDD境界条件。
+  \item $X^{p+1},\dots,X^{25}$がDD境界条件。
 \end{itemize}
 になります。この講義では光円錐ゲージを考えたいので、$p\ge 1$の場合を考えます。
 
@@ -3242,7 +3242,7 @@ ND境界条件の場合、
 
 さて、スペクトルを調べていきましょう。まず、Fock真空$\ket{k}$は
 \begin{align}
-  p^{+}\ket{k}=k^{+}\ket{k}
+  p^{+}\ket{k}=k^{+}\ket{k},\quad
   p^{\ell}\ket{k}=k^{\ell}\ket{k}\ (\ell=2,\dots,p),\nonumber\\
  \alpha_{n}^{i}\ket{k}=0\ (n>0,\ i=2,\dots,25)
 \end{align}
