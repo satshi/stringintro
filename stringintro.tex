@@ -1882,6 +1882,7 @@ $\gamma_3$の固有値のことを\kyou{chirality}と呼びます。$\gamma_3$�
 \end{enumerate}
 
 \section{２次元の自由フェルミオン場}
+\label{sec:fermion}
 さて、超弦理論を解析していくためには、\eqref{supergaugefixedaction}の作用で表される系について知る必要があります。このうち$X^{\mu}$については、ボゾン的弦のところでやりました。また$\psi^{\mu}_{\pm}$は$D$個同じもののコピーがあるだけですから、一つの$\psi_{\pm}$だけ考えれば良いです。さらに$\psi_{+}$が分かれば$\psi_{-}$は完全に同様にできます。なのでここでは$\psi_{+}$一つに集中して、その力学を調べていきます。
 
 \subsection{作用とモード展開}
@@ -3338,8 +3339,181 @@ ND境界条件の場合、
 となります。これは、$v=0,\ N=1$でも有質量であることに注意してください。
 
 \section{2次元超対称理論の境界}
+次に超弦理論での弦理論を考えたいです。そのために、ここではまず超対称性のある2次元の理論の境界について調べましょう。
+
+\subsection{超対称性のカレントに対する境界条件}
+超弦理論に使うためには超対称性が保存するような境界条件を課す必要があります。
+
+ここで考える理論の作用を
+\begin{align}
+  S=\frac{1}{2\pi}\int d^2\sigma \left( 
+    \del_{+}X \del_{-} X+i\psi_{+}\del_{-}\psi_{+}+i\psi_{-}\del_{+}\psi_{-}
+   \right),\quad 0\le \sigma \le \pi
+\end{align}
+とします。超対称性のカレントは
+\begin{align}
+  G_{++}=\psi_{+}\del_{+}X,\quad
+  G_{--}=\psi_{-}\del_{-}X  
+\end{align}
+です。
+
+境界で超対称性を保存するためには$\sigma=0,\pi$で
+\begin{align}
+  G_{++}=\pm G_{--}\label{Gboundarycondition0}
+\end{align}
+を満たす必要があります。カイラルなフェルミオン数の対称性$\psi_{-}\to \psi_{-}$がありますから、\eqref{Gboundarycondition0}で$-$符号の方も許されることに注意してください。この対称性を利用して$\sigma=\pi$で
+\begin{align}
+  G_{++}=G_{--}
+\end{align}
+とします。そうすると、超対称性を保つ境界条件には$\sigma=0$で
+\begin{itemize}
+  \item $G_{++}=-G_{--}$: NSセクター
+  \item $G_{++}=G_{--}$: Rセクター
+\end{itemize}
+の2種類があります。
+
+\subsection{二重化のトリック}
+超対称性のカレントに対する二重化のトリックを考えます。$G_{++}(\tau,\sigma)\ (0\le \sigma \le 2\pi)$を次のように定義します。
+\begin{align}
+  G_{++}(\tau,\sigma)
+  =
+  \begin{cases}
+    G_{++}(\tau,\sigma) & (0\le \sigma \le \pi)\\
+    G_{--}(\tau,2\pi-\sigma) & (\pi\le \sigma \le 2\pi)
+  \end{cases}.
+\end{align}
+こうすると$\sigma=\pi$で連続になります。さらに
+\begin{itemize}
+  \item $G_{++}(\tau,2\pi)=-G_{++}(\tau,0)$: NSセクター
+  \item $G_{++}(\tau,2\pi)=G_{++}(\tau,0)$: Rセクター
+\end{itemize}
+という（反）周期境界条件を満たします。また$\del_{-}G_{++}=0$を満たしますから$G_{++}$は$\sigma^{+}$だけによっており
+\begin{align}
+  G_{++}(\tau,\sigma)=\sum_{r}G_{r}e^{-ir\sigma^{+}},\quad
+  \begin{cases}
+    r\in \Zbh & (\text{NSセクター})\\
+    r\in \Zb & (\text{Rセクター})
+  \end{cases}
+\end{align}
+とモード展開できます。
+
+\subsection{フェルミオンの境界条件}
+さて、ここでは、ボゾンのNN, DD, ND, DNの各境界条件に対して、具体的にフェルミオンに対する境界条件を求めてみることにします。
+
+\subsubsection*{--- NN境界条件 ---}
+$\sigma=\pi$では、$\del_{+}X=\del_{-}X$です。$G_{++}=G_{--}$ですから
+$\psi_{+}=\psi_{-}$
+となります。
+
+$\sigma=0$では、$\del_{+}X=\del_{-}X$です。
+\begin{itemize}
+  \item NSセクター: $G_{++}=-G_{--}\ \Rightarrow\ 
+  \psi_{+}=-\psi_{-}$
+  \item Rセクター: $G_{++}=G_{--}\ \Rightarrow\ 
+  \psi_{+}=\psi_{-}$
+\end{itemize}
+となります。
+
+二重化のトリックを用いると$\psi_{+}(\tau,\sigma)\ (0\le \sigma \le 2\pi)$が定義できて
+\begin{itemize}
+  \item NSセクター: $\psi_{+}(\tau,2\pi)=-\psi_{+}(\tau,0)$で反周期的。
+  \item Rセクター: $\psi_{+}(\tau,2\pi)=\psi_{+}(\tau,0)$で周期的。
+\end{itemize}
+となります。反周期的、周期的なフェルミオンは\ref{sec:fermion}節での取り扱いと同じです。
+
+\subsubsection*{--- DD境界条件 ---}
+$\sigma=\pi$では、$\del_{+}X=-\del_{-}X$です。$G_{++}=G_{--}$ですから
+$\psi_{+}=-\psi_{-}$
+となります。
+
+$\sigma=0$では、$\del_{+}X=-\del_{-}X$です。
+\begin{itemize}
+  \item NSセクター: $G_{++}=-G_{--}\ \Rightarrow\ 
+  \psi_{+}=\psi_{-}$
+  \item Rセクター: $G_{++}=G_{--}\ \Rightarrow\ 
+  \psi_{+}=-\psi_{-}$
+\end{itemize}
+となります。
+
+二重化のトリックを用いると$\psi_{+}(\tau,\sigma)\ (0\le \sigma \le 2\pi)$が定義できて
+\begin{itemize}
+  \item NSセクター: $\psi_{+}(\tau,2\pi)=-\psi_{+}(\tau,0)$で反周期的。
+  \item Rセクター: $\psi_{+}(\tau,2\pi)=\psi_{+}(\tau,0)$で周期的。
+\end{itemize}
+となります。
+
+\subsubsection*{--- DN境界条件 ---}
+$\sigma=\pi$では、$\del_{+}X=\del_{-}X$です。$G_{++}=G_{--}$ですから
+$\psi_{+}=\psi_{-}$
+となります。
+
+$\sigma=0$では、$\del_{+}X=-\del_{-}X$です。
+\begin{itemize}
+  \item NSセクター: $G_{++}=-G_{--}\ \Rightarrow\ 
+  \psi_{+}=\psi_{-}$
+  \item Rセクター: $G_{++}=G_{--}\ \Rightarrow\ 
+  \psi_{+}=-\psi_{-}$
+\end{itemize}
+となります。
+
+二重化のトリックを用いると$\psi_{+}(\tau,\sigma)\ (0\le \sigma \le 2\pi)$が定義できて
+\begin{itemize}
+  \item NSセクター: $\psi_{+}(\tau,2\pi)=\psi_{+}(\tau,0)$で周期的。
+  \item Rセクター: $\psi_{+}(\tau,2\pi)=-\psi_{+}(\tau,0)$で反周期的。
+\end{itemize}
+となります。
 
 
+\subsubsection*{--- ND境界条件 ---}
+$\sigma=\pi$では、$\del_{+}X=-\del_{-}X$です。$G_{++}=G_{--}$ですから
+$\psi_{+}=-\psi_{-}$
+となります。
+
+$\sigma=0$では、$\del_{+}X=\del_{-}X$です。
+\begin{itemize}
+  \item NSセクター: $G_{++}=-G_{--}\ \Rightarrow\ 
+  \psi_{+}=-\psi_{-}$
+  \item Rセクター: $G_{++}=G_{--}\ \Rightarrow\ 
+  \psi_{+}=\psi_{-}$
+\end{itemize}
+となります。
+
+二重化のトリックを用いると$\psi_{+}(\tau,\sigma)\ (0\le \sigma \le 2\pi)$が定義できて
+\begin{itemize}
+  \item NSセクター: $\psi_{+}(\tau,2\pi)=\psi_{+}(\tau,0)$で周期的。
+  \item Rセクター: $\psi_{+}(\tau,2\pi)=-\psi_{+}(\tau,0)$で反周期的。
+\end{itemize}
+となります。
+
+
+\subsection{真空のエネルギー}
+これらの結果をまとめて、真空のエネルギー（$a$と書いていたもの）をまとめておきます。
+
+まず、表\ref{tab:bosonfermiona}に、（反）周期的なボゾン、フェルミオンの$a$の値をまとめておきます。
+\begin{table}
+  \centering
+  \begin{tabular}{|c||c|c|}\hline
+    & 周期的 & 反周期的 \\ \hline\hline
+  ボゾン & $\frac{1}{24}$ & $-\frac{1}{48}$\\ \hline
+  フェルミオン & $-\frac{1}{24}$&  $\frac{1}{48}$\\ \hline
+  \end{tabular}
+  \caption{$a$の値の表。ボゾンかフェルミオンか、二重化のトリックをしたときに周期的か反周期的かによる。}
+  \label{tab:bosonfermiona}
+\end{table}
+
+これらから、各境界条件に対する$a$の値は次のようになります。
+\begin{itemize}
+  \item[NN, DD:] 
+  \begin{align}
+    \text{NSセクター:}& \frac{1}{24}+\frac{1}{48}=\frac{1}{16}, \nonumber\\
+    \text{Rセクター:}& \frac{1}{24}-\frac{1}{24}=\frac{1}{16}. \nonumber\\
+  \end{align} 
+  \item[ND, DN:] 
+  \begin{align}
+    \text{NSセクター:}& -\frac{1}{48}-\frac{1}{24}=-\frac{1}{16}, \nonumber\\
+    \text{Rセクター:}& -\frac{1}{48}+\frac{1}{48}=0. \nonumber\\
+  \end{align} 
+\end{itemize}
 
 \section{超弦理論のD-brane}
 
