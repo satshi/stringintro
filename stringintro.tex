@@ -3194,7 +3194,7 @@ ND境界条件の場合、
 \end{align}
 となります。
 
-\section{ボゾン的弦におけるD-brane}
+\section{ボゾン的弦理論のD-brane}
 さて、2次元の境界付きの自由スカラー場の理論の準備は終えたので、実際に弦理論におけるD-braneの解析を進めましょう。
 
 \subsection{1枚の平らなD-brane}
@@ -3311,6 +3311,38 @@ ND境界条件の場合、
 ここで少し不思議なのは、２つのD-braneの位置は２つの数（あるいは、垂直方向の２つのベクトル）だったのですが、U$(2)$が回復する点では、$2\times 2$の行列（からなるベクトル）になります。これは、古典的には非常に想像しにくいので場の理論、あるいは弦理論独特の現象です。
 
 同様にして$n$枚の重なったD-braneがあるときには、U$(n)$のゲージ対称性が現れます。そこには随伴表現の無質量スカラー場があり、これが真空期待値をとることにより一般にはU$(1)^n$に自発的に破れます。
+
+\subsection{2つの異なるD-brane}
+
+次に次元が異なる２つのD-braneを考えます。図\ref{fig:ppprimebrane}を見てください。$p'>p$としてD$p$-braneとD$p'$-braneを考え、D$p$-braneの方は$X^{0},\dots,X^{p}$の方向に伸びており、D$p'$-braneの方は$X^{0},\dots,X^{p'}$の方に伸びているとします。
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=1.5]{ppprimebrane.pdf}
+  \caption{次元が異なる２つのD-brane}
+  \label{fig:ppprimebrane}
+\end{figure}
+
+それぞれのD-braneにくっついている開弦はもうやりました。これらは、それぞれのD-braneの上にU$(1)$ゲージ場をつくります。さらにD$p$-braneとD$p'$-braneにくっついている開弦は、D$p$-braneのゲージ場に対して、その向きによって電荷が$+1$または$-1$になります。もし、D$p'$-braneが$N_f$枚あったとすると、それはD$p$-braneの上から見れば$N_f$個のフレーバーに見えます。
+
+さらにD$p$-braneとD$p'$-braneにくっついている開弦のスペクトルについて考えてみましょう。境界条件は
+\begin{itemize}
+  \item $X^{0},\dots,X^{p}$: NN.
+  \item $X^{p+1},\dots,X^{p'}$: ND, DN.
+  \item $X^{p'+1},\dots,X^{25}$: DD.
+\end{itemize}
+となります。質量は、brane間の距離を$v$として
+\begin{align}
+  m^{2}=\left( \frac{v}{4\pi} \right)^2+\frac12\left( N-1+\frac{p'-p}{16} \right)
+\end{align}
+となります。これは、$v=0,\ N=1$でも有質量であることに注意してください。
+
+\section{2次元超対称理論の境界}
+
+
+
+\section{超弦理論のD-brane}
+
 
 \appendix
 \chapter{局所超対称性を持つ作用}
