@@ -3569,6 +3569,70 @@ $n$枚重なったD$p$-braneを考えるとU$(n)$ゲージ対称性が現れま�
 
 \subsection{D-braneの系}
 
+次に様々なD-braneの系を考えることにします。
+
+一つのD-braneに両端を持つ開弦はもうすでに考えました。異なるD-braneに端を一つづつもつ開弦を考えます。
+この開弦で$q$個のDN, ND方向があり、その他の$10-q$個の方向がNNあるいはDDの場合を考えます。このとき、「時空の超対称性を保つか？」ということを考えます。
+このために真空のエネルギーを考えてみましょう。Rセクターでは、いつも$a=0$です。NSセクターでは、
+\begin{align}
+  a=\frac12-\frac18 q\label{susyaNS}
+\end{align}
+となります。モードは最小でエネルギーを$\frac12$変えますから、もし\eqref{susyaNS}が$\frac12$の倍数でなければ、RセクターとNSセクターのエネルギーが同じになることはありません。したがって時空の超対称性はないことになります。つまり
+\begin{important}
+  $q=0,4,8$のいずれかであることが、時空の超対称性があることの必要条件である。
+\end{important}
+ということができます。
+
+\begin{table}
+  \centering
+  \begin{tabular}{|c|||c|c|c|c|c|c|c|c|c|c|}\hline
+    &0 &1 &2 &3 &4 &5 &6 &7 &8 &9 \\ \hline\hline
+  D3&○&○&○&○&×&×&×&×&×&×\\ \hline    
+  D7&○&○&○&○&○&○&○&○&×&×\\ \hline    
+  \end{tabular}
+  \caption{D3-braneとD7-braneの系。○がD-braneが伸びている方向。✕がD-braneが伸びていない方向。}
+  \label{tab:D3D7}
+\end{table}
+$q=4$の例として、表\ref{tab:D3D7}のようなtype IIB超弦理論でのD3-braneとD7-braneの配位を考えます。この場合、D3-D7をつなぐ弦では、NSセクター、Rセクターともに$a=0$となります。したがって質量はD3-braneとD7-braneの間の距離を$v$として
+\begin{align}
+  m^2=\left( \frac{v}{4\pi} \right)^2+N
+\end{align}
+となります。$N=0$の状態を詳しく調べましょう。
+\begin{itemize}
+  \item NSセクターでは$\psi_{+}^{4},\psi_{+}^{5},\psi_{+}^{6},\psi_{+}^{7}$にゼロモードがあります。これは$\psi_{0}^{4},\psi_{0}^{5},\psi_{0}^{6},\psi_{0}^{7}$で、SO$(4)$のClifford代数をなします。つまり、$X^{4},\dots,X^{7}$を回転するSO$(4)$=SU$(2)\times$SU$(2)$のDiracスピノール表現$(\mathbf{2},\mathbf{1})\oplus(\mathbf{1},\mathbf{2})$になります。GSO射影によってWeylスピノール表現$(\mathbf{2},\mathbf{1})$になります。
+  \item Rセクターでは、$\psi_{+}^{2},\psi_{+}^{3},\psi_{+}^{7},\psi_{+}^{8}$にゼロモード$\psi_{0}^{2},\psi_{0}^{3},\psi_{0}^{7},\psi_{0}^{8}$があります。このために４つの状態があります。GSO射影によって2つの状態になります。
+\end{itemize}
+向きを反対にしたD7-D3弦と合わせて、これらの状態は4次元の$\Ncal=2$超対称性のハイパー多重項というまとまりを作ります。特に$n$枚のD3-braneと$N_f$枚のD7-braneを考えた場合には、4次元で比較的軽い場は
+\begin{itemize}
+  \item 4次元$\Ncal=4$ U$(n)$ 超対称Yang-Mills理論。
+  \item $N_f$個の基本表現のハイパー多重項。
+\end{itemize}
+となります。
+
+\begin{table}
+  \centering
+  \begin{tabular}{|c|||c|c|c|c|c|c|c|c|c|c|}\hline
+    &0 &1 &2 &3 &4 &5 &6 &7 &8 &9 \\ \hline\hline
+  D4&○&○&○&○&○&×&×&×&×&×\\ \hline    
+  D6&○&○&×&×&×&○&○&○&○&○\\ \hline    
+  \end{tabular}
+  \caption{D4-braneとD6-braneの系。}
+  \label{tab:D4D6}
+\end{table}
+$q=8$の例として、表\ref{tab:D4D6}のようなtype IIA超弦理論でのD4-braneとD6-braneの配位を考えます。この場合、D4-D6をつなぐ弦で比較的軽い状態を調べてみましょう。NSセクターでは、$a=\frac12$となるのでFock真空は$m^2=\frac14$となって有質量になります。Rセクターは$a=0$ですので$m^2=0$です。今、質量とは2次元のPoincar\'e対称性に対する質量ですので、$p^{+}p^{-}=0$となります。$p^{+}=0$の場合には光円錐ゲージで考えることは出来ませんので、ここでは、$p^{-}=0$の場合を考えます。これはフェルミオンで$X^{1}$の正の方向に光の速さで走っていることになります。つまり2次元の意味でのカイラル・フェルミオンを表します。
+
+現実の世界を記述するためには、カイラル・フェルミオンを含むことが必須です。上のD4-D6の系は非常に簡単で2次元ですが、弦理論がカイラル・フェルミオンを含むことが出来るということの例になっています。
+
+\section{まとめ}
+この章ではD-braneについて考えてきました。
+\begin{itemize}
+  \item D-braneとは弦理論において開弦がくっつくことができる物体です。
+  \item D-braneを調べる最も基本的な方法は、D-braneにくっついた開弦を調べることです。
+  \item 簡単な境界条件の例としてNeumann境界条件とDirichlet境界条件があります。
+  \item D-braneの上にはゲージ場があります。また、D-braneの垂直方向のゆらぎもあります。
+  \item Type IIB ではBPS D$p$-brane ($p$は奇数)、Type IIA ではBPS D$p$-brane ($p$は偶数)があります。
+  \item 超弦理論では、DN, ND方向の数が$0,4,8$の場合に超対称性を保つ可能性があります。このとき、ハイパー多重項が出てくる例や、カイラル・フェルミオンが出てくる場合があります。
+\end{itemize}
 
 \appendix
 \chapter{局所超対称性を持つ作用}
