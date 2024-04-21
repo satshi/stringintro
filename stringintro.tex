@@ -3644,10 +3644,29 @@ $q=8$の例として、表\ref{tab:D4D6}のようなtype IIA超弦理論でのD4
 \section{Poincare群、Poincare代数}
 D次元のPoincare変換のなす群であるPoincare群の表現を考えます。それには、そのLie代数であるPoincare代数を考えるのが便利です。Poincare代数の生成子は、並進の生成子である$P^{\mu},\ \mu=0,1,\dots, D-1$とLorentz変換の生成子$M^{\mu\nu},\ \mu,\nu=0,1,\dots,D-1$, $M^{\mu\nu}=-M^{\mu\nu}$で、これらすべてエルミートです。これらの間の交換関係は
 \begin{align}
-  [M^{\mu\nu},M^{\rho\sigma}]=-i\eta^{\nu\rho}M^{\mu\sigma}+i\eta^{\mu\rho}M^{\nu\sigma}-i\eta^{\mu\sigma}M^{\nu\rho}+i\eta^{\nu\sigma}M^{\mu\rho},\\
-  [M^{\mu\nu},P^{\rho}]=i\eta^{\mu\rho}P^{\nu}-i\eta^{\nu\rho}P^{\mu},\\
-  [P^{\mu},P^{\nu}]=0.
+  [M^{\mu\nu},M^{\rho\sigma}]&=-i\eta^{\nu\rho}M^{\mu\sigma}+i\eta^{\mu\rho}M^{\nu\sigma}-i\eta^{\mu\sigma}M^{\nu\rho}+i\eta^{\nu\sigma}M^{\mu\rho},\label{MMcom}\\
+  [M^{\mu\nu},P^{\rho}]&=i\eta^{\mu\rho}P^{\nu}-i\eta^{\nu\rho}P^{\mu},\label{MPcom}\\
+  [P^{\mu},P^{\nu}]&=0.\label{PPcom}
 \end{align}
+となります。
+
+\section{Poincare群の表現の分類}
+Poincare代数\eqref{MMcom}, \eqref{MPcom}, \eqref{PPcom}のHilbert空間への表現を考えていきます。$D=1,2$の場合には、例外的な取り扱いをしないといけないので、$D\ge 3$の場合のみを考えます。これはユニタリー表現でないといけませんから、完全可約であり、既約表現の直和に分解できます。ですから既約表現を考えておけば良いことになります。ただし、これらのほとんどは無限次元表現です。これは、Lorentz群ユニタリー表現が自明な表現か無限次元表現であるという事実から言えます。
+
+まず、$m^2:=-P^{\mu}P_{\mu}$と定義し、これについて考えます。$m^2$はすべての生成子と交換しますから、既約表現の中では定数になります。$P^{\mu}$はエルミートでしたから、$m^2$は実数になります。
+
+また、$P^{\mu}$どうしは交換しますから、これらの同時固有値を考えることができます。これを$k^{\mu}$とします。一つの表現の中に現れる$k^{\mu}$はLorentz変換で移り合うものです。まず、簡単な条件は上で述べた$m^2$が定数ということです。ここから$m^2$の符号によって、さらにどう分かれるかを考えてみます。
+\begin{itemize}
+  \item $m^2>0$の場合、$k^{\mu}$は時間的ですから、Lorentz変換で$k^0$の符号が変わることはありません。ですから、一つの表現の中では、$k^0>0$あるいは$k^0<0$となります。
+  \item $m^2=0$の場合、同様に$k^0$の符号は変わりませんが、今度は$k^0>0$, $k^0=0$, $k^0<0$の３種類があります。
+  \item $m^2<0$の場合、空間的ですから$D>2$なら$m^2$が同じすべての$k^{\mu}$が移りあいます。
+\end{itemize}
+
+さて、一般論をやるのは難しいので、ここから先は、表現空間の中で$k^{\mu}$が一定の空間は有限次元であるものを考えます。つまり、状態として
+\begin{align}
+  \sum_{a}\int_{k}\Psi_{a}(k)\ket{k,a}
+\end{align}
+のような形で書けるもののみを考えます。ただし、$a$は有限和です。
 
 \chapter{局所超対称性を持つ作用}
 \label{app:localSUSY}
