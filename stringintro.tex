@@ -3635,6 +3635,20 @@ $q=8$の例として、表\ref{tab:D4D6}のようなtype IIA超弦理論でのD4
 \end{itemize}
 
 \appendix
+
+\chapter{Poincare群のユニタリー表現}
+\label{app:PoincareRep}
+
+ここでは、本文でしばしば用いてきたPoincare群の表現について説明します。
+
+\section{Poincare群、Poincare代数}
+D次元のPoincare変換のなす群であるPoincare群の表現を考えます。それには、そのLie代数であるPoincare代数を考えるのが便利です。Poincare代数の生成子は、並進の生成子である$P^{\mu},\ \mu=0,1,\dots, D-1$とLorentz変換の生成子$M^{\mu\nu},\ \mu,\nu=0,1,\dots,D-1$, $M^{\mu\nu}=-M^{\mu\nu}$で、これらすべてエルミートです。これらの間の交換関係は
+\begin{align}
+  [M^{\mu\nu},M^{\rho\sigma}]=-i\eta^{\nu\rho}M^{\mu\sigma}+i\eta^{\mu\rho}M^{\nu\sigma}-i\eta^{\mu\sigma}M^{\nu\rho}+i\eta^{\nu\sigma}M^{\mu\rho},\\
+  [M^{\mu\nu},P^{\rho}]=i\eta^{\mu\rho}P^{\nu}-i\eta^{\nu\rho}P^{\mu},\\
+  [P^{\mu},P^{\nu}]=0.
+\end{align}
+
 \chapter{局所超対称性を持つ作用}
 \label{app:localSUSY}
 ここでは、本文で省略した、局所超対称性を持つ作用を解説します。
