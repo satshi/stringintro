@@ -623,14 +623,14 @@ x+2p\tau
 このままでも良いのですが、次のような積分変数$\alpha_n,\alphat_n,\ (n\ne 0)$を用いるのが標準的であり、
 便利です。$n>0$として
 \begin{align}
-\alpha_n:=-ina_n,\qquad \alpha_{-n}:=inb_{-n},\qquad
-\alphat_n:=-in a_{-n},\qquad \alphat_{-n}:=inb_{n}
+\alpha_n:=-in a_{-n},\qquad \alpha_{-n}:=inb_{n},\qquad
+\alphat_n:=-ina_n,\qquad \alphat_{-n}:=inb_{-n}
 \end{align}
 とすると、
 \begin{align}
 X(\tau,\sigma)=x+2p\tau+i\sum_{n\ne 0}\left(
-\frac{\alpha_n}{n}e^{-in(\tau+\sigma)}
-+\frac{\alphat_n}{n}e^{-in(\tau-\sigma)}
+\frac{\alpha_n}{n}e^{-in(\tau-\sigma)}
++\frac{\alphat_n}{n}e^{-in(\tau+\sigma)}
 \right).
 \end{align}
 今、$X(\tau,\sigma)$は実数なので$\alpha_n,\alphat_n$の複素共役は、
@@ -643,13 +643,13 @@ X(\tau,\sigma)=x+2p\tau+i\sum_{n\ne 0}\left(
 局所演算子として良いものではないです。
 しかし微分したもの、あるいは後に考える頂点演算子形式のものは良い局所演算子です。}
 \begin{align}
-\del_{+}X
-=p+\sum_{n\ne 0} \alpha_n e^{-in\sigma^{+}}
-=\sum_{n \in \Zb} \alpha_n e^{-in\sigma^{+}}
-,\qquad
 \del_{-}X
-=p+\sum_{n\ne 0} \alphat_n e^{-in\sigma^{-}}
-=\sum_{n \in \Zb} \alphat_n e^{-in\sigma^{-}}.
+=p+\sum_{n\ne 0} \alpha_n e^{-in\sigma^{-}}
+=\sum_{n \in \Zb} \alpha_n e^{-in\sigma^{-}}
+,\qquad
+\del_{+}X
+=p+\sum_{n\ne 0} \alphat_n e^{-in\sigma^{+}}
+=\sum_{n \in \Zb} \alphat_n e^{-in\sigma^{+}}.
 \label{delXalpha}
 \end{align}
 ここで、$\alpha_0:=\alphat_0:=p$と定義しました。また、微分記号
@@ -660,8 +660,8 @@ X(\tau,\sigma)=x+2p\tau+i\sum_{n\ne 0}\left(
 
 後のために式\eqref{delXalpha}を逆に解いておきます。
 \begin{align}
-&\alpha_n=\frac{1}{2\pi}\int_0^{2\pi} \di \sigma \del_{+} X(\tau=0,\sigma) e^{in\sigma}, \quad
-\alphat_n=\frac{1}{2\pi}\int_0^{2\pi} \di \sigma \del_{-} X(\tau=0,\sigma) e^{-in\sigma}.\label{alphabyX}
+&\alpha_n=\frac{1}{2\pi}\int_0^{2\pi} \di \sigma \del_{-} X(\tau=0,\sigma) e^{-in\sigma}, \quad
+\alphat_n=\frac{1}{2\pi}\int_0^{2\pi} \di \sigma \del_{+} X(\tau=0,\sigma) e^{in\sigma}.\label{alphabyX}
 \end{align}
 また、$x$についても解いておくと便利です。
 \begin{align}
@@ -673,23 +673,23 @@ x=\frac{1}{2\pi}\int \di\sigma X(\tau=0,\sigma).\label{xbyX}
 「エネルギー運動量テンソルが$0$になる」というものです。また、世界面の理論に残っている共形対称性に
 対するカレントはエネルギー運動量テンソルです。今の１つのボゾンの系に対するエネルギー運動量テンソルは、
 \begin{align}
-T_{++}=\frac12 \del_{+}X\del_{+}X,\qquad
 T_{--}=\frac12 \del_{-}X\del_{-}X,\qquad
+T_{++}=\frac12 \del_{+}X\del_{+}X,\qquad
 T_{+-}=T_{-+}=0\label{free-scalar-EM}
 \end{align}
 です。エネルギー運動量の保存則から運動方程式を満たすような配位に対して$\del^{\alpha}T_{\alpha\beta}=0$が成り立ちます。書き換えると
 \begin{align}
-\del_{-}T_{++}=\del_{+}T_{--}=0.
+\del_{+}T_{--}=\del_{-}T_{++}=0.
 \end{align}
 これは式\eqref{delXalpha}の形からも分かります。$\sigma$の周期性から次のようにFourier展開できます。
 \begin{align}
-T_{++}=\sum_{n\in\Zb}L_{n}e^{-in\sigma^{+}},\qquad
-T_{--}=\sum_{n\in\Zb}\Lt_{n}e^{-in\sigma^{-}}.
+T_{--}=\sum_{n\in\Zb}L_{n}e^{-in\sigma^{-}},\qquad
+T_{++}=\sum_{n\in\Zb}\Lt_{n}e^{-in\sigma^{+}}.
 \end{align}
-実際に式\eqref{delXalpha}を代入すると$T_{++}$は
+実際に式\eqref{delXalpha}を代入すると$T_{--}$は
 \begin{align}
-T_{++}&=\frac12 \sum_{n,m\in\Zb}\alpha_n e^{-in\sigma^{+}}\alpha_m e^{-im\sigma^{+}}\\
-&=\sum_{n,m\in\Zb}\frac12 \alpha_n\alpha_m e^{-i(m+n)\sigma^{+}}
+T_{--}&=\frac12 \sum_{n,m\in\Zb}\alpha_n e^{-in\sigma^{-}}\alpha_m e^{-im\sigma^{-}}\\
+&=\sum_{n,m\in\Zb}\frac12 \alpha_n\alpha_m e^{-i(m+n)\sigma^{-}}
 \end{align}
 となるので、
 \begin{align}
@@ -718,7 +718,7 @@ H=\int \di \sigma \Pi(\sigma) \dot {X} (\sigma)-L
 \end{align}
 となります。あるいは、エネルギー運動量テンソルや、そのモード$L_n,\Lt_n$を使って書くと
 \begin{align}
-H=\frac{1}{2\pi}\int \di \sigma (T_{++}(\sigma)+T_{--}(\sigma))=L_0+\Lt_0\label{CFT-Hamiltonial}
+H=\frac{1}{2\pi}\int \di \sigma (T_{--}(\sigma)+T_{++}(\sigma))=L_0+\Lt_0\label{CFT-Hamiltonial}
 \end{align}
 となります。
 
