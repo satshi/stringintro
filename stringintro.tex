@@ -843,21 +843,21 @@ S=-\frac{1}{2\pi}\int \di^2\sigma \del_{+}X^{\mu}\del_{-}X_{\mu}
 \end{align}
 であり、エネルギー運動量テンソル\eqref{constraint}は
 \begin{align}
-T_{++}=\frac12 \del_{+}X^{\mu}\del_{+}X_{\mu},\qquad
-T_{--}=\frac12 \del_{-}X^{\mu}\del_{-}X_{\mu}
-\label{EMtensor}
+T_{--}=\frac12 \del_{-}X^{\mu}\del_{-}X_{\mu},
+\qquad
+T_{++}=\frac12 \del_{+}X^{\mu}\del_{+}X_{\mu}\label{EMtensor}
 \end{align}
-となり、これを使って拘束条件は$T_{++}=T_{--}=0$と書けます。運動方程式の解は、前節でやったように
+となり、これを使って拘束条件は$T_{--}=T_{++}=0$と書けます。運動方程式の解は、前節でやったように
 \begin{align}
 X^{\mu}(\tau,\sigma)=x^{\mu}+2p^{\mu}\tau+i\sum_{n\ne 0} \left(
-\frac{\alpha^{\mu}_{n}}{n}e^{-in\sigma^{+}}
-+\frac{\alphat^{\mu}_{n}}{n}e^{-in\sigma^{-}}
+\frac{\alpha^{\mu}_{n}}{n}e^{-in\sigma^{-}}
++\frac{\alphat^{\mu}_{n}}{n}e^{-in\sigma^{+}}
 \right).
 \end{align}
 残っているゲージ対称性は
 \begin{align}
+\sigma^{-}\to \sigma'^{-}=\sigma'^{-}(\sigma^{-}),\qquad 
 \sigma^{+}\to \sigma'^{+}=\sigma'^{+}(\sigma^{+})
-,\qquad \sigma^{-}\to \sigma'^{-}=\sigma'^{-}(\sigma^{-})
 \label{residual-gauge}
 \end{align}
 です。次にこの対称性を固定することを考えます。
@@ -866,8 +866,8 @@ X^{\mu}(\tau,\sigma)=x^{\mu}+2p^{\mu}\tau+i\sum_{n\ne 0} \left(
 $X^{+}$のモード展開は$p^{+}\ne 0$の場合には
 \begin{align}
 X^{+}(\tau,\sigma)=&x^{+}+2p^{+}\tau+i\sum_{n\ne 0} \left(
-\frac{\alpha^{+}_{n}}{n}e^{-in\sigma^{+}}
-+\frac{\alphat^{+}_{n}}{n}e^{-in\sigma^{-}}
+\frac{\alpha^{+}_{n}}{n}e^{-in\sigma^{-}}
++\frac{\alphat^{+}_{n}}{n}e^{-in\sigma^{+}}
 \right)\\
 =&2p^{+}\tau'
 \end{align}
@@ -875,12 +875,14 @@ X^{+}(\tau,\sigma)=&x^{+}+2p^{+}\tau+i\sum_{n\ne 0} \left(
 \begin{align}
 &\tau'=\frac12(\sigma'^{+}+\sigma'^{-})\\
 &
-\sigma'^{+}=\sigma^{+}+\frac{1}{2p^{+}}x^{+}+\frac{i}{p^{+}}\sum_{n\ne 0} \left(
-\frac{\alpha^{+}_{n}}{n}e^{-in\sigma^{+}}
-\right),\qquad
 \sigma'^{-}=\sigma^{-}+\frac{1}{2p^{+}}x^{+}+\frac{i}{p^{+}}\sum_{n\ne 0} \left(
-\frac{\alphat^{+}_{n}}{n}e^{-in\sigma^{-}}
-\right)\label{light-cone-gauge-transf}
+\frac{\alpha^{+}_{n}}{n}e^{-in\sigma^{-}}
+\right)
+,\qquad
+\sigma'^{+}=\sigma^{+}+\frac{1}{2p^{+}}x^{+}+\frac{i}{p^{+}}\sum_{n\ne 0} \left(
+\frac{\alphat^{+}_{n}}{n}e^{-in\sigma^{+}}
+\right)
+\label{light-cone-gauge-transf}
 \end{align}
 です。ここで\eqref{light-cone-gauge-transf}はゲージ変換\eqref{residual-gauge}と思うことができて
 $\sigma'$を新しい座標と思うことができます。この座標を使うと$X^{+}$が非常に簡単な形に書けるのです。新しい座標でも$\sigma'=\frac12(\sigma'^{+}-\sigma'^{-})$の周期は$2\pi$です。まとめると（${}'$を省略して）\eqref{residual-gauge}の変換を用いて$X^{+}$を次のような形にすることができます。
@@ -891,31 +893,31 @@ X^{+}(\tau,\sigma)=&2p^{+}\tau.
 このようなゲージ固定の仕方を「光円錐ゲージ(light-cone gauge)」と呼びます。
 
 光円錐ゲージが便利なのは、拘束条件を比較的単純な形で解くことができるところです。簡単のため、しばらくは古典論で考えて、後で量子化することにしましょう。
-拘束条件は\eqref{EMtensor}のエネルギー運動量テンソルが$T_{++}=T_{--}=0$を満たすことです。
-今の座標で例えば$T_{++}=0$は、
+拘束条件は\eqref{EMtensor}のエネルギー運動量テンソルが$T_{--}=T_{++}=0$を満たすことです。
+今の座標で例えば$T_{--}=0$は、
 \begin{align}
-0=-\del_{+}X^{+}\del_{+}X^{-}+\frac12 \del_{+}X^{i}\del_{+}X^{i},\quad(i=1,\dots,D-2)
+0=-\del_{-}X^{+}\del_{-}X^{-}+\frac12 \del_{-}X^{i}\del_{-}X^{i},\quad(i=1,\dots,D-2)
 \end{align}
-です。$\del_{+}X^{+}=p^{+}$なので、この条件は$\del_{+}X^{-}$について解くことができて
+です。$\del_{-}X^{+}=p^{+}$なので、この条件は$\del_{-}X^{-}$について解くことができて
 \begin{align}
-\del_{+}X^{-}=\frac{1}{2p^{+}}\del_{+}X^{i}\del_{+}X^{i}
+\del_{-}X^{-}=\frac{1}{2p^{+}}\del_{-}X^{i}\del_{-}X^{i}
 \label{constraint+}
 \end{align}
 となります。また、同様にして
 \begin{align}
-\del_{-}X^{-}=\frac{1}{2p^{+}}\del_{-}X^{i}\del_{-}X^{i}
+\del_{+}X^{-}=\frac{1}{2p^{+}}\del_{+}X^{i}\del_{+}X^{i}
 \label{constraint-}
 \end{align}
 です。どこまで拘束条件が減ったかを詳しく見るためにモード展開を考えましょう。横波方向の自由度$X^{i},\ i=1,\dots, D-2$から作られるエネルギー運動量テンソルとそのモード展開を考えておくと便利です。
 \begin{align}
-T^{\perp}_{++}=\frac{1}{2}\del_{+}X^{i}\del_{+}X^{i}=\sum_{n\in\Zb}\Lp_{n}e^{-in\sigma^{+}},\quad
-T^{\perp}_{--}=\frac{1}{2}\del_{-}X^{i}\del_{-}X^{i}=\sum_{n\in\Zb}\Ltp_{n}e^{-in\sigma^{-}}.
+T^{\perp}_{--}=\frac{1}{2}\del_{-}X^{i}\del_{-}X^{i}=\sum_{n\in\Zb}\Lp_{n}e^{-in\sigma^{-}},\quad
+T^{\perp}_{++}=\frac{1}{2}\del_{+}X^{i}\del_{+}X^{i}=\sum_{n\in\Zb}\Ltp_{n}e^{-in\sigma^{+}}.
 \end{align}
 $X^{-}$のモード展開は
 \begin{align}
 X^{-}(\tau,\sigma)=&x^{-}+2p^{-}\tau+i\sum_{n\ne 0} \left(
-\frac{\alpha^{-}_{n}}{n}e^{-in\sigma^{+}}
-+\frac{\alphat^{-}_{n}}{n}e^{-in\sigma^{-}}
+\frac{\alpha^{-}_{n}}{n}e^{-in\sigma^{-}}
++\frac{\alphat^{-}_{n}}{n}e^{-in\sigma^{+}}
 \right)
 \end{align}
 となるので拘束条件\eqref{constraint+}と\eqref{constraint-}は、
@@ -1054,7 +1056,8 @@ a=1
 \subsection{臨界次元}
 ボゾン的弦理論は、$D=26$の時のみ無矛盾に定式化されます。ここでは２つの方向から、この事実を導出しよう。
 
-一つめは、かなり発見法的な方法です。まず、上の議論から$a=1$になることは分かります。もう一つの仮定は、$T_{++}=\frac12 \del_{+}X^i\del_{+}X^i$の「正しい」演算子順序は、演算子の意味でそのまま掛け算をしたものである、というものです。もちろんこれには発散があるので、「正しい」やり方で正則化とくりこみが行われなければなりません。これは、次のように書くことができます。
+一つめは、かなり発見法的な方法です。まず、上の議論から$a=1$になることは分かります。
+もう一つの仮定は、$T_{--}=\frac12 \del_{-}X^i\del_{-}X^i$の「正しい」演算子順序は、演算子の意味でそのまま掛け算をしたものである、というものです。もちろんこれには発散があるので、「正しい」やり方で正則化とくりこみが行われなければなりません。これは、次のように書くことができます。
 \begin{align}
 \frac12\sum_{n\in \Zb}\alpha^i_{-n}\alpha^i_{n}=\frac12 \alpha^i_0\alpha^i_0+\sum_{n=1}^{\infty}\alpha^i_{-n}\alpha^i_{n}-a.
 \end{align}
