@@ -3371,44 +3371,45 @@ ND境界条件の場合、
 \end{align}
 とします。超対称性のカレントは
 \begin{align}
-  G_{++}=\psi_{+}\del_{+}X,\quad
   G_{--}=\psi_{-}\del_{-}X  
+  ,\quad
+  G_{++}=\psi_{+}\del_{+}X
 \end{align}
 です。
 
 境界で超対称性を保存するためには$\sigma=0,\pi$で
 \begin{align}
-  G_{++}=\pm G_{--}\label{Gboundarycondition0}
+  G_{--}=\pm G_{++}\label{Gboundarycondition0}
 \end{align}
-を満たす必要があります。カイラルなフェルミオン数の対称性$\psi_{-}\to \psi_{-}$がありますから、\eqref{Gboundarycondition0}で$-$符号の方も許されることに注意してください。この対称性を利用して$\sigma=\pi$で
+を満たす必要があります。カイラルなフェルミオン数の対称性$\psi_{+}\to -\psi_{+}$がありますから、\eqref{Gboundarycondition0}で$-$符号の方も許されることに注意してください。この対称性を利用して$\sigma=\pi$で
 \begin{align}
   G_{++}=G_{--}
 \end{align}
 とします。そうすると、超対称性を保つ境界条件には$\sigma=0$で
 \begin{itemize}
-  \item $G_{++}=-G_{--}$: NSセクター
-  \item $G_{++}=G_{--}$: Rセクター
+  \item $G_{--}=-G_{++}$: NSセクター
+  \item $G_{--}=G_{++}$: Rセクター
 \end{itemize}
 の2種類があります。
 
 \subsection{二重化のトリック}
-超対称性のカレントに対する二重化のトリックを考えます。$G_{++}(\tau,\sigma)\ (0\le \sigma \le 2\pi)$を次のように定義します。
+超対称性のカレントに対する二重化のトリックを考えます。$G_{--}(\tau,\sigma)\ (0\le \sigma \le 2\pi)$を次のように定義します。
 \begin{align}
-  G_{++}(\tau,\sigma)
+  G_{--}(\tau,\sigma)
   =
   \begin{cases}
-    G_{++}(\tau,\sigma) & (0\le \sigma \le \pi)\\
-    G_{--}(\tau,2\pi-\sigma) & (\pi\le \sigma \le 2\pi)
+    G_{--}(\tau,\sigma) & (0\le \sigma \le \pi)\\
+    G_{++}(\tau,2\pi-\sigma) & (\pi\le \sigma \le 2\pi)
   \end{cases}.
 \end{align}
 こうすると$\sigma=\pi$で連続になります。さらに
 \begin{itemize}
-  \item $G_{++}(\tau,2\pi)=-G_{++}(\tau,0)$: NSセクター
-  \item $G_{++}(\tau,2\pi)=G_{++}(\tau,0)$: Rセクター
+  \item $G_{--}(\tau,2\pi)=-G_{--}(\tau,0)$: NSセクター
+  \item $G_{--}(\tau,2\pi)=G_{--}(\tau,0)$: Rセクター
 \end{itemize}
-という（反）周期境界条件を満たします。また$\del_{-}G_{++}=0$を満たしますから$G_{++}$は$\sigma^{+}$だけによっており
+という（反）周期境界条件を満たします。また$\del_{+}G_{--}=0$を満たしますから$G_{--}$は$\sigma^{-}$だけによっており
 \begin{align}
-  G_{++}(\tau,\sigma)=\sum_{r}G_{r}e^{-ir\sigma^{+}},\quad
+  G_{--}(\tau,\sigma)=\sum_{r}G_{r}e^{-ir\sigma^{-}},\quad
   \begin{cases}
     r\in \Zbh & (\text{NSセクター})\\
     r\in \Zb & (\text{Rセクター})
@@ -3420,87 +3421,87 @@ ND境界条件の場合、
 さて、ここでは、ボゾンのNN, DD, ND, DNの各境界条件に対して、具体的にフェルミオンに対する境界条件を求めてみることにします。
 
 \subsubsection*{--- NN境界条件 ---}
-$\sigma=\pi$では、$\del_{+}X=\del_{-}X$です。$G_{++}=G_{--}$ですから
-$\psi_{+}=\psi_{-}$
+$\sigma=\pi$では、$\del_{-}X=\del_{+}X$です。$G_{++}=G_{--}$ですから
+$\psi_{-}=\psi_{+}$
 となります。
 
-$\sigma=0$では、$\del_{+}X=\del_{-}X$です。
+$\sigma=0$では、$\del_{-}X=\del_{+}X$です。
 \begin{itemize}
-  \item NSセクター: $G_{++}=-G_{--}\ \Rightarrow\ 
-  \psi_{+}=-\psi_{-}$
-  \item Rセクター: $G_{++}=G_{--}\ \Rightarrow\ 
-  \psi_{+}=\psi_{-}$
+  \item NSセクター: $G_{--}=-G_{++}\ \Rightarrow\ 
+  \psi_{-}=-\psi_{+}$
+  \item Rセクター: $G_{--}=G_{++}\ \Rightarrow\ 
+  \psi_{-}=\psi_{+}$
 \end{itemize}
 となります。
 
-二重化のトリックを用いると$\psi_{+}(\tau,\sigma)\ (0\le \sigma \le 2\pi)$が定義できて
+二重化のトリックを用いると$\psi_{-}(\tau,\sigma)\ (0\le \sigma \le 2\pi)$が定義できて
 \begin{itemize}
-  \item NSセクター: $\psi_{+}(\tau,2\pi)=-\psi_{+}(\tau,0)$で反周期的。
-  \item Rセクター: $\psi_{+}(\tau,2\pi)=\psi_{+}(\tau,0)$で周期的。
+  \item NSセクター: $\psi_{-}(\tau,2\pi)=-\psi_{-}(\tau,0)$で反周期的。
+  \item Rセクター: $\psi_{-}(\tau,2\pi)=\psi_{-}(\tau,0)$で周期的。
 \end{itemize}
 となります。反周期的、周期的なフェルミオンは\ref{sec:fermion}節での取り扱いと同じです。
 
 \subsubsection*{--- DD境界条件 ---}
-$\sigma=\pi$では、$\del_{+}X=-\del_{-}X$です。$G_{++}=G_{--}$ですから
-$\psi_{+}=-\psi_{-}$
+$\sigma=\pi$では、$\del_{-}X=-\del_{+}X$です。$G_{++}=G_{--}$ですから
+$\psi_{-}=-\psi_{+}$
 となります。
 
-$\sigma=0$では、$\del_{+}X=-\del_{-}X$です。
+$\sigma=0$では、$\del_{-}X=-\del_{+}X$です。
 \begin{itemize}
-  \item NSセクター: $G_{++}=-G_{--}\ \Rightarrow\ 
-  \psi_{+}=\psi_{-}$
-  \item Rセクター: $G_{++}=G_{--}\ \Rightarrow\ 
-  \psi_{+}=-\psi_{-}$
+  \item NSセクター: $G_{--}=-G_{++}\ \Rightarrow\ 
+  \psi_{-}=\psi_{+}$
+  \item Rセクター: $G_{--}=G_{++}\ \Rightarrow\ 
+  \psi_{-}=-\psi_{+}$
 \end{itemize}
 となります。
 
-二重化のトリックを用いると$\psi_{+}(\tau,\sigma)\ (0\le \sigma \le 2\pi)$が定義できて
+二重化のトリックを用いると$\psi_{-}(\tau,\sigma)\ (0\le \sigma \le 2\pi)$が定義できて
 \begin{itemize}
-  \item NSセクター: $\psi_{+}(\tau,2\pi)=-\psi_{+}(\tau,0)$で反周期的。
-  \item Rセクター: $\psi_{+}(\tau,2\pi)=\psi_{+}(\tau,0)$で周期的。
+  \item NSセクター: $\psi_{-}(\tau,2\pi)=-\psi_{-}(\tau,0)$で反周期的。
+  \item Rセクター: $\psi_{-}(\tau,2\pi)=\psi_{-}(\tau,0)$で周期的。
 \end{itemize}
 となります。
 
 \subsubsection*{--- DN境界条件 ---}
-$\sigma=\pi$では、$\del_{+}X=\del_{-}X$です。$G_{++}=G_{--}$ですから
-$\psi_{+}=\psi_{-}$
+$\sigma=\pi$では、$\del_{-}X=\del_{+}X$です。$G_{++}=G_{--}$ですから
+$\psi_{-}=\psi_{+}$
 となります。
 
-$\sigma=0$では、$\del_{+}X=-\del_{-}X$です。
+$\sigma=0$では、$\del_{-}X=-\del_{+}X$です。
 \begin{itemize}
-  \item NSセクター: $G_{++}=-G_{--}\ \Rightarrow\ 
-  \psi_{+}=\psi_{-}$
-  \item Rセクター: $G_{++}=G_{--}\ \Rightarrow\ 
-  \psi_{+}=-\psi_{-}$
+  \item NSセクター: $G_{--}=-G_{++}\ \Rightarrow\ 
+  \psi_{-}=\psi_{+}$
+  \item Rセクター: $G_{--}=G_{++}\ \Rightarrow\ 
+  \psi_{-}=-\psi_{+}$
 \end{itemize}
 となります。
 
-二重化のトリックを用いると$\psi_{+}(\tau,\sigma)\ (0\le \sigma \le 2\pi)$が定義できて
+二重化のトリックを用いると$\psi_{-}(\tau,\sigma)\ (0\le \sigma \le 2\pi)$が定義できて
 \begin{itemize}
-  \item NSセクター: $\psi_{+}(\tau,2\pi)=\psi_{+}(\tau,0)$で周期的。
-  \item Rセクター: $\psi_{+}(\tau,2\pi)=-\psi_{+}(\tau,0)$で反周期的。
+  \item NSセクター: $\psi_{-}(\tau,2\pi)=\psi_{-}(\tau,0)$で周期的。
+  \item Rセクター: $\psi_{-}(\tau,2\pi)=-\psi_{-}(\tau,0)$で反周期的。
 \end{itemize}
 となります。
 
 
 \subsubsection*{--- ND境界条件 ---}
-$\sigma=\pi$では、$\del_{+}X=-\del_{-}X$です。$G_{++}=G_{--}$ですから
-$\psi_{+}=-\psi_{-}$
+$\sigma=\pi$では、$\del_{-}X=-\del_{+}X$です。$G_{--}=G_{++}$ですから
+$\psi_{-}=-\psi_{+}$
 となります。
 
-$\sigma=0$では、$\del_{+}X=\del_{-}X$です。
+$\sigma=0$では、$\del_{-}X=\del_{+}X$です。
 \begin{itemize}
-  \item NSセクター: $G_{++}=-G_{--}\ \Rightarrow\ 
-  \psi_{+}=-\psi_{-}$
-  \item Rセクター: $G_{++}=G_{--}\ \Rightarrow\ 
-  \psi_{+}=\psi_{-}$
+  \item NSセクター: $G_{--}=-G_{++}\ \Rightarrow\ 
+  \psi_{-}=-\psi_{+}$
+  \item Rセクター: $G_{--}=G_{++}\ \Rightarrow\ 
+  \psi_{-}=\psi_{+}$
 \end{itemize}
 となります。
 
-二重化のトリックを用いると$\psi_{+}(\tau,\sigma)\ (0\le \sigma \le 2\pi)$が定義できて
+二重化のトリックを用いると$\psi_{-}(\tau,\sigma)\ (0\le \sigma \le 2\pi)$が定義できて
 \begin{itemize}
-  \item NSセクター: $\psi_{+}(\tau,2\pi)=\psi_{+}(\tau,0)$で周期的。
-  \item Rセクター: $\psi_{+}(\tau,2\pi)=-\psi_{+}(\tau,0)$で反周期的。
+  \item NSセクター: $\psi_{-}(\tau,2\pi)=\psi_{-}(\tau,0)$で周期的。
+  \item Rセクター: $\psi_{-}(\tau,2\pi)=-\psi_{-}(\tau,0)$で反周期的。
 \end{itemize}
 となります。
 
@@ -3525,7 +3526,7 @@ $\sigma=0$では、$\del_{+}X=\del_{-}X$です。
   \item NN, DD: 
   \begin{align}
     \text{NSセクター:}& \frac{1}{24}+\frac{1}{48}=\frac{1}{16}, \nonumber\\
-    \text{Rセクター:}& \frac{1}{24}-\frac{1}{24}=\frac{1}{16}. \nonumber\\
+    \text{Rセクター:}& \frac{1}{24}-\frac{1}{24}=0. \nonumber\\
   \end{align} 
   \item ND, DN: 
   \begin{align}
@@ -3550,11 +3551,11 @@ $\sigma=0$では、$\del_{+}X=\del_{-}X$です。
 
 光円錐ゲージをとって考えます。ゲージ固定条件は
 \begin{align}
-  X^{+}=4p^{+}\tau,\quad \psi_{+}^{+}=0
+  X^{+}=4p^{+}\tau,\quad \psi_{-}^{+}=0
 \end{align}
 とします。これを用いて拘束条件
 \begin{align}
-  T_{++}=0,\quad G_{++}=0
+  T_{--}=0,\quad G_{--}=0
 \end{align}
 を解くことができます。特に$p+1$次元の意味での質量が求まって
 \begin{align}
@@ -3618,8 +3619,8 @@ $q=4$の例として、表\ref{tab:D3D7}のようなtype IIB超弦理論でのD3
 \end{align}
 となります。$N=0$の状態を詳しく調べましょう。
 \begin{itemize}
-  \item NSセクターでは$\psi_{+}^{4},\psi_{+}^{5},\psi_{+}^{6},\psi_{+}^{7}$にゼロモードがあります。これは$\psi_{0}^{4},\psi_{0}^{5},\psi_{0}^{6},\psi_{0}^{7}$で、SO$(4)$のClifford代数をなします。つまり、$X^{4},\dots,X^{7}$を回転するSO$(4)$=SU$(2)\times$SU$(2)$のDiracスピノール表現$(\mathbf{2},\mathbf{1})\oplus(\mathbf{1},\mathbf{2})$になります。GSO射影によってWeylスピノール表現$(\mathbf{2},\mathbf{1})$になります。
-  \item Rセクターでは、$\psi_{+}^{2},\psi_{+}^{3},\psi_{+}^{7},\psi_{+}^{8}$にゼロモード$\psi_{0}^{2},\psi_{0}^{3},\psi_{0}^{7},\psi_{0}^{8}$があります。このために４つの状態があります。GSO射影によって2つの状態になります。
+  \item NSセクターでは$\psi_{-}^{4},\psi_{-}^{5},\psi_{-}^{6},\psi_{-}^{7}$にゼロモードがあります。これは$\psi_{0}^{4},\psi_{0}^{5},\psi_{0}^{6},\psi_{0}^{7}$で、SO$(4)$のClifford代数をなします。つまり、$X^{4},\dots,X^{7}$を回転するSO$(4)$=SU$(2)\times$SU$(2)$のDiracスピノール表現$(\mathbf{2},\mathbf{1})\oplus(\mathbf{1},\mathbf{2})$になります。GSO射影によってWeylスピノール表現$(\mathbf{2},\mathbf{1})$になります。
+  \item Rセクターでは、$\psi_{-}^{2},\psi_{-}^{3},\psi_{-}^{7},\psi_{-}^{8}$にゼロモード$\psi_{0}^{2},\psi_{0}^{3},\psi_{0}^{7},\psi_{0}^{8}$があります。このために４つの状態があります。GSO射影によって2つの状態になります。
 \end{itemize}
 向きを反対にしたD7-D3弦と合わせて、これらの状態は4次元の$\Ncal=2$超対称性のハイパー多重項というまとまりを作ります。特に$n$枚のD3-braneと$N_f$枚のD7-braneを考えた場合には、4次元で比較的軽い場は
 \begin{itemize}
