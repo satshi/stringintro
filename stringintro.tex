@@ -501,7 +501,7 @@ h_{\alpha\beta}=\eta_{\alpha\beta}
 局所的な対称性のパラメータは、一般座標変換の２つとWeyl変換の１つの合計３つあるので、数の上からは上のようなゲージを取ることはできます。このゲージでは作用は
 \begin{important}
   \begin{align}
-    S=-\frac{1}{8\pi}\int \di^2\sigma \eta^{\alpha\beta}\del_{\alpha}X^{\mu}\del_{\beta}X^{\nu}\eta^{\alpha\beta}\eta_{\mu\nu}.\label{gaugefixedaction}
+    S=-\frac{1}{8\pi}\int \di^2\sigma \eta^{\alpha\beta}\del_{\alpha}X^{\mu}\del_{\beta}X^{\nu}\eta_{\mu\nu}.\label{gaugefixedaction}
     \end{align}      
 \end{important}
 粒子の場合でやったのと同様に$h_{\alpha\beta}$に対する運動方程式\eqref{constraintT}を拘束条件として課さなければなりません。これは今のゲージでは\eqref{EM}から
@@ -509,7 +509,7 @@ h_{\alpha\beta}=\eta_{\alpha\beta}
   \begin{align}
     0=T_{\alpha\beta}=
     \frac12 \del_{\alpha}X^{\mu}\del_{\beta}X^{\nu}\eta_{\mu\nu}
-    -\frac14 \eta_{\alpha\beta}\del_{\gamma}X^{\mu}\del_{\delta}X^{\nu}\eta_{\mu\nu}\label{constraint}
+    -\frac14 \eta_{\alpha\beta}\eta^{\gamma\delta}\del_{\gamma}X^{\mu}\del_{\delta}X^{\nu}\eta_{\mu\nu}\label{constraint}
     \end{align}      
 \end{important}
 と書けます。したがって、\kyou{古典的な弦理論は\eqref{gaugefixedaction}の作用で表される系で\eqref{constraint}の拘束条件を課したものです。}
@@ -1413,11 +1413,11 @@ L=\int \di \theta \frac{i}{2}\del_{\tau} Y^{\mu} \Dh Y_{\mu}
 という拘束条件を課す必要があれば、それがDirac方程式になります。ただし、ここまでの議論では、この拘束条件はどこからも出てきません。
 
 \subsection{Dirac括弧とフェルミオンの正準交換関係*}
-ここで少し寄り道し、拘束条件のある正準形式とDirac括弧について触れます。詳しくは九後汰一郎「ゲージ場の量子論 1」を参照してください。
+ここで少し寄り道し、拘束条件のある正準形式とDirac括弧について触れます。詳しくは例えば九後汰一郎「ゲージ場の量子論 1」を参照してください。
 
 形式的に正準変数$p_i,q_i,\ (i=1,\dots,N)$で表される相空間があるとします。Poisson括弧を
 \begin{align}
-  \pbk{A}{B}:=\sum_{i}\pdv{A}{p_i}\pdv{B}{q_i}-(-1)^{|A||B|}\pdv{B}{p_i}\pdv{A}{q_i}
+  \pbk{A,B}:=\sum_{i}\left(\pdv{A}{p_i}\pdv{B}{q_i}-(-1)^{|A||B|}\pdv{B}{p_i}\pdv{A}{q_i}\right)
 \end{align}
 と定義します。ここで$|A|$は
 \begin{align}
